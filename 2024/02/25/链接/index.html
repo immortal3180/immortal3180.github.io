@@ -507,6 +507,7 @@
 <td>191.23.191.254</td>
 </tr>
 </tbody></table>
+<hr>
 <table>
 <thead>
 <tr>
@@ -563,6 +564,16 @@
 <p>Router-R3 (config)#ip route 0.0.0.0 0.0.0.0 211.68.69.169  添加了一条默认静态路由，将所有目的地流量指向下一跳地址 211.68.69.169</p>
 <p>Router-R3 (config)#exit   退出路由器 R3 的全局配置模式，返回到全局配置模式下</p>
 <p>Router-R3 #   待机</p>
+<p>注意事项：</p>
+<p>1.POS:</p>
+<ul>
+<li>接口速率：bandwidth 10 000 000</li>
+<li>帧格式：<ul>
+<li>flaming sdh：flag s1s0 2</li>
+<li>flaming sonet：flag s1s0 0</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>

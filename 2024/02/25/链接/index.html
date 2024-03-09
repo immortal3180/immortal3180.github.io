@@ -541,6 +541,10 @@
 <p>得到直接广播地址（主机位全变1）：10111111.00010111.10111111.11111111，转换为十进制：1<br>91.23.191.255</p>
 <p>得到主机号（网络位全变0）：00000000.00000000.00110101.00001101，转换为十进制：0.0.53.13</p>
 <p>得到子网内最后一个可用IP地址（直接广播地址的前一个地址）：191.23.191.254</p>
+<h3 id="综合题-2"><a href="#综合题-2" class="headerlink" title="综合题 2"></a>综合题 2</h3><p>本题涉及的内容有：路由器POS接口配置、lookback接口配置、OSPF动态路由协议配置、静态路由的配置 和 DHCP服务器配置</p>
+<p>（1）POS接口的配置参数有接口带宽、接口地址，接口的链路层协议，接口的帧格式，接口的CRC校验和flag（帧头中净负荷类型的标志位）等。</p>
+<p> （2）loopback接口主要用于网络管理。网络管理员为loopback接口分配一个IP地址作为管理地址，其掩码应为255.255.255.255.</p>
+<p>Router-R3 #configure terminal 进入路由器的全局配置模式<br>Router-R3 (config)#interface pos4&#x2F;0 进入POS4&#x2F;0接口<br>Router-R3 (config-if)#description To Internet 该接口连接到互联网<br>Router-R3 (congfig-if)#bandwidth 10000000 设置了接口的带宽为 10000000，表示该接口的带宽为 10 Mbps<br>Router-R3 (config-if)#ip address 211.68.69.170 255.255.255.252 指定的IP地址为211.68.69.170，子网掩码为255.255.255.252<br>Router-R3 (config-if)# crc 32 开启 CRC（循环冗余校验）功能，以帮助检测数据在传输过程中是否发生错误<br>Router-R3 (config-if)#pos framing sdh 希望配置接口的 POS（Packet over SONET）帧格式为 SDH（Synchronous Digital Hierarchy）。SDH是一种光传输网络标准，用于在光纤网络中传输数据。通过将接口的帧格式设置为SDH，可以确保接口与光纤网络兼容。<br>Router-R3 (config-if)#no ip directed-broadcast 禁止了 IP 直播（Directed Broadcast）功能。禁止 IP 直播可以增强网络安全性，防止网络中的广播消息被转发到其他网络中，从而减少潜在的安全风险<br>Router-R3 (config-if)#pos flag sls0 2 配置路由器接口的 POS（Packet over SONET）标志。在这条命令中，您设置了 POS 接口的 SLS0（Section Line Signal 0）标志为 2</p>
 
                 
             </div>
@@ -1049,7 +1053,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.9k</span>&nbsp;字
+                class="white-color">2.3k</span>&nbsp;字
             
             
             

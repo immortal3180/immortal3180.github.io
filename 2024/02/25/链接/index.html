@@ -577,6 +577,50 @@
 </ul>
 </li>
 </ul>
+<hr>
+<p>3.10 </p>
+<p>DHCP：（Dynamic Host Configuration Protocol，动态主机配置协议）<br>使用UDP协议工作，统一使用两个IANA分配的端口：67（服务器端），68（客户端）。<br>DHCP通常被用于局域网环境，主要作用是集中的管理、分配IP地址，使client动态的获得IP地址、Gateway地址、DNS服务器地址等信息，并能够提升地址的使用率。简单来说，DHCP就是一个不需要账号密码登录的、自动给内网机器分配IP地址等信息的协议。</p>
+<h3 id="DHCP报文种类"><a href="#DHCP报文种类" class="headerlink" title="DHCP报文种类"></a>DHCP报文种类</h3><p>DHCP一共有8中报文，各种类型报文的基本功能如下：</p>
+<table>
+<thead>
+<tr>
+<th>报文类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discover（0x01)</td>
+<td>客户端请求IP地址时不知道服务器的位置 —&gt; 广播Discover报文—&gt;收到的服务器发送应答报文</td>
+</tr>
+<tr>
+<td>Offer（0x02）</td>
+<td>&emsp; 服务器收到Discover报文后，所配置的地址池中查找一个合适的IP地址,加上相应的租约期限和其他配置信息（如网关、DNS服务器等），构造Offer报文，发送给客户端，告知用户本服务器可以为其提供IP地址。<br>[但这个报文只是告诉DHCP客户端可以提供IP地址，最终还需要客户端通过ARP来检测该IP地址是否重复。]</td>
+</tr>
+<tr>
+<td>Request（0x03）</td>
+<td>1. 客户端在收到的众多Offer报文中选择一个(通常为第一个)，向该服务器发送一个广播的Request报文，通告选择的服务器，希望获得所分配的IP地址。 <br> 2. 另外，DHCP客户端在成功获取IP地址后，在地址使用租期达到50%时，会向服务器发送单播Request报文请求续延租约，如果没有收到ACK报文，在租期达到87.5%时，会再次发送广播的Request报文已请求续延租约。</td>
+</tr>
+<tr>
+<td>ACK (0x05)</td>
+<td>服务器收到Request报文后，根据Request报文中携带的用户MAC来查找有没有相应的租约记录，如果有则发送ACK应答报文，通知用户可以使用分配的IP地址。</td>
+</tr>
+<tr>
+<td>NAK（0x06）</td>
+<td>如果DHCP服务器收到Request请求报文后，没有发现有相应的租约记录或者由于某些原因无法正常分配IP地址，则向DHCP客户端发送NAK应答报文，通知用户无法分配合适的IP地址。</td>
+</tr>
+<tr>
+<td>Release（0x07）</td>
+<td>当DHCP客户端不再需要使用分配IP地址时（一般出现在客户端关机、下线等状况）就会主动向DHCP服务器发送RELEASE请求报文，告知服务器用户不再需要分配IP地址，请求DHCP服务器释放对应的IP地址。</td>
+</tr>
+<tr>
+<td>Decline（0x04）</td>
+<td>DHCP客户端收到DHCP服务器ACK应答报文后，通过地址冲突检测发现服务器分配的地址冲突或者由于其他原因导致不能使用，则会向DHCP服务器发送Decline请求报文，通知服务器所分配的IP地址不可用，以期获得新的IP地址。</td>
+</tr>
+<tr>
+<td>Inform（0x08）</td>
+<td>DHCP客户端如果需要从DHCP服务器端获取更为详细的配置信息，则向DHCP服务器发送Inform请求报文；DHCP服务器在收到该报文后，将根据租约进行查找到相应的配置信息后，向DHCP客户端发送ACK应答报文。目前基本上不用了。</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -1085,7 +1129,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">3.7k</span>&nbsp;字
             
             
             

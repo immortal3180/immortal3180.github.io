@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基于 OpenCV-Python 和 Mediapipe 的手部识别教程, 霜晴的避风港">
+    <meta name="keywords" content="ESP32-Cam 初步使用：网络摄像头示例, 霜晴的避风港">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基于 OpenCV-Python 和 Mediapipe 的手部识别教程 | 霜晴的避风港</title>
+    <title>ESP32-Cam 初步使用：网络摄像头示例 | 霜晴的避风港</title>
     <link rel="icon" type="image/jpeg" href="/head.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基于 OpenCV-Python 和 Mediapipe 的手部识别教程</h1>
+                    <h1 class="description center-align post-title">ESP32-Cam 初步使用：网络摄像头示例</h1>
                 </div>
             </div>
         </div>
@@ -422,14 +422,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
-                                <span class="chip bg-color">计算机视觉</span>
+                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                                <span class="chip bg-color">嵌入式</span>
+                            </a>
+                        
+                            <a href="/tags/ESP32-Cam/">
+                                <span class="chip bg-color">ESP32-Cam</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
+                                嵌入式
+                            </a>
+                        
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32/" class="post-category">
+                                ESP32
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -438,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-02-19
+                    2024-03-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-13
+                    2024-03-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    469
                 </div>
                 
 
@@ -469,38 +486,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h6 id="本文意在教你如何在PyCharm上用OpenCV-Python-和-Mediapipe库实现手部识别-（很遗憾，暂时没有什么实际用处，初步了解用）"><a href="#本文意在教你如何在PyCharm上用OpenCV-Python-和-Mediapipe库实现手部识别-（很遗憾，暂时没有什么实际用处，初步了解用）" class="headerlink" title="本文意在教你如何在PyCharm上用OpenCV-Python 和 Mediapipe库实现手部识别 （很遗憾，暂时没有什么实际用处，初步了解用）"></a>本文意在教你如何在PyCharm上用OpenCV-Python 和 Mediapipe库实现手部识别 （很遗憾，暂时没有什么实际用处，初步了解用）</h6><pre><code> 阅读本文，你将学会：
-</code></pre>
-<p>一. 学会安装Python</p>
-<p>二. 学会安装PyCharm</p>
-<p>三. 学会给代码配置合适的环境并成功运行代码（手部识别）</p>
-<p><img src="/images/OpenCV/720p.gif" alt="演示GIF"></p>
-<p>使用编译器：PyCharm2023.3.2专业版</p>
-<p>编译环境：Python3.7.9</p>
-<p>使用库：Numpy，OpenCV-Python，Mediapipe</p>
-<h1 id="准备活动："><a href="#准备活动：" class="headerlink" title="准备活动："></a>准备活动：</h1><h1 id="一-Python的安装与环境变量部署"><a href="#一-Python的安装与环境变量部署" class="headerlink" title="一. Python的安装与环境变量部署"></a>一. Python的安装与环境变量部署</h1><h2 id="1-下载-Python-最新版本-网址-https-www-python-org"><a href="#1-下载-Python-最新版本-网址-https-www-python-org" class="headerlink" title="1. 下载 Python 最新版本 ( 网址: https://www.python.org/ )"></a>1. 下载 Python 最新版本 ( 网址: <a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a> )</h2><p><img src="/images/OpenCV/1.png" alt="python下载1"><br><img src="/images/OpenCV/2.png" alt="python下载2"><br><img src="/images/OpenCV/3.png" alt="python下载3"></p>
-<h2 id="2-Python安装"><a href="#2-Python安装" class="headerlink" title="2.Python安装"></a>2.Python安装</h2><p><img src="/images/OpenCV/2.1.png" alt="python安装1"><br><img src="/images/OpenCV/2.2.png" alt="python安装2"><br><img src="/images/OpenCV/2.3.png" alt="python安装3"></p>
-<h2 id="3-Python环境变量配置"><a href="#3-Python环境变量配置" class="headerlink" title="3.Python环境变量配置"></a>3.Python环境变量配置</h2><p>环境变量的配置可以保证在任意路径都能执行程序，而不是拘泥于在命令行所在路径查找<br>用户变量 &#x2F; 系统变量： 用户变量是对单一用户生效，系统变量对所有用户生效。</p>
-<h1 id="二-PyCharm的安装以及相关环境准备"><a href="#二-PyCharm的安装以及相关环境准备" class="headerlink" title="二. PyCharm的安装以及相关环境准备"></a>二. PyCharm的安装以及相关环境准备</h1><h2 id="1-下载PyCharm2023-3-2"><a href="#1-下载PyCharm2023-3-2" class="headerlink" title="1. 下载PyCharm2023.3.2"></a>1. 下载PyCharm2023.3.2</h2><p>（中文官网：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/zh-cn/pycharm/">https://www.jetbrains.com/zh-cn/pycharm/</a> ）</p>
-<h2 id="2-PyCharm的安装-以安装免费的PyCharm社区版举例"><a href="#2-PyCharm的安装-以安装免费的PyCharm社区版举例" class="headerlink" title="2.PyCharm的安装 (以安装免费的PyCharm社区版举例)"></a>2.PyCharm的安装 (以安装免费的PyCharm社区版举例)</h2><h2 id="3-创建PyCharm项目并正确配置Python解释器"><a href="#3-创建PyCharm项目并正确配置Python解释器" class="headerlink" title="3.创建PyCharm项目并正确配置Python解释器"></a>3.创建PyCharm项目并正确配置Python解释器</h2><p>（1）新建项目<br>（2）新建Python程序文件<br>（3）给PyCharm做汉化，下载中文语音包，下载完重启后启用</p>
-<h2 id="4-程序运行所需软件包安装（OpenCV-Python-和-Mediapipe）"><a href="#4-程序运行所需软件包安装（OpenCV-Python-和-Mediapipe）" class="headerlink" title="4.程序运行所需软件包安装（OpenCV-Python 和 Mediapipe）"></a>4.程序运行所需软件包安装（OpenCV-Python 和 Mediapipe）</h2><p>前言：软件包资源大多需要从国外服务器上下载，为保证下载速度和下载成功率，我们选择将下载目标地址转向国内镜像源：</p>
-<p>（1）永久设置pip指定国内镜像源（windows内）</p>
-<p>（2）然后转回PyCharm设置</p>
-<p>安装OpenCV-Python:</p>
-<p>接着安装Mediapipe;</p>
-<p>然后就是编写程序代码了。</p>
-<h1 id="三-编写代码，运行代码"><a href="#三-编写代码，运行代码" class="headerlink" title="三. 编写代码，运行代码"></a>三. 编写代码，运行代码</h1><p>（1）编写代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import cv2 #导入OpenCv库</span><br><span class="line">import mediapipe as mp #导入Mediapipe库</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(0) #0为打开默认摄像头,1为打开你设备列表的第二个摄像头,以此类推;</span><br><span class="line">mpHands = mp.solutions.hands #使用Mediapipe库的手部姿势估计模型</span><br><span class="line">hands = mpHands.Hands(static_image_mode=False, max_num_hands=4, model_complexity=1, min_detection_confidence=0.5, min_tracking_confidence=0.5) #创建手部姿势估计器对象，设置参数。</span><br><span class="line">mpDraw = mp.solutions.drawing_utils #初始化Mediapipe库绘图工具</span><br><span class="line">handLmsStyle = mpDraw.DrawingSpec(color=(0, 0, 255), thickness=5)</span><br><span class="line">handConStyle = mpDraw.DrawingSpec(color=(0, 255, 0), thickness=10) #设置绘制手部关键点和连接线的样式</span><br><span class="line">pTime = 0</span><br><span class="line">cTime = 0 #用于计算帧率</span><br><span class="line"></span><br><span class="line">while True: #无限循环</span><br><span class="line">    ret, img = cap.read() #读取摄像头的图像帧</span><br><span class="line">    img = cv2.flip(img, 1) #对img图像进行水平翻转</span><br><span class="line">    if ret:</span><br><span class="line">        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #将图像从BGR格式转换为RGB格式</span><br><span class="line">        result = hands.process(imgRGB) #使用手部姿势估计器处理图像，获取结果</span><br><span class="line">        # print(result.multi_hand_landmarks)</span><br><span class="line">        imgHeight = img.shape[0] #获取图像的高度，并将其赋值给变量imgHeight(其中[0]表示高度的维度)</span><br><span class="line">        imgWidth = img.shape[1] #其中，img是一个图像对象，而shape[1]表示图像的宽度</span><br><span class="line"></span><br><span class="line">        if result.multi_hand_landmarks: #检查是否检测到手部</span><br><span class="line">            for handLms in result.multi_hand_landmarks: #遍历检测到的手部</span><br><span class="line">                mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS, handLmsStyle, handConStyle) #绘制手部关键点和连接线</span><br><span class="line">                for i, lm in enumerate(handLms.landmark): #遍历每个关键点</span><br><span class="line">                    xPos = int(lm.x * imgWidth) #计算关键点在图像中的x坐标</span><br><span class="line">                    yPos = int(lm.y * imgHeight) #计算关键点在图像中的y坐标</span><br><span class="line">                    # cv2.putText(img, str(i), (xPos-25, yPos+5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), )</span><br><span class="line">                    if i == 4: #绘制特定关键点的标记,如果是特定的关键点（在代码中是第5个关键点）</span><br><span class="line">                        cv2.circle(img, (xPos, yPos), 15, (92, 65, 214), cv2.FILLED)</span><br><span class="line">                    print(i, xPos, yPos) #在特定关键点处绘制一个填充的圆</span><br><span class="line"></span><br><span class="line">        cTime = time.time() #获取当前时间</span><br><span class="line">        fps = 1/(cTime-pTime) #计算帧率</span><br><span class="line">        pTime = cTime #更新上一帧的时间</span><br><span class="line">        cv2.putText(img, f&quot;FPS : &#123;int(fps)&#125;&quot;, (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3) #在图像上显示帧率</span><br><span class="line"></span><br><span class="line">        cv2.imshow(&#x27;img&#x27;, img) #显示处理后的图像</span><br><span class="line"></span><br><span class="line">    if cv2.waitKey(1) == ord(&#x27; &#x27;):</span><br><span class="line">        break #如果按下 &#x27; &#x27; 键，则退出循环</span><br></pre></td></tr></table></figure>
-
-
-
-<p>概括：这段代码的功能是实时从摄像头获取图像，并使用手部姿势估计器检测手部关键点并绘制在图像上，同时显示帧率。</p>
-<p>PS:这段代码是@GrandmaCan我阿嬤都會的，我给代码添加了注释</p>
-<p>如果以后有空就补充关键代码的配置调参，咕咕咕</p>
-<p>（2）运行代码及注意事项</p>
-<p>成果展示：</p>
-<p>教程到这里就结束了。制作不易还望点赞&#x2F;评论&#x2F;关注呀 </p>
-<p>————————————————</p>
+                <p><strong>此片意在教会你如何初步使用ESP32-cam</strong></p>
+<p><strong>阅读本文，你将学会：</strong><br>一. 学会安装Arduino<br>二. 学会使用相关例程</p>
+<hr>
+<h2 id="一、Arduino-的下载安装及汉化"><a href="#一、Arduino-的下载安装及汉化" class="headerlink" title="一、Arduino 的下载安装及汉化"></a>一、Arduino 的下载安装及汉化</h2><h3 id="1-下载Arduino（Arduino-软件下载官网）"><a href="#1-下载Arduino（Arduino-软件下载官网）" class="headerlink" title="1.下载Arduino（Arduino 软件下载官网）"></a>1.下载Arduino（<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/donate/" title="Arduino 软件下载官网">Arduino 软件下载官网</a>）</h3><p><img src="https://img-blog.csdnimg.cn/direct/10aa48886908484099de79c2a1811e4d.png"></p>
+<h3 id="2-Arduino的安装"><a href="#2-Arduino的安装" class="headerlink" title="2.Arduino的安装"></a>2.Arduino的安装</h3><p><img src="https://img-blog.csdnimg.cn/direct/f4a1fb549355479aac0bb4ea9d9efcc3.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/669a602a8f644048b0272bf72a846f49.png"></p>
+<h3 id="3-Arduino的汉化："><a href="#3-Arduino的汉化：" class="headerlink" title="3.Arduino的汉化："></a>3.Arduino的汉化：</h3><p>左上角 File–&gt;Preferences(Ctrl+逗号也能进入)–&gt;Settings–&gt;Language–&gt;中文(简体)–&gt;OK</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/cd6e175f777046c699ce5c13943d8e8a.png"></p>
+<h2 id="二、ESP32-cam-的初始化及例程使用"><a href="#二、ESP32-cam-的初始化及例程使用" class="headerlink" title="二、ESP32-cam 的初始化及例程使用"></a>二、ESP32-cam 的初始化及例程使用</h2><h3 id="1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；"><a href="#1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；" class="headerlink" title="1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；"></a>1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；</h3><p>        如图所示操作：工具—&gt;开发板—&gt;开发版管理器，找到 esp32 by Espressif Systems，选择任意版本下载（主要看你那个能下载成功，我下载的是2.0.10版本）；</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/65d63e7971ed49dfb3cd21989530e98d.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/71c6df9bea5a44fb9e05699b5c0459d3.png"></p>
+<p>选择接口及对应开发板（Al Thinker ESP32-CAM)</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/aa4e037f89194a8ab250be6c39147431.png"></p>
+<h3 id="2-尝试ESP32例程项目-—-CameraWebServer"><a href="#2-尝试ESP32例程项目-—-CameraWebServer" class="headerlink" title="2.尝试ESP32例程项目 — CameraWebServer"></a>2.尝试ESP32例程项目 — CameraWebServer</h3><p><img src="https://img-blog.csdnimg.cn/direct/a21c13020e7e42e18ea384aaa334cc98.png"></p>
+<p>此时会跳出新页面（CameraWebServer项目）；选择该项目；</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/b63c0d456e844302a065ed60987719a0.png"></p>
+<h3 id="3-在CameraWebServer项目代码中进行操作"><a href="#3-在CameraWebServer项目代码中进行操作" class="headerlink" title="3.在CameraWebServer项目代码中进行操作"></a>3.在CameraWebServer项目代码中进行操作</h3><p>代码中一共有四处需要修改的地方</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/0378fcd37a8d45d88dd5ea4249d47f6b.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/e97e057b12264321a19f135487abbbf0.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/8450b723e83540f3ab680bc9cf328e6f.png"></p>
+<p>开始编译认证：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/e988f6ecdf8d4ccfa7b3662c69b4e97f.png"></p>
+<p>编译无问题后如此显示：</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/aabe18ad696940b9be627a79c2af20ae.png"></p>
+<p>接下来上传（即 将代码烧录到ESP32-cam中）</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/73673adcd500465abf6ae67400427956.png"></p>
+<p> 上传（烧录）成功后如此显示：<img src="https://img-blog.csdnimg.cn/direct/fc85c7bd6d504b698346bb106202f973.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/473fc3698223468591e7f6233a0886c8.png"><img src="https://img-blog.csdnimg.cn/direct/f3261a0f31b44a6ba04225a67b106491.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/0310f71bcace405cb079916fe2f55d4e.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/bb5ad36655744cac932338a86818bf62.png"></p>
+<h3 id="4、通过串口获取-ESP32-cam-所在的IP"><a href="#4、通过串口获取-ESP32-cam-所在的IP" class="headerlink" title="4、通过串口获取 ESP32-cam 所在的IP"></a>4、通过串口获取 ESP32-cam 所在的IP</h3><p>我们打开任意串口监视器（我用的正点原子串口调试助手）<img src="https://img-blog.csdnimg.cn/direct/c9ca2f6382cf462f942b56bf0c0d7d7c.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/0d18d5e576664fe5b9cece5017b43ae1.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/direct/ca92d7b1458f427d9f890a9f3dfa070a.png"></p>
+<h3 id="5、进入操作界面"><a href="#5、进入操作界面" class="headerlink" title="5、进入操作界面"></a>5、进入操作界面</h3><p><img src="https://img-blog.csdnimg.cn/direct/11c98aefc48042c0973a86be78e07994.png"></p>
+<p>使用一台与ESP32-cam所连WiFi&#x2F;热点相同的设备(PC&#x2F;手机都行)，在浏览器标题栏中输入所得IP地址，回车进入，出现如下画面</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/e0582c81c328496591a5696cddbbb585.png"><img src="https://img-blog.csdnimg.cn/direct/21e663f5ee7f4992b04d8c1392391e32.png"></p>
+<hr>
+<h2 id="三、项目的保存"><a href="#三、项目的保存" class="headerlink" title="三、项目的保存"></a>三、项目的保存</h2><p>在体验了一番 ESP32-cam 摄像头后（然而并没有什么卵用 </p>
+<p>我们将项目保存以便下次使用</p>
+<h3 id="1-保存方式：按下-Ctrl-S-或-文件-—-Save；"><a href="#1-保存方式：按下-Ctrl-S-或-文件-—-Save；" class="headerlink" title="1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；"></a>1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；</h3><p><img src="https://img-blog.csdnimg.cn/direct/ddcc202cf2b04c0fa478c8dbec44c2eb.png"></p>
+<p>项目默认保存在 C盘–文档–Arduino 下</p>
+<p><img src="https://img-blog.csdnimg.cn/direct/7dacca00c159472a84698a01b971027c.png"></p>
+<p>我选择将项目保存在 Arduino 的位置下（同在D盘以防C盘报废的情况）</p>
 
                 
             </div>
@@ -527,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://immortal3180.github.io/2024/02/19/OpenCV/">https://immortal3180.github.io/2024/02/19/OpenCV/</a>
+                    <a href="https://immortal3180.github.io/2024/03/14/esp32%20csdn/">https://immortal3180.github.io/2024/03/14/esp32%20csdn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -565,8 +593,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
-                                    <span class="chip bg-color">计算机视觉</span>
+                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                                    <span class="chip bg-color">嵌入式</span>
+                                </a>
+                            
+                                <a href="/tags/ESP32-Cam/">
+                                    <span class="chip bg-color">ESP32-Cam</span>
                                 </a>
                             
                         </div>
@@ -610,42 +642,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/02/25/%E9%93%BE%E6%8E%A5/">
+                <a href="/2024/03/14/esp32%20csdn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机三级-题型">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ESP32-Cam 初步使用：网络摄像头示例">
                         
-                        <span class="card-title">计算机三级-题型</span>
+                        <span class="card-title">ESP32-Cam 初步使用：网络摄像头示例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            如何初步使用ESP32-cam - 使用网络摄像头示例
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            霜晴
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
+                                    嵌入式
+                                </a>
+                            
+                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32/" class="post-category">
+                                    ESP32
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/">
-                        <span class="chip bg-color">计算机三级</span>
+                    <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
+                        <span class="chip bg-color">嵌入式</span>
+                    </a>
+                    
+                    <a href="/tags/ESP32-Cam/">
+                        <span class="chip bg-color">ESP32-Cam</span>
                     </a>
                     
                 </div>
@@ -659,13 +705,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/02/18/hello-world/">
+                <a href="/2024/03/14/esp32%20bilibili/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Hello World !">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World !</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -676,7 +722,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
                             </span>
                         <span class="publish-author">
                             
@@ -685,14 +731,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
                 </div>
                 
             </div>

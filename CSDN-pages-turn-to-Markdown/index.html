@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ESP32-Cam 初步使用：网络摄像头示例, 霜晴的避风港">
+    <meta name="keywords" content="CSDN博客文章如何转为Markdown, 霜晴的避风港">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ESP32-Cam 初步使用：网络摄像头示例 | 霜晴的避风港</title>
+    <title>CSDN博客文章如何转为Markdown | 霜晴的避风港</title>
     <link rel="icon" type="image/jpeg" href="/head.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ESP32-Cam 初步使用：网络摄像头示例</h1>
+                    <h1 class="description center-align post-title">CSDN博客文章如何转为Markdown</h1>
                 </div>
             </div>
         </div>
@@ -422,12 +422,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                <span class="chip bg-color">嵌入式</span>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                <span class="chip bg-color">博客</span>
                             </a>
                         
-                            <a href="/tags/ESP32-Cam/">
-                                <span class="chip bg-color">ESP32-Cam</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                <span class="chip bg-color">转载</span>
                             </a>
                         
                     </div>
@@ -438,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
-                                嵌入式
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                博客搭建
                             </a>
                         
                     </div>
@@ -451,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-03-14
+                    2024-03-13
                 </div>
                 
 
@@ -465,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    150
                 </div>
                 
 
@@ -482,48 +486,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>此片意在教会你如何初步使用ESP32-cam</strong></p>
-<p><strong>阅读本文，你将学会：</strong><br>一. 学会安装Arduino<br>二. 学会使用相关例程</p>
-<hr>
-<h2 id="一、Arduino-的下载安装及汉化"><a href="#一、Arduino-的下载安装及汉化" class="headerlink" title="一、Arduino 的下载安装及汉化"></a>一、Arduino 的下载安装及汉化</h2><h3 id="1-下载Arduino（Arduino-软件下载官网）"><a href="#1-下载Arduino（Arduino-软件下载官网）" class="headerlink" title="1.下载Arduino（Arduino 软件下载官网）"></a>1.下载Arduino（<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/donate/" title="Arduino 软件下载官网">Arduino 软件下载官网</a>）</h3><p><img src="https://img-blog.csdnimg.cn/direct/10aa48886908484099de79c2a1811e4d.png"></p>
-<h3 id="2-Arduino的安装"><a href="#2-Arduino的安装" class="headerlink" title="2.Arduino的安装"></a>2.Arduino的安装</h3><p><img src="https://img-blog.csdnimg.cn/direct/f4a1fb549355479aac0bb4ea9d9efcc3.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/669a602a8f644048b0272bf72a846f49.png"></p>
-<h3 id="3-Arduino的汉化："><a href="#3-Arduino的汉化：" class="headerlink" title="3.Arduino的汉化："></a>3.Arduino的汉化：</h3><p>左上角 File–&gt;Preferences(Ctrl+逗号也能进入)–&gt;Settings–&gt;Language–&gt;中文(简体)–&gt;OK</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/cd6e175f777046c699ce5c13943d8e8a.png"></p>
-<h2 id="二、ESP32-cam-的初始化及例程使用"><a href="#二、ESP32-cam-的初始化及例程使用" class="headerlink" title="二、ESP32-cam 的初始化及例程使用"></a>二、ESP32-cam 的初始化及例程使用</h2><h3 id="1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；"><a href="#1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；" class="headerlink" title="1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；"></a>1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；</h3><p>        如图所示操作：工具—&gt;开发板—&gt;开发版管理器，找到 esp32 by Espressif Systems，选择任意版本下载（主要看你那个能下载成功，我下载的是2.0.10版本）；</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/65d63e7971ed49dfb3cd21989530e98d.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/71c6df9bea5a44fb9e05699b5c0459d3.png"></p>
-<p>选择接口及对应开发板（Al Thinker ESP32-CAM)</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/aa4e037f89194a8ab250be6c39147431.png"></p>
-<h3 id="2-尝试ESP32例程项目-—-CameraWebServer"><a href="#2-尝试ESP32例程项目-—-CameraWebServer" class="headerlink" title="2.尝试ESP32例程项目 — CameraWebServer"></a>2.尝试ESP32例程项目 — CameraWebServer</h3><p><img src="https://img-blog.csdnimg.cn/direct/a21c13020e7e42e18ea384aaa334cc98.png"></p>
-<p>此时会跳出新页面（CameraWebServer项目）；选择该项目；</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/b63c0d456e844302a065ed60987719a0.png"></p>
-<h3 id="3-在CameraWebServer项目代码中进行操作"><a href="#3-在CameraWebServer项目代码中进行操作" class="headerlink" title="3.在CameraWebServer项目代码中进行操作"></a>3.在CameraWebServer项目代码中进行操作</h3><p>代码中一共有四处需要修改的地方</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0378fcd37a8d45d88dd5ea4249d47f6b.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e97e057b12264321a19f135487abbbf0.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/8450b723e83540f3ab680bc9cf328e6f.png"></p>
-<p>开始编译认证：</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e988f6ecdf8d4ccfa7b3662c69b4e97f.png"></p>
-<p>编译无问题后如此显示：</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/aabe18ad696940b9be627a79c2af20ae.png"></p>
-<p>接下来上传（即 将代码烧录到ESP32-cam中）</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/73673adcd500465abf6ae67400427956.png"></p>
-<p> 上传（烧录）成功后如此显示：<img src="https://img-blog.csdnimg.cn/direct/fc85c7bd6d504b698346bb106202f973.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/473fc3698223468591e7f6233a0886c8.png"><img src="https://img-blog.csdnimg.cn/direct/f3261a0f31b44a6ba04225a67b106491.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0310f71bcace405cb079916fe2f55d4e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/bb5ad36655744cac932338a86818bf62.png"></p>
-<h3 id="4、通过串口获取-ESP32-cam-所在的IP"><a href="#4、通过串口获取-ESP32-cam-所在的IP" class="headerlink" title="4、通过串口获取 ESP32-cam 所在的IP"></a>4、通过串口获取 ESP32-cam 所在的IP</h3><p>我们打开任意串口监视器（我用的正点原子串口调试助手）<img src="https://img-blog.csdnimg.cn/direct/c9ca2f6382cf462f942b56bf0c0d7d7c.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0d18d5e576664fe5b9cece5017b43ae1.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/ca92d7b1458f427d9f890a9f3dfa070a.png"></p>
-<h3 id="5、进入操作界面"><a href="#5、进入操作界面" class="headerlink" title="5、进入操作界面"></a>5、进入操作界面</h3><p><img src="https://img-blog.csdnimg.cn/direct/11c98aefc48042c0973a86be78e07994.png"></p>
-<p>使用一台与ESP32-cam所连WiFi&#x2F;热点相同的设备(PC&#x2F;手机都行)，在浏览器标题栏中输入所得IP地址，回车进入，出现如下画面</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e0582c81c328496591a5696cddbbb585.png"><img src="https://img-blog.csdnimg.cn/direct/21e663f5ee7f4992b04d8c1392391e32.png"></p>
-<hr>
-<h2 id="三、项目的保存"><a href="#三、项目的保存" class="headerlink" title="三、项目的保存"></a>三、项目的保存</h2><p>在体验了一番 ESP32-cam 摄像头后（然而并没有什么卵用 </p>
-<p>我们将项目保存以便下次使用</p>
-<h3 id="1-保存方式：按下-Ctrl-S-或-文件-—-Save；"><a href="#1-保存方式：按下-Ctrl-S-或-文件-—-Save；" class="headerlink" title="1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；"></a>1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；</h3><p><img src="https://img-blog.csdnimg.cn/direct/ddcc202cf2b04c0fa478c8dbec44c2eb.png" alt="项目默认保存在 C盘--文档--Arduino 下"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/7dacca00c159472a84698a01b971027c.png" alt="我选择将项目保存在 Arduino 的位置下（同在D盘以防C盘报废的情况）"></p>
-
+                <h4 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h4><ul>
+<li><ul>
+<li><ul>
+<li><ul>
+<li><a href="#1CSDNGoogle_1">1.在CSDN博文页面点击右键，选择“检查”（Google浏览器为例）。</a></li>
+<li><a href="#2article_contentouterHTML_3">2.在查看器中搜索`article_content`，找到对应内容，点击…复制为`outerHTML`。</a></li>
+<li><a href="#3httpstoollumarkdownHTML2MDhtmlMarkdown_5">3.打开网址https://tool.lu/markdown/，点击HTML2MD，粘贴html代码，转换成Markdown。</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_7">参考文献</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="1-在CSDN博文页面点击右键，选择“检查”（Google浏览器为例）。"><a href="#1-在CSDN博文页面点击右键，选择“检查”（Google浏览器为例）。" class="headerlink" title="1.在CSDN博文页面点击右键，选择“检查”（Google浏览器为例）。"></a>1.在CSDN博文页面点击右键，选择“检查”（Google浏览器为例）。</h5><p><img src="https://img-blog.csdnimg.cn/1731254ef01142c0bf890fc3fb0d5605.png#pic_center" alt="在这里插入图片描述"></p>
+<h5 id="2-在查看器中搜索article-content，找到对应内容，点击…复制为outerHTML。"><a href="#2-在查看器中搜索article-content，找到对应内容，点击…复制为outerHTML。" class="headerlink" title="2.在查看器中搜索article_content，找到对应内容，点击…复制为outerHTML。"></a>2.在查看器中搜索<code>article_content</code>，找到对应内容，点击…复制为<code>outerHTML</code>。</h5><p><img src="https://img-blog.csdnimg.cn/1bbebf21be0c46fca63e5edc20ea96ac.png#pic_center" alt="在这里插入图片描述"></p>
+<h5 id="3-打开网址https-tool-lu-markdown-，点击HTML2MD，粘贴html代码，转换成Markdown。"><a href="#3-打开网址https-tool-lu-markdown-，点击HTML2MD，粘贴html代码，转换成Markdown。" class="headerlink" title="3.打开网址https://tool.lu/markdown/，点击HTML2MD，粘贴html代码，转换成Markdown。"></a>3.打开网址<a target="_blank" rel="noopener" href="https://tool.lu/markdown/%EF%BC%8C%E7%82%B9%E5%87%BBHTML2MD%EF%BC%8C%E7%B2%98%E8%B4%B4html%E4%BB%A3%E7%A0%81%EF%BC%8C%E8%BD%AC%E6%8D%A2%E6%88%90Markdown%E3%80%82">https://tool.lu/markdown/，点击HTML2MD，粘贴html代码，转换成Markdown。</a></h5><p><img src="https://img-blog.csdnimg.cn/ae1d8be130994fbfb1368a33f5af535d.png" alt="在这里插入图片描述"></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Better_Xing/article/details/125246147##">https://blog.csdn.net/Better_Xing/article/details/125246147##</a> 目标</li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3>
                 
             </div>
             <hr/>
@@ -539,7 +523,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">霜晴</a>
+                    <a href="/about" rel="external nofollow noreferrer">转载</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -549,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://immortal3180.github.io/2024/03/14/ESP32-Cam/">https://immortal3180.github.io/2024/03/14/ESP32-Cam/</a>
+                    <a href="https://immortal3180.github.io/CSDN-pages-turn-to-Markdown/">https://immortal3180.github.io/CSDN-pages-turn-to-Markdown/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,7 +546,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">霜晴</a>
+                    <a href="/about" target="_blank">转载</a>
                     !
                 </span>
             </div>
@@ -587,12 +571,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                    <span class="chip bg-color">嵌入式</span>
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                    <span class="chip bg-color">博客</span>
                                 </a>
                             
-                                <a href="/tags/ESP32-Cam/">
-                                    <span class="chip bg-color">ESP32-Cam</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                    <span class="chip bg-color">转载</span>
                                 </a>
                             
                         </div>
@@ -636,12 +624,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/03/14/ESP32-Cam/">
+                <a href="/ESP32-Cam/">
                     <div class="card-image">
                         
                         
@@ -657,9 +644,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -672,7 +659,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -695,19 +681,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/03/13/CSDN-pages-turn-to-Markdown/">
+                <a href="/NCRE-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CSDN博客文章如何转为Markdown">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="计算机三级网络技术考过指南">
                         
-                        <span class="card-title">CSDN博客文章如何转为Markdown</span>
+                        <span class="card-title">计算机三级网络技术考过指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CTRL+F `article_content`；复制为`outerHTML` \打开网址https://tool.lu/markdown/，点击HTML2MD，粘贴html代码，转换成Markdown
+                             
                         
                     </div>
                     <div class="publish-info">
@@ -718,8 +704,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    博客搭建
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    网络技术
                                 </a>
                             
                             
@@ -729,12 +715,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/">
+                        <span class="chip bg-color">计算机三级</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">网络技术</span>
                     </a>
                     
                     <a href="/tags/%E8%BD%AC%E8%BD%BD/">

@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    721
                 </div>
                 
 
@@ -546,15 +546,6 @@ layout: <span class="token boolean">false</span>
 <li>3.21 创建了github图床，方便了撰写文章时图片的引用</li>
 <li>3.22 实现指定篇目取消渲染，添加README</li>
 </ul>
-<p><code class="prism language-bash has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">import cv2 #导入OpenCv库<br>import mediapipe as mp #导入Mediapipe库<br>import time</p>
-<p>cap = cv2.VideoCapture(0) #0为打开默认摄像头,1为打开你设备列表的第二个摄像头,以此类推;<br>mpHands = mp.solutions.hands #使用Mediapipe库的手部姿势估计模型<br>hands = mpHands.Hands(static_image_mode=False, max_num_hands=4, model_complexity=1, min_detection_confidence=0.5, min_tracking_confidence=0.5) #创建手部姿势估计器对象，设置参数。<br>mpDraw = mp.solutions.drawing_utils #初始化Mediapipe库绘图工具<br>handLmsStyle = mpDraw.DrawingSpec(color=(0, 0, 255), thickness=5)<br>handConStyle = mpDraw.DrawingSpec(color=(0, 255, 0), thickness=10) #设置绘制手部关键点和连接线的样式<br>pTime = 0<br>cTime = 0 #用于计算帧率</p>
-<p>while True: #无限循环<br>ret, img = cap.read() #读取摄像头的图像帧<br>img = cv2.flip(img, 1) #对img图像进行水平翻转<br>if ret:<br>imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #将图像从BGR格式转换为RGB格式<br>result = hands.process(imgRGB) #使用手部姿势估计器处理图像，获取结果</p>
-<h1 id="print-result-multi-hand-landmarks"><a href="#print-result-multi-hand-landmarks" class="headerlink" title="print(result.multi_hand_landmarks)"></a>print(result.multi_hand_landmarks)</h1><p>imgHeight = img.shape[0] #获取图像的高度，并将其赋值给变量imgHeight(其中[0]表示高度的维度)<br>imgWidth = img.shape[1] #其中，img是一个图像对象，而shape[1]表示图像的宽度</p>
-<p>if result.multi_hand_landmarks: #检查是否检测到手部<br>for handLms in result.multi_hand_landmarks: #遍历检测到的手部<br>mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS, handLmsStyle, handConStyle) #绘制手部关键点和连接线<br>for i, lm in enumerate(handLms.landmark): #遍历每个关键点<br>xPos = int(lm.x * imgWidth) #计算关键点在图像中的x坐标<br>yPos = int(lm.y * imgHeight) #计算关键点在图像中的y坐标</p>
-<h1 id="cv2-putText-img-str-i-xPos-25-yPos-5-cv2-FONT-HERSHEY-SIMPLEX-0-4-0-0-255"><a href="#cv2-putText-img-str-i-xPos-25-yPos-5-cv2-FONT-HERSHEY-SIMPLEX-0-4-0-0-255" class="headerlink" title="cv2.putText(img, str(i), (xPos-25, yPos+5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), )"></a>cv2.putText(img, str(i), (xPos-25, yPos+5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), )</h1><p>if i == 4: #绘制特定关键点的标记,如果是特定的关键点（在代码中是第5个关键点）<br>cv2.circle(img, (xPos, yPos), 15, (92, 65, 214), cv2.FILLED)<br>print(i, xPos, yPos) #在特定关键点处绘制一个填充的圆</p>
-<p>cTime = time.time() #获取当前时间<br>fps = 1/(cTime-pTime) #计算帧率<br>pTime = cTime #更新上一帧的时间<br>cv2.putText(img, f"FPS : &#123;int(fps)&#125;", (30, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3) #在图像上显示帧率</p>
-<p>cv2.imshow('img', img) #显示处理后的图像</p>
-<p>if cv2.waitKey(1) == ord(' '):<br>break #如果按下 ' ' 键，则退出循环</code></p>
 
                 
             </div>
@@ -918,7 +909,7 @@ layout: <span class="token boolean">false</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.5k</span>&nbsp;字
+                class="white-color">17k</span>&nbsp;字
             
             
             

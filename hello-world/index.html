@@ -458,14 +458,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-21
+                    2024-03-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    237
+                    701
                 </div>
                 
 
@@ -495,7 +495,42 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<hr>
 <p>注意事项：<br>更新上传数据需要在开启Steam++加速的情况下使用！！！</p>
+<hr>
+<div id="article_content" class="article_content clearfix">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/kdoc_html_views-1a98987dfd.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/ck_htmledit_views-044f2cf1dc.css">
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <p><strong>Hexo自定义原理</strong><br> <a href="https://so.csdn.net/so/search?q=Hexo&amp;spm=1001.2101.3001.7020" target="_blank" class="hl hl-1" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.7020&quot;,&quot;dest&quot;:&quot;https://so.csdn.net/so/search?q=Hexo&amp;spm=1001.2101.3001.7020&quot;,&quot;extra&quot;:&quot;{\&quot;searchword\&quot;:\&quot;Hexo\&quot;}&quot;}" data-tit="Hexo" data-pretit="hexo">Hexo</a> 系列的博客中的文章都是经Hexo的主题渲染的静态网页。所以Hexo博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。</p> 
+<p>比如在博客中放入图片、自定义404.html、自定义About页面、简历等<br> <strong>创建自定义网页</strong><br> 网页可以是自己编写的，也可以是别人现成的源码（下载喜欢的页面）。</p> 
+<p>网页编写完成后，在Hexo\source目录下创建一个文件夹（文件夹名称任意，比如我创建的是about这个文件夹，部署完成后，访问http://mrlsm.github.io/about即可看到效果，依此类推）</p> 
+<p>将 html 文件放置于此文件夹，并重命名为 index.html 。<br> <strong>跳过渲染</strong><br> 跳过渲染有下述两种方法：<br> <strong>1.在自定义页面的开头添加如下：</strong></p> 
+<pre data-index="0" class="set-code-show prettyprint"><code class="prism language-bash has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">---
+layout: <span class="token boolean">false</span>
+---
+<div class="hljs-button &#123;2&#125;" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre> 
+<p>添加该指令后，执行 hexo g命令时便会跳过该 index.html文件，使得index.html不受当前 hexo 主题影响，完全是一个独立的网页，如果网页引用了 css 或 js，css 和 js 需使用外链或者将css js 文件放入index.html同目录下引用。</p> 
+<p>引用图片亦是如此</p> 
+<p><strong>2.在_config.yml文件中设置skip_render</strong><br> 使用编辑器打开 Hexo 目录下的_config.yml文件，找到skip_render</p> 
+<p>skip_render一般有以下四种常用参数：</p> 
+<ul><li>跳过source目录下的 test.html: skip_render: test.html</li><li>跳过source目录下 test 文件夹内所有文件：skip_render: test/*</li><li>跳过source目录下 test 文件夹内所有文件包括子文件夹以及子文件夹内的文件：skip_render: test/**</li></ul> 
+<p>跳过多个路径：</p> 
+<pre data-index="1" class="set-code-show prettyprint"><code class="prism language-bash has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">skip_render:
+ - test.html
+ - test/*
+<div class="hljs-button &#123;2&#125;" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li></ul></pre> 
+<p><strong>最后执行：</strong></p> 
+<pre data-index="2" class="set-code-show prettyprint"><code class="prism language-bash has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">hexo g -d
+<div class="hljs-button &#123;2&#125;" data-title="复制"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+                </div><div><div></div></div>
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/editerView/markdown_views-f23dff6052.css" rel="stylesheet">
+                <link href="https://csdnimg.cn/release/blogv2/dist/mdeditor/css/style-c216769e99.css" rel="stylesheet">
+        </div>
+
 <hr>
 <h1 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h1><p>2024：</p>
 <ul>
@@ -872,7 +907,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.5k</span>&nbsp;字
+                class="white-color">16.9k</span>&nbsp;字
             
             
             

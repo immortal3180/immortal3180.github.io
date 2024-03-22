@@ -2,7 +2,7 @@
 
 ---
 
-<img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/head.jpg" align="left" style="zoom:10%;" />
+<img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/small_head.png" align="left"/>
 
 **[immortal3180.github.io](https://immortal3180.github.io/)**
 

@@ -448,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    386
                 </div>
                 
 
@@ -466,24 +466,34 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h5 id="转刷综合题2-–-POS，OSPF，Loopback，静态路由"><a href="#转刷综合题2-–-POS，OSPF，Loopback，静态路由" class="headerlink" title="转刷综合题2 – POS，OSPF，Loopback，静态路由"></a>转刷综合题2 – POS，OSPF，Loopback，静态路由</h5><hr>
+<h5 id="综合题1：IP地址相互推理"><a href="#综合题1：IP地址相互推理" class="headerlink" title="综合题1：IP地址相互推理"></a>综合题1：IP地址相互推理</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/3net/20240322214537.png"></p>
+<p>网络地址：网不变主0</p>
+<p>直接广播地址：网不变主1</p>
+<p>受限广播地址：255.255.255.255</p>
+<p>主机号：网0主不变</p>
+<p>子网内第一个可用IP地址：网络地址+1</p>
+<p>子网内最后一个可用IP地址：直接广播地址-1</p>
+<hr>
+<h5 id="综合题2-–-POS，OSPF，Loopback，静态路由"><a href="#综合题2-–-POS，OSPF，Loopback，静态路由" class="headerlink" title="综合题2 – POS，OSPF，Loopback，静态路由"></a>综合题2 – POS，OSPF，Loopback，静态路由</h5><hr>
 <p>真题14 ：</p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323171227.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323173725.png"></p>
 <p>真题13：</p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323174039.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323181250.png"></p>
+<p>真题17：</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323211635.png"><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323212442.png"></p>
 <hr>
 <p>先稍稍总结一下：(粗体为你可能要填的)</p>
 <p><em>Rx的POS接口配置：</em></p>
 <blockquote>
 <p>interface pos3&#x2F;1</p>
 <p>description To Internet &#x2F; CERNET</p>
-<p><strong>bandwidth 题目中Gbps数字 x 100 000</strong></p>
-<p>ip address 该路由器指定pos接口ip地址 + 子网掩码</p>
+<p><strong>bandwidth 题目中Gbps数字 x 100 000</strong>		# 配置带宽</p>
+<p>ip address 该路由器指定pos接口ip地址 + 子网掩码		#配置接口地址</p>
 </blockquote>
 <blockquote>
-<p>crc 32</p>
+<p><strong>crc 32</strong>		# 在配置接口IP地址和帧格式之间配置接口的CRC校验(默认为32)</p>
 </blockquote>
 <blockquote>
 <p><strong>pos framing sonet &#x2F; sdh</strong></p>
@@ -505,16 +515,28 @@
 <blockquote>
 <p><strong>router ospf 63&#x2F;65</strong></p>
 <p>(重新分配已连接的度量类型1子网)</p>
-<p><em><em>network 云中IP(如有多个需要合并</em>) 反掩码 area 0</em>*</p>
+<p><strong>network 云中IP(如有多个需要聚合^) 反掩码 area 0</strong></p>
 </blockquote>
 <blockquote>
 <p>默认信息总是产生</p>
-<p><em><em>area 0 range 云中IP(如有多个需要合并</em>) 子网掩码</em>*</p>
+<p><strong>area 0 range 云中IP(如有多个需要聚合^) 子网掩码</strong></p>
 </blockquote>
 <blockquote>
 <p>exit</p>
 <p><strong>ip route 0.0.0.0 0.0.0.0 下一跳ip</strong>*</p>
 </blockquote>
+<p><em>Rx的静态路由配置：</em></p>
+<blockquote>
+<p><strong>ip route 云中IP(如有多个需要聚合^) 子网掩码 下一跳ip</strong>*</p>
+</blockquote>
+<hr>
+<h5 id="综合题3：DHCP报文分析"><a href="#综合题3：DHCP报文分析" class="headerlink" title="综合题3：DHCP报文分析"></a>综合题3：DHCP报文分析</h5><hr>
+<p>真题17：</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323214326.png"></p>
+<hr>
+<h5 id="综合题4：Sniffer-抓包报文分析"><a href="#综合题4：Sniffer-抓包报文分析" class="headerlink" title="综合题4：Sniffer 抓包报文分析"></a>综合题4：Sniffer 抓包报文分析</h5><hr>
+<p>真题17：</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/NCRE3/20240323215636.png"></p>
 
                 
             </div>
@@ -843,7 +865,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">17.4k</span>&nbsp;字
+                class="white-color">17.6k</span>&nbsp;字
             
             
             

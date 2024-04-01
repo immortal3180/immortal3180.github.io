@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="pyinstaller, 霜晴的避风港">
+    <meta name="keywords" content="Pyinstaller 打包教程, 霜晴的避风港">
     <meta name="description" content="... la ringrazio.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>pyinstaller | 霜晴的避风港</title>
+    <title>Pyinstaller 打包教程 | 霜晴的避风港</title>
     <link rel="icon" type="image/jpeg" href="/head.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">pyinstaller</h1>
+                    <h1 class="description center-align post-title">Pyinstaller 打包教程</h1>
                 </div>
             </div>
         </div>
@@ -420,12 +420,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python%E6%89%93%E5%8C%85/" class="post-category">
+                                Python打包
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -441,14 +454,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-29
+                    2024-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    44
+                    956
                 </div>
                 
 
@@ -465,10 +478,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller Hands.py --add-data=<span class="string">&quot;D:\Desktop\try\Lib\site-packages\mediapipe\modules;mediapipe/modules&quot;</span> -F -w -i ciallo.ico</span><br></pre></td></tr></table></figure>
+                <h3 id="一-Pyinstaller-简介"><a href="#一-Pyinstaller-简介" class="headerlink" title="一. Pyinstaller 简介"></a>一. Pyinstaller 简介</h3><blockquote>
+<h5 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h5><p>PyInstaller 将 Python 应用程序及其所有依赖项捆绑到单个软件包中。用户无需安装 Python 解释器或任何模块，即可运行打包后的应用程序。</p>
+<h5 id="支持情况-兼容性-："><a href="#支持情况-兼容性-：" class="headerlink" title="支持情况(兼容性)："></a>支持情况(兼容性)：</h5><p>PyInstaller 支持 Python 3.8 及其更新版本；</p>
+<p>能正确捆绑 numpy、matplotlib、PyQt、wxPython 等许多主流 Python 包。</p>
+<p>PyInstaller 已经过 Windows、MacOS X 和 Linux 测试。</p>
+<h5 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h5><p>不过，它并不是一个交叉编译器；要制作 Windows 应用程序就需要在 Windows 上运行 PyInstaller，要制作 Linux 应用程序就需要在 Linux 上运行它，依此类推。</p>
+</blockquote>
+<hr>
+<p><strong>一般来说，我们使用Pyinstaller打包出于如下原因：</strong></p>
+<ol>
+<li>君子式防止他人得到该项目的源代码（很容易破解）；</li>
+<li>开发过程中用了一些第三方库<br>如果把做好的代码项目供他人使用，需要对方电脑上拥有Python环境；<br>而经过Pyinstaller打包后就可以在单独的文件夹中打开<code>.exe</code>文件（开箱即用）即可</li>
+</ol>
+<hr>
+<h3 id="二-Pyinstaller-安装及使用"><a href="#二-Pyinstaller-安装及使用" class="headerlink" title="二. Pyinstaller 安装及使用"></a>二. Pyinstaller 安装及使用</h3><p>下面来一段Pyinstaller的使用示例：</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401172657.png"></p>
+<ol>
+<li>如图，这是一段简单的Python项目代码，作用是打开<a href="opentap.top">我的网站(opentap.top)</a>：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> webbrowser	<span class="comment">#导入了webbrowser模块</span></span><br><span class="line"></span><br><span class="line">websites = [<span class="string">&quot;https://opentap.top&quot;</span>]	<span class="comment">#定义了一个包含一个网站链接的列表</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> site <span class="keyword">in</span> websites:	<span class="comment">#使用for循环遍历这个列表</span></span><br><span class="line">    webbrowser.<span class="built_in">open</span>(site)	<span class="comment">#对列表中的每个网站链接，调用webbrowser.open()函数打开网页</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>我想点击某个快捷方式直接先从桌面打开我的网站，于是我使用Pyinstaller打包：</li>
+</ol>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401180254.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401180348.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401180608.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401205146.png" alt="pyinstaller安装完毕"></p>
+<p>[^注]: 下载失败的请 <a target="_blank" rel="noopener" href="https://opentap.top/OpenCV/#toc-heading-10">配置国内镜像源</a> 或 自行科学上网</p>
+<ol start="3">
+<li>首先让我们学习一下pyinstaller打包的基础指令：</li>
+</ol>
+<blockquote>
+<p><strong>格式：<code>pyinstaller xxx.py(项目名) -X -Y -Z(各种命令模块)</code></strong></p>
+</blockquote>
+<p>一些简单有效的的命令模块：</p>
+<blockquote>
+<p><code>-F, --onefile</code></p>
+<p>创建一个文件捆绑的可执行文件。</p>
+<p><strong>人话：<code>-F</code></strong></p>
+<p><strong>把生成的文件放入同一个文件夹中</strong></p>
+</blockquote>
+<blockquote>
+<p><code>-w, --windowed, --noconsole</code></p>
+<p>Windows 和 Mac OS X：不为标准 I&#x2F;O 提供控制台窗口。上 Mac OS 这也触发了构建 Mac OS .app 捆绑包。在 Windows 上，这个 如果第一个脚本是“.pyw”文件，则会自动设置选项。这 选项在 *NIX 系统上被忽略。</p>
+<p><strong>人话：<code>-w</code></strong></p>
+<p><strong>打开 生成的.exe可执行文件 时 隐藏 cmd(windows控制台) 窗口</strong></p>
+</blockquote>
+<blockquote>
+<p><code>-i &lt;FILE.ico or FILE.exe,ID or FILE.icns or Image or “NONE”&gt;, --icon &lt;FILE.ico or FILE.exe,ID or FILE.icns or Image or “NONE”&gt;</code></p>
+<p>FILE.ico：将图标应用于 Windows 可执行文件。</p>
+<p>FILE.exe，ID：提取 带有 EXE 中 ID 的图标。</p>
+<p>FILE.icns：将图标应用于 .app 捆绑包 Mac 操作系统。</p>
+<p>如果输入的图像文件不是平台格式（ico 在 Windows 上，在 Mac 上，PyInstaller 尝试使用 Pillow 来翻译 图标转换为正确的格式（如果安装了 Pillow）。使用“NONE”表示不 应用任何图标，从而使操作系统显示一些默认值（默认：apply PyInstaller 的图标）。此选项可以多次使用。</p>
+<p><strong>人话：<code>-i [文件名].ico</code></strong></p>
+<p><strong>怎么让生成的.exe程序带上自己想要的图标？</strong></p>
+<ul>
+<li><strong>把那张图片文件格式改为.ico</strong></li>
+<li><strong>把图片.ico与代码.py放在同一个文件夹中（也就是把图片.ico放入项目文件夹里）</strong></li>
+<li><strong>终端命令中加入 -i xxxx(图片名).ico</strong></li>
+</ul>
+</blockquote>
+<ol start="4">
+<li>打开终端 –  输入pyinstaller打包命令 – 回车</li>
+</ol>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401210726.png" alt="打开终端 -- 输入pyinstaller打包命令 -- 回车"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller opentap.top.py  -F -w -i ciallo.ico</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401211054.png" alt="如图，打包成功"></p>
+<ol start="5">
+<li>整理出单独文件 方便今后文件管理</li>
+</ol>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401211911.png"><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401212154.png" align="center"/></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401212104.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Pyinstaller/20240401212609.png"></p>
+<p>未完待续</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller Hands.py --add-data=<span class="string">&quot;D:\Desktop\try\Lib\site-packages\mediapipe\modules;mediapipe/modules&quot;</span> -F -w -i ciallo.ico</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller Gesture_volume_control.py --add-data=<span class="string">&quot;D:\Desktop\try\Lib\site-packages\mediapipe\modules;mediapipe/modules&quot;</span> -F -w -i ciallo.ico</span><br></pre></td></tr></table></figure>
 
+<p>参考文献：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://pyinstaller.org/en/stable/man/pyinstaller.html">pyinstaller — PyInstaller 6.5.0 文档</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://muzing.gitbook.io/pyinstaller-docs-zh-cn/usage">使用 PyInstaller | PyInstaller 中文文档 (gitbook.io)</a></p>
+</li>
+</ol>
 
                 
             </div>
@@ -532,7 +628,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -583,9 +683,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="pyinstaller">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Pyinstaller 打包教程">
                         
-                        <span class="card-title">pyinstaller</span>
+                        <span class="card-title">Pyinstaller 打包教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -600,13 +700,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            霜晴
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E6%89%93%E5%8C%85/" class="post-category">
+                                    Python打包
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -805,7 +917,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18k</span>&nbsp;字
+                class="white-color">18.9k</span>&nbsp;字
             
             
             

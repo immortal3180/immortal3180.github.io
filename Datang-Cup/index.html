@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="OpenMV, 霜晴的避风港">
+    <meta name="keywords" content="大唐杯, 霜晴的避风港">
     <meta name="description" content="... la ringrazio.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>OpenMV | 霜晴的避风港</title>
+    <title>大唐杯 | 霜晴的避风港</title>
     <link rel="icon" type="image/png" href="/ciallo.apk.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">OpenMV</h1>
+                    <h1 class="description center-align post-title">大唐杯</h1>
                 </div>
             </div>
         </div>
@@ -420,29 +420,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
-                                <span class="chip bg-color">计算机视觉</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                <span class="chip bg-color">嵌入式</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="post-category">
-                                计算机视觉
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -451,21 +434,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-03-15
+                    2024-04-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-16
+                    2024-04-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    22
+                    342
                 </div>
                 
 
@@ -482,8 +465,103 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="教程文章链接"><a href="#教程文章链接" class="headerlink" title="教程文章链接"></a><a target="_blank" rel="noopener" href="https://book.openmv.cc/project/zhui-xiao-qiu-de-xiao-8f665d28-project-pan-tilt-md.html">教程文章链接</a></h3><p><img src="/images/OpenMV/1.jpg" alt="拼装图例"></p>
-<p><a target="_blank" rel="noopener" href="https://book.openmv.cc/project/zhui-xiao-qiu-de-xiao-8f665d28-project-pan-tilt-md.html">https://book.openmv.cc/project/zhui-xiao-qiu-de-xiao-8f665d28-project-pan-tilt-md.html</a></p>
+                <hr>
+<p>1.理论知识</p>
+<hr>
+<ol>
+<li>理论知识</li>
+</ol>
+<p>1.1 基站 核心网</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>核心网</th>
+<th>基站</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5G</td>
+<td>5GC</td>
+<td>gNB</td>
+</tr>
+<tr>
+<td>4G</td>
+<td>EPC</td>
+<td>eNB</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>基站接入核心网</th>
+<th>核心网：原核心网</th>
+<th>基站：受核心影响的原基站</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5G基站接入4G核心网</td>
+<td>EPC</td>
+<td>en-gNB</td>
+</tr>
+<tr>
+<td>4G基站接入5G核心网</td>
+<td>5GC</td>
+<td>ng-eNB</td>
+</tr>
+</tbody></table>
+<p>上行：移动终端 — 基站</p>
+<p>下行：基站 — 移动终端</p>
+<p>1.2 5G三大场景</p>
+<table>
+<thead>
+<tr>
+<th>5G三大场景</th>
+<th>全称（便于记忆）</th>
+<th>简述</th>
+<th>特点</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eMBB</td>
+<td>（Enhanced Mobile Broadband，增强移动宽带）</td>
+<td>增：宽带数据服务</td>
+<td>高速率，大容量数据传输</td>
+<td>视频、下载、VR、云游戏</td>
+</tr>
+<tr>
+<td>uRLLC</td>
+<td>（Ultra-Reliable and Low-Latency Communications，超可靠低时延通信）</td>
+<td>精：低时延，高可靠性</td>
+<td>实时，关键性应用；可靠稳定</td>
+<td>实时控制、医疗、自动驾驶</td>
+</tr>
+<tr>
+<td>mMTC</td>
+<td>（Massive Machine Type Communications，大规模机器通信）</td>
+<td>广：大型物联网</td>
+<td>大规模多设备；低功耗低成本</td>
+<td>智能家居、智能城市</td>
+</tr>
+</tbody></table>
+<p>5G八大关键能力：</p>
+<ul>
+<li>流量密度</li>
+<li>连接数密度</li>
+<li>时延</li>
+<li>移动性</li>
+<li>能效</li>
+<li>用户体验速率</li>
+<li>频谱效率</li>
+<li>峰值效率</li>
+</ul>
+<p>1.3 速率</p>
+<p>香农公式：<br>$$<br>C&#x3D;B * \log _{2}\left(1+\frac{S}{N}\right)<br>$$<br>C：信道容量</p>
+<p>B：带宽</p>
+<p>S&#x2F;N：信噪比</p>
+<p>C 是数据速率的极限值，单位 bit&#x2F;s；B 为信道带宽，单位 Hz；S 是信号功率（瓦），N 是噪声</p>
+<p>功率（瓦）。</p>
 
                 
             </div>
@@ -510,7 +588,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://immortal3180.github.io/OpenMV/">https://immortal3180.github.io/OpenMV/</a>
+                    <a href="https://immortal3180.github.io/Datang-Cup/">https://immortal3180.github.io/Datang-Cup/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,15 +625,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">
-                                    <span class="chip bg-color">计算机视觉</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                    <span class="chip bg-color">嵌入式</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -597,70 +667,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/Try-New/">
+                <a href="/Datang-Cup/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="实验性页面">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="大唐杯">
                         
-                        <span class="card-title">实验性页面</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            尚在实验中的版块
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            霜晴
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E6%B8%B8%E6%88%8F/">
-                        <span class="chip bg-color">网页游戏</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/">
-                        <span class="chip bg-color">资源下载</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9F%B3%E4%B9%90/">
-                        <span class="chip bg-color">音乐</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/Video/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="B站导入视频测试">
-                        
-                        <span class="card-title">B站导入视频测试</span>
+                        <span class="card-title">大唐杯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -671,7 +689,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-09
                             </span>
                         <span class="publish-author">
                             
@@ -681,11 +699,53 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/Yuzu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Yuzu 模拟器合集">
+                        
+                        <span class="card-title">Yuzu 模拟器合集</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Switch-%E6%A8%A1%E6%8B%9F%E5%99%A8/" class="post-category">
+                                    Switch 模拟器
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">
-                        <span class="chip bg-color">测试页面</span>
+                    <a href="/tags/Switch-%E6%A8%A1%E6%8B%9F%E5%99%A8/">
+                        <span class="chip bg-color">Switch 模拟器</span>
                     </a>
                     
                 </div>

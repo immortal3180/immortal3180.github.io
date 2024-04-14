@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文件后缀整理, 霜晴的避风港">
+    <meta name="keywords" content="Ubuntu-22.04, 霜晴的避风港">
     <meta name="description" content="... la ringrazio.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>文件后缀整理 | 霜晴的避风港</title>
+    <title>Ubuntu-22.04 | 霜晴的避风港</title>
     <link rel="icon" type="image/png" href="/ciallo.apk.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">文件后缀整理</h1>
+                    <h1 class="description center-align post-title">Ubuntu-22.04</h1>
                 </div>
             </div>
         </div>
@@ -420,25 +420,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/">
-                                <span class="chip bg-color">文件后缀</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" class="post-category">
-                                文件格式转化
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -447,21 +434,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-03-21
+                    2024-04-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-02
+                    2024-04-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    83
+                    91
                 </div>
                 
 
@@ -483,8 +470,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>.md：Markdown文件<br>.dmg：苹果系统的安装文件<br>.Appimage：便携式Linux只读软件<br>.snap：安全，通用的 Linux 软件包<br>.exe：Windows安装或运行软件应用程序<br>.tar.gz：在Linux系统中，.tar.gz 是一种常见的压缩文件格式，通常用于打包和压缩多个文件或目录。</p>
-<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBedDHCP.png"></p>
+                <h4 id="1-初见Ubuntu22-04-4-LTS-–-配置远程连接"><a href="#1-初见Ubuntu22-04-4-LTS-–-配置远程连接" class="headerlink" title="1.初见Ubuntu22.04.4 LTS – 配置远程连接"></a>1.初见Ubuntu22.04.4 LTS – 配置远程连接</h4><p>如何在 Windows笔记本 上远程控制 Ubuntu220.4.4 LTS 树莓派（同一局域网下）：</p>
+<h5 id="1-受控端-树莓派4B"><a href="#1-受控端-树莓派4B" class="headerlink" title="1. 受控端(树莓派4B)"></a>1. 受控端(树莓派4B)</h5><ol>
+<li>Ubuntu初始化引导（未作记录）</li>
+<li><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414212538.png" alt="找到设置"></li>
+</ol>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414212756.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414213350.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215101.png" alt="配置WIFI(注意控制端和被控端要在同一局域网下)"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414214616.png"></p>
+<p>配置部分防火墙：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 5900/tcp</span><br><span class="line">sudo ufw allow 3389/tcp</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215324.png" alt="配置部分防火墙"></p>
+<p>查询本机在此局域网内的的IP:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215442.png" alt="查询本机在此局域网内的的IP"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414220414.png" alt="查询到ip地址"></p>
+<h5 id="2-主控端"><a href="#2-主控端" class="headerlink" title="2.主控端"></a>2.主控端</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414220807.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221429.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221549.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221622.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221719.png" alt="进来了"></p>
 
                 
             </div>
@@ -511,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://immortal3180.github.io/suffix/">https://immortal3180.github.io/suffix/</a>
+                    <a href="https://immortal3180.github.io/Ubuntu-22-04/">https://immortal3180.github.io/Ubuntu-22-04/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,11 +556,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80/">
-                                    <span class="chip bg-color">文件后缀</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -594,53 +598,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/PicGo/">
+                <a href="/Ubuntu-22-04/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="PicGo+GitHub图床：你的下一个图片召唤器">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Ubuntu-22.04">
                         
-                        <span class="card-title">PicGo+GitHub图床：你的下一个图片召唤器</span>
+                        <span class="card-title">Ubuntu-22.04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PicGo使用 - 图床初见
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-14
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%9B%BE%E5%BA%8A/" class="post-category">
-                                    图床
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            霜晴
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                        <span class="chip bg-color">图床</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -651,24 +641,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Try-New/">
+                <a href="/Disk/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="实验性页面">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Disk">
                         
-                        <span class="card-title">实验性页面</span>
+                        <span class="card-title">Disk</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            尚在实验中的版块
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-13
                             </span>
                         <span class="publish-author">
                             
@@ -677,22 +667,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%BD%91%E9%A1%B5%E6%B8%B8%E6%88%8F/">
-                        <span class="chip bg-color">网页游戏</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD/">
-                        <span class="chip bg-color">资源下载</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9F%B3%E4%B9%90/">
-                        <span class="chip bg-color">音乐</span>
-                    </a>
-                    
                 </div>
                 
             </div>

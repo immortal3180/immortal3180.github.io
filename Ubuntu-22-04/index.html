@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu-22.04, 霜晴的避风港">
+    <meta name="keywords" content="Ubuntu 22.04 调教记录, 霜晴的避风港">
     <meta name="description" content="... la ringrazio.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu-22.04 | 霜晴的避风港</title>
+    <title>Ubuntu 22.04 调教记录 | 霜晴的避风港</title>
     <link rel="icon" type="image/png" href="/ciallo.apk.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu-22.04</h1>
+                    <h1 class="description center-align post-title">Ubuntu 22.04 调教记录</h1>
                 </div>
             </div>
         </div>
@@ -441,14 +441,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-17
+                    2024-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    92
+                    862
                 </div>
                 
 
@@ -470,33 +470,97 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/IMG_20240416_205041.jpg"></p>
+                <h4 id="0-系统镜像文件的烧录"><a href="#0-系统镜像文件的烧录" class="headerlink" title="0.系统镜像文件的烧录"></a>0.系统镜像文件的烧录</h4><p>下载树莓派官方镜像烧录软件 </p>
+<p>蓝奏云 <a target="_blank" rel="noopener" href="https://wwz.lanzoue.com/iKmpo1vmapfa">https://wwz.lanzoue.com/iKmpo1vmapfa</a> 密码:b9zi</p>
+<p>安装的是 Ubuntu22.04.4 64bit LTS 版本</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/IMG_20240416_205041.jpg" alt="TF卡插读卡器里"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240416205338.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240416205516.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240416205419.png"></p>
+<hr>
 <h4 id="1-初见Ubuntu22-04-4-LTS-–-配置远程连接"><a href="#1-初见Ubuntu22-04-4-LTS-–-配置远程连接" class="headerlink" title="1.初见Ubuntu22.04.4 LTS – 配置远程连接"></a>1.初见Ubuntu22.04.4 LTS – 配置远程连接</h4><p>如何在 Windows笔记本 上远程控制 Ubuntu22.04.4 LTS 树莓派（同一局域网下）：</p>
-<h5 id="1-受控端-树莓派4B"><a href="#1-受控端-树莓派4B" class="headerlink" title="1. 受控端(树莓派4B)"></a>1. 受控端(树莓派4B)</h5><ol>
-<li>Ubuntu初始化引导（未作记录）</li>
-<li><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414212538.png" alt="找到设置"></li>
-</ol>
+<h5 id="1-受控端-树莓派4B"><a href="#1-受控端-树莓派4B" class="headerlink" title="1. 受控端(树莓派4B)"></a>1. 受控端(树莓派4B)</h5><p>1.Ubuntu初始化引导（未作记录）</p>
+<p>2.找到设置 – Sharing(共享) ，配置一下</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414212538.png" alt="找到设置"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414212756.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414213350.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215101.png" alt="配置WIFI(注意控制端和被控端要在同一局域网下)"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414214616.png"></p>
-<p>配置部分防火墙：</p>
+<p>3.配置部分防火墙：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 5900/tcp</span><br><span class="line">sudo ufw allow 3389/tcp</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215324.png" alt="配置部分防火墙"></p>
-<p>查询本机在此局域网内的的IP:</p>
+<p>4.查询本机在此局域网内的的IP:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414215442.png" alt="查询本机在此局域网内的的IP"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414220414.png" alt="查询到ip地址"></p>
-<h5 id="2-主控端-Windows"><a href="#2-主控端-Windows" class="headerlink" title="2.主控端(Windows)"></a>2.主控端(Windows)</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414220807.png"></p>
+<h5 id="2-主控端-Windows"><a href="#2-主控端-Windows" class="headerlink" title="2.主控端(Windows)"></a>2.主控端(Windows)</h5><p>1.找到Windows内置应用 – 远程桌面连接</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414220807.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221429.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221549.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221622.png"></p>
 <p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240414221719.png" alt="进来了"></p>
+<hr>
+<h4 id="4-18-opencv的安装"><a href="#4-18-opencv的安装" class="headerlink" title="4.18 opencv的安装"></a>4.18 opencv的安装</h4><ul>
+<li>Ubuntu 内置 Python3</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新软件包列表,确保系统中的软件包列表是最新的</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418152846.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libopencv-dev python3-opencv</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">libopencv-dev: 这是 OpenCV 的开发库，包含了编译和开发 OpenCV 应用程序所需的头文件和静态库文件。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">python3-opencv: 这是用于 Python3 的 OpenCV 包，允许在 Python 中使用 OpenCV 库进行图像处理和计算机视觉任务。</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418152952.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418153421.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 -c &quot;import cv2; print(cv2.__version__)&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在 Python3 中检查安装的 OpenCV 版本。它会导入 cv2 模块并打印出当前安装的 OpenCV 版本号。</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418153548.png"></p>
+<p>桌面新建文件夹，进入其目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch 1.py</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在当前目录下创建名为<span class="string">&quot;1”的 python文件</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418160213.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 打开USB摄像头</span></span><br><span class="line">    cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 检查摄像头是否成功打开</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cap.isOpened():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;无法打开摄像头&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 从摄像头中读取一帧视频</span></span><br><span class="line">        ret, frame = cap.read()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检查视频帧是否成功读取</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> ret:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;无法获取视频帧&quot;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 在窗口中显示视频帧</span></span><br><span class="line">        cv2.imshow(<span class="string">&#x27;Video Stream&#x27;</span>, frame)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 检测按下 &#x27;q&#x27; 键退出循环</span></span><br><span class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == <span class="built_in">ord</span>(<span class="string">&#x27;q&#x27;</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 释放摄像头资源</span></span><br><span class="line">    cap.release()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭所有窗口</span></span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`python3 1.py`</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行 python3 运行当前文件夹下的 1.py</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418162534.png"></p>
+<hr>
+<h4 id="N-树莓派风扇安装位置"><a href="#N-树莓派风扇安装位置" class="headerlink" title="N.树莓派风扇安装位置"></a>N.树莓派风扇安装位置</h4><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418172849.png"></p>
+<hr>
+<h4 id="Ubuntu22-04-usi-配置摄像头"><a href="#Ubuntu22-04-usi-配置摄像头" class="headerlink" title="Ubuntu22.04+usi 配置摄像头"></a>Ubuntu22.04+usi 配置摄像头</h4><p>1.检查gpu_mem，start_x是否如以下配置（其实不需要改，默认就已打开，只需要检查确认下）</p>
+<p>gpu_mem&#x3D;128</p>
+<p>start_x&#x3D;1</p>
+<p>将camera_auto_detect注释掉</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#camera_auto_detect=1</span><br></pre></td></tr></table></figure>
+
+<p>2.安装raspi-config的依赖组件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install triggerhappy lua5.1 alsa-utils</span><br></pre></td></tr></table></figure>
+
+<p>3.获取raspi-config，也可以去链接里自己下最新的，或者用我写好的命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wget http://archive.raspberrypi.org/debian/pool/main/r/raspi-config/raspi-config_20210212_all.deb</span><br></pre></td></tr></table></figure>
+
+<p>4.安装raspi-config，在</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i raspi-config_20210212_all.deb</span><br></pre></td></tr></table></figure>
+
+<p>5.修改Raspberry的启动配置使能项</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
+
+<p>选择3 Interface</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418212205.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418212152.png"></p>
+<p>选择第一个 P1 Camera，然后就一直选择OK，如果报错就执行下面的步骤，如果没有就一直OK下去，然后返回初始界面后选择 Finish ，会让你选择是否重启，选择OK。</p>
+<p>如果出现错误Your firmwave appears to be out of date (no start_x.elf). Please update</p>
+<p>（1）查看boot分区所在的设备号，设备号可能是：&#x2F;dev&#x2F;mmcblk0p1</p>
+<p>df -h</p>
+<p>（2）这个要看具体是哪个了，有可能是我这条语句里面的</p>
+<p>sudo mount &#x2F;dev&#x2F;mmcblk0p1 &#x2F;boot</p>
+<p>6.查看是否成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al /dev/ | grep video</span><br></pre></td></tr></table></figure>
+
+<p>如果是排线插在树莓派上的，可能是video0，如下图所示。如果有则应该是成功的。或者你可以拔掉再重新上电试一试，看是不是少一个。</p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240418212141.png"></p>
 
                 
             </div>
@@ -827,7 +891,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">29.7k</span>&nbsp;字
+                class="white-color">30.4k</span>&nbsp;字
             
             
             

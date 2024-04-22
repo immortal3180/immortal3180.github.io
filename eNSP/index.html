@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ESP32-Cam 初步使用：网络摄像头示例, 霜晴的避风港">
+    <meta name="keywords" content="eNSP, 霜晴的避风港">
     <meta name="description" content="... la ringrazio.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ESP32-Cam 初步使用：网络摄像头示例 | 霜晴的避风港</title>
+    <title>eNSP | 霜晴的避风港</title>
     <link rel="icon" type="image/png" href="/ciallo.apk.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ESP32-Cam 初步使用：网络摄像头示例</h1>
+                    <h1 class="description center-align post-title">eNSP</h1>
                 </div>
             </div>
         </div>
@@ -422,12 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                <span class="chip bg-color">嵌入式</span>
-                            </a>
-                        
-                            <a href="/tags/ESP32-Cam/">
-                                <span class="chip bg-color">ESP32-Cam</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">网络技术</span>
                             </a>
                         
                     </div>
@@ -438,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" class="post-category">
-                                嵌入式
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" class="post-category">
+                                网络技术
                             </a>
                         
                     </div>
@@ -451,21 +447,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-03-14
+                    2024-04-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-22
+                    2024-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    1.1k
                 </div>
                 
 
@@ -487,49 +483,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <meta name="referrer" content="no-referrer"/>
-
-<p><strong>此片意在教会你如何初步使用ESP32-cam</strong></p>
-<p><strong>阅读本文，你将学会：</strong><br>一. 学会安装Arduino<br>二. 学会使用相关例程</p>
+                <hr>
+<h2 id="华为eNSP资源及安装教程"><a href="#华为eNSP资源及安装教程" class="headerlink" title="华为eNSP资源及安装教程"></a>华为eNSP资源及安装教程</h2><h4 id="前言：eNSP概述"><a href="#前言：eNSP概述" class="headerlink" title="前言：eNSP概述"></a>前言：eNSP概述</h4><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zorIrGO9hw9pVU6kB05vfA?pwd=s73b">eNSP下载链接</a></p>
+<blockquote>
+<p>​        eNSP(Enterprise Network Simulation Platform)是一款由华为提供的免费的、可扩展的、图形化的网络设备仿真平台，主要对企业网路由器、交换机、WLAN等设备进行软件仿真，完美呈现真实设备部署实景，支持大型网络模拟，让你有机会在没有真实设备的情况下也能够开展实验测试，学习网络技术。</p>
+</blockquote>
 <hr>
-<h2 id="一、Arduino-的下载安装及汉化"><a href="#一、Arduino-的下载安装及汉化" class="headerlink" title="一、Arduino 的下载安装及汉化"></a>一、Arduino 的下载安装及汉化</h2><h3 id="1-下载Arduino（Arduino-软件下载官网）"><a href="#1-下载Arduino（Arduino-软件下载官网）" class="headerlink" title="1.下载Arduino（Arduino 软件下载官网）"></a>1.下载Arduino（<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/donate/" title="Arduino 软件下载官网">Arduino 软件下载官网</a>）</h3><p><img src="https://img-blog.csdnimg.cn/direct/10aa48886908484099de79c2a1811e4d.png"></p>
-<h3 id="2-Arduino的安装"><a href="#2-Arduino的安装" class="headerlink" title="2.Arduino的安装"></a>2.Arduino的安装</h3><p><img src="https://img-blog.csdnimg.cn/direct/f4a1fb549355479aac0bb4ea9d9efcc3.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/669a602a8f644048b0272bf72a846f49.png"></p>
-<h3 id="3-Arduino的汉化："><a href="#3-Arduino的汉化：" class="headerlink" title="3.Arduino的汉化："></a>3.Arduino的汉化：</h3><p>左上角 File–&gt;Preferences(Ctrl+逗号也能进入)–&gt;Settings–&gt;Language–&gt;中文(简体)–&gt;OK</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/cd6e175f777046c699ce5c13943d8e8a.png"></p>
-<h2 id="二、ESP32-cam-的初始化及例程使用"><a href="#二、ESP32-cam-的初始化及例程使用" class="headerlink" title="二、ESP32-cam 的初始化及例程使用"></a>二、ESP32-cam 的初始化及例程使用</h2><h3 id="1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；"><a href="#1-在-Arduino-中初始化-ESP32-cam：让-Arduino-认识你的-ESP32-cam；" class="headerlink" title="1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；"></a>1.在 Arduino 中初始化 ESP32-cam：让 Arduino 认识你的 ESP32-cam；</h3><p>        如图所示操作：工具—&gt;开发板—&gt;开发版管理器，找到 esp32 by Espressif Systems，选择任意版本下载（主要看你那个能下载成功，我下载的是2.0.10版本）；</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/65d63e7971ed49dfb3cd21989530e98d.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/71c6df9bea5a44fb9e05699b5c0459d3.png"></p>
-<p>选择接口及对应开发板（Al Thinker ESP32-CAM)</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/aa4e037f89194a8ab250be6c39147431.png"></p>
-<h3 id="2-尝试ESP32例程项目：CameraWebServer"><a href="#2-尝试ESP32例程项目：CameraWebServer" class="headerlink" title="2.尝试ESP32例程项目：CameraWebServer"></a>2.尝试ESP32例程项目：CameraWebServer</h3><p><img src="https://img-blog.csdnimg.cn/direct/a21c13020e7e42e18ea384aaa334cc98.png"></p>
-<p>此时会跳出新页面（CameraWebServer项目）；选择该项目；</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/b63c0d456e844302a065ed60987719a0.png"></p>
-<h3 id="3-在CameraWebServer项目代码中进行操作"><a href="#3-在CameraWebServer项目代码中进行操作" class="headerlink" title="3.在CameraWebServer项目代码中进行操作"></a>3.在CameraWebServer项目代码中进行操作</h3><p>代码中一共有四处需要修改的地方</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0378fcd37a8d45d88dd5ea4249d47f6b.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e97e057b12264321a19f135487abbbf0.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/8450b723e83540f3ab680bc9cf328e6f.png"></p>
-<p>开始编译认证：</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e988f6ecdf8d4ccfa7b3662c69b4e97f.png"></p>
-<p>编译无问题后如此显示：</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/aabe18ad696940b9be627a79c2af20ae.png"></p>
-<p>接下来上传（即 将代码烧录到ESP32-cam中）</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/73673adcd500465abf6ae67400427956.png"></p>
-<p> 上传（烧录）成功后如此显示：<img src="https://img-blog.csdnimg.cn/direct/fc85c7bd6d504b698346bb106202f973.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/473fc3698223468591e7f6233a0886c8.png"><img src="https://img-blog.csdnimg.cn/direct/f3261a0f31b44a6ba04225a67b106491.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0310f71bcace405cb079916fe2f55d4e.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/bb5ad36655744cac932338a86818bf62.png"></p>
-<h3 id="4、通过串口获取-ESP32-cam-所在的IP"><a href="#4、通过串口获取-ESP32-cam-所在的IP" class="headerlink" title="4、通过串口获取 ESP32-cam 所在的IP"></a>4、通过串口获取 ESP32-cam 所在的IP</h3><p>我们打开任意串口监视器（我用的正点原子串口调试助手）<img src="https://img-blog.csdnimg.cn/direct/c9ca2f6382cf462f942b56bf0c0d7d7c.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/0d18d5e576664fe5b9cece5017b43ae1.png"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/ca92d7b1458f427d9f890a9f3dfa070a.png"></p>
-<h3 id="5、进入操作界面"><a href="#5、进入操作界面" class="headerlink" title="5、进入操作界面"></a>5、进入操作界面</h3><p><img src="https://img-blog.csdnimg.cn/direct/11c98aefc48042c0973a86be78e07994.png"></p>
-<p>使用一台与ESP32-cam所连WiFi&#x2F;热点相同的设备(PC&#x2F;手机都行)，在浏览器标题栏中输入所得IP地址，回车进入，出现如下画面</p>
-<p><img src="https://img-blog.csdnimg.cn/direct/e0582c81c328496591a5696cddbbb585.png"><img src="https://img-blog.csdnimg.cn/direct/21e663f5ee7f4992b04d8c1392391e32.png"></p>
+<h4 id="安装流程-可以直接用我提供的安装包-："><a href="#安装流程-可以直接用我提供的安装包-：" class="headerlink" title="安装流程(可以直接用我提供的安装包) ："></a>安装流程(可以直接用我提供的安装包) ：</h4><h5 id="一、下载提供的安装包，解压"><a href="#一、下载提供的安装包，解压" class="headerlink" title="一、下载提供的安装包，解压"></a>一、下载提供的安装包，解压</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422163445.png"></p>
 <hr>
-<h2 id="三、项目的保存"><a href="#三、项目的保存" class="headerlink" title="三、项目的保存"></a>三、项目的保存</h2><p>在体验了一番 ESP32-cam 摄像头后（然而并没有什么卵用 </p>
-<p>我们将项目保存以便下次使用</p>
-<h3 id="1-保存方式：按下-Ctrl-S-或-文件-—-Save；"><a href="#1-保存方式：按下-Ctrl-S-或-文件-—-Save；" class="headerlink" title="1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；"></a>1.保存方式：按下 Ctrl+S 或 文件 —&gt; Save；</h3><p><img src="https://img-blog.csdnimg.cn/direct/ddcc202cf2b04c0fa478c8dbec44c2eb.png" alt="项目默认保存在 C盘--文档--Arduino 下"></p>
-<p><img src="https://img-blog.csdnimg.cn/direct/7dacca00c159472a84698a01b971027c.png" alt="我选择将项目保存在 Arduino 的位置下（同在D盘以防C盘报废的情况）"></p>
+<h5 id="二、先安装-WinPcap-https-www-winpcap-org"><a href="#二、先安装-WinPcap-https-www-winpcap-org" class="headerlink" title="二、先安装 WinPcap  https://www.winpcap.org/"></a>二、先安装 WinPcap  <a target="_blank" rel="noopener" href="https://www.winpcap.org/">https://www.winpcap.org/</a></h5><blockquote>
+<p>​    多年来，WinPcap 一直被公认为 Windows 环境中链路层网络访问的行业标准工具，允许应用程序绕过协议栈捕获和传输网络数据包，并包括内核级数据包过滤、网络统计引擎和对远程<a target="_blank" rel="noopener" href="http://www.riverbed.com/us/products/cascade/cascade_shark_overview.php">数据包捕获</a>的支持。</p>
+<p>​    WinPcap 由一个扩展操作系统以提供低级网络访问的驱动程序和一个用于轻松访问低级网络层的库组成。该库还包含著名的 libpcap Unix API 的 Windows 版本。</p>
+<p>​    由于其一系列功能，WinPcap 已成为许多开源和商业网络工具的<a target="_blank" rel="noopener" href="http://www.riverbed.com/us/products/cascade/cascade_shark_overview.php">数据包捕获</a>和过滤引擎，包括协议分析器、网络监视器、网络入侵检测系统、嗅探器、流量生成器和网络测试器。其中一些<a target="_blank" rel="noopener" href="http://www.riverbed.com/">网络工具</a>，如 <a target="_blank" rel="noopener" href="http://www.wireshark.org/">Wireshark</a>、Nmap、Snort 和 ntop，在整个网络社区中广为人知和使用。</p>
+<p>​    Winpcap.org 也是 <a target="_blank" rel="noopener" href="https://www.winpcap.org/">WinDump 的所在地，WinDump</a> 是流行的 tcpdump 工具的 Windows 版本。WinDump 可用于根据各种复杂的规则监视、诊断和保存到磁盘网络流量。—</p>
+</blockquote>
+<hr>
+<h5 id="三、安装-VirtualBox-https-www-virtualbox-org"><a href="#三、安装-VirtualBox-https-www-virtualbox-org" class="headerlink" title="三、安装 VirtualBox  https://www.virtualbox.org/"></a>三、安装 VirtualBox  <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></h5><blockquote>
+<p>​    VirtualBox是一款功能强大的x86和AMD64&#x2F;Intel64虚拟化产品，适合企业和家庭使用。VirtualBox不仅是面向企业客户的功能极其丰富的高性能产品,而且是唯一一个根据GNU通用公共许可证(GPL)第3版条款作为开源软件免费提供的专业解决方案。</p>
+<p>​    目前, VirtualBox可以在Windows, Linux, macOS和Solaris主机上运行,并支持大量的客户操作系统,包括但不限于Windows (NT 4.0, 2000、XP, Server 2003、 Vista7、 8、 Windows 10和Windows 11)、 DOS&#x2F;Windows 3。 x、 Linux(2.4、 2.6、 3.x4.x, 5。x和6.x),Solaris和OpenSolaris, OS&#x2F;2,OpenBSD, NetBSD和FreeBSDVirtualBox正在积极开发，频繁发布，并且拥有不断增长的功能列表，支持客户操作系统和平台。VirtualBox是一个由专门的公司支持的社区努力：每个人都被鼓励贡献，而Oracle确保产品始终符合专业质量标准。</p>
+</blockquote>
+<p> 一直点击下一步直到点击安装，安装的时候会出现一个对话框，提示是否允许程序对你的设备进 行更改，这里选择“<strong>是</strong>”，安装完成。</p>
+<hr>
+<h5 id="四、wireshark-的安装-https-www-wireshark-org"><a href="#四、wireshark-的安装-https-www-wireshark-org" class="headerlink" title="四、wireshark 的安装  https://www.wireshark.org/"></a>四、wireshark 的安装  <a target="_blank" rel="noopener" href="https://www.wireshark.org/">https://www.wireshark.org/</a></h5><p><strong>什么是 Wireshark？</strong></p>
+<blockquote>
+<p>​    Wireshark® 是一个网络协议分析器。它可以让您捕获和 以交互方式浏览计算机网络上运行的流量。它有一个 丰富而强大的功能集，是世界上最受欢迎的工具 类。它可以在大多数计算平台上运行，包括 Windows、macOS、 Linux 和 UNIX。网络专业人员、安全专家、开发人员、 世界各地的教育工作者都经常使用它。它是免费提供的 作为开源，并在 GNU 通用公共许可证下发布 版本 2。</p>
+<p>​    它由全球协议专家团队开发和维护， 这是<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Disruptive_technology">破坏性的一个例子 技术</a>。</p>
+<p>​    Wireshark 曾经被称为 Ethereal®。请参阅下一个问题 有关名称更改的详细信息。如果您仍在使用 Ethereal，那么它是 强烈建议您像 Ethereal 一样升级到 Wireshark 不受支持且存在已知的安全漏洞。</p>
+<p>​    有关更多信息，请参阅<a target="_blank" rel="noopener" href="https://www.wireshark.org/about.html">关于 Wireshark</a> 页面。</p>
+</blockquote>
+<p>安装途中可能会有附带安装 Npcap 和 USBPcap，一起安装了就行。</p>
+<hr>
+<h5 id="五、eNSP-的安装"><a href="#五、eNSP-的安装" class="headerlink" title="五、eNSP 的安装"></a>五、eNSP 的安装</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164043.png"></p>
+<p>一直到这一步，检查其他程序是否安装完成，如果安装完成，则点击“<strong>下一步</strong>“，然后点击安装；</p>
+<p>没有安装完成的 则按照安装教程重新安装一遍。然后静静等待安装完成，安装完成后会出现安装完成的界面</p>
+<hr>
+<h5 id="六、eNSP的注册"><a href="#六、eNSP的注册" class="headerlink" title="六、eNSP的注册"></a>六、eNSP的注册</h5><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164136.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164158.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164218.png"></p>
+<hr>
+<p><em><strong>至此就可以使用ENSP了~~</strong></em></p>
+<hr>
 
                 
             </div>
@@ -556,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://immortal3180.github.io/ESP32-Cam/">https://immortal3180.github.io/ESP32-Cam/</a>
+                    <a href="https://immortal3180.github.io/eNSP/">https://immortal3180.github.io/eNSP/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -594,12 +587,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">
-                                    <span class="chip bg-color">嵌入式</span>
-                                </a>
-                            
-                                <a href="/tags/ESP32-Cam/">
-                                    <span class="chip bg-color">ESP32-Cam</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">网络技术</span>
                                 </a>
                             
                         </div>
@@ -643,50 +632,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/Markdown-Tool/">
+                <a href="/eNSP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Markdown 基本语法">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="eNSP">
                         
-                        <span class="card-title">Markdown 基本语法</span>
+                        <span class="card-title">eNSP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记一些Markdown基本语法
+                            欢迎来到网工~
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    网络技术
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">网络技术</span>
                     </a>
                     
                 </div>
@@ -700,31 +687,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/CSDN-pages-turn-to-Markdown/">
+                <a href="/How-To-Search/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CSDN博客文章如何转为Markdown">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="信息化时代，如何提高你的搜索能力">
                         
-                        <span class="card-title">CSDN博客文章如何转为Markdown</span>
+                        <span class="card-title">信息化时代，如何提高你的搜索能力</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CTRL+F "article_content"<br>复制为"outerHTML"<br>https://tool.lu/markdown/<br>点击HTML2MD，粘贴代码，转成Markdown
+                            让搜索能力提高生产力
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" class="post-category">
-                                    文件格式转化
+                            <a href="/categories/%E6%90%9C%E7%B4%A2/" class="post-category">
+                                    搜索
                                 </a>
                             
                             
@@ -734,12 +721,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="chip bg-color">博客搭建</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
+                    <a href="/tags/%E6%90%9C%E7%B4%A2/">
+                        <span class="chip bg-color">搜索</span>
                     </a>
                     
                 </div>

@@ -441,7 +441,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-28
+                    2024-05-13
                 </div>
                 
 
@@ -660,6 +660,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`python3 test.py`</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">ser = serial.Serial(<span class="string">&quot;/dev/ttyAMA0&quot;</span>,<span class="number">115200</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> ser.isOpen():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;open failed&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;open success: &quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(ser)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            count = ser.inWaiting()</span><br><span class="line">            <span class="keyword">if</span> count &gt; <span class="number">0</span>:</span><br><span class="line">                recv = ser.read(count)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;recv: &quot;</span> + recv)</span><br><span class="line">                ser.write(recv)</span><br><span class="line">                sleep(<span class="number">0.05</span>) </span><br><span class="line">            <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">                <span class="keyword">if</span> ser != <span class="literal">None</span>:</span><br><span class="line">                    ser.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240513172421.png" alt="下载这个，搬到桌面上"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ~/Desktop/slam_gmapping-eloquent-devel/* /opt/ros/humble/src</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动到Ros工作区下</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-roslaunch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不知道啥 ros的工具包</span></span><br></pre></td></tr></table></figure>
 
 
                 
@@ -991,7 +997,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.7k</span>&nbsp;字
+                class="white-color">33.8k</span>&nbsp;字
             
             
             

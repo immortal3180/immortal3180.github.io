@@ -441,14 +441,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-13
+                    2024-05-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.4k
                 </div>
                 
 
@@ -666,6 +666,67 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv ~/Desktop/slam_gmapping-eloquent-devel/* /opt/ros/humble/src</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移动到Ros工作区下</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-roslaunch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不知道啥 ros的工具包</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Ros2-命令行操作"><a href="#Ros2-命令行操作" class="headerlink" title="Ros2 命令行操作"></a>Ros2 命令行操作</h3><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518150817.png" alt=" 终端 - Terminal 快捷键 - CTRL+ALT+T "></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前终端所在的路径在哪里</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前路径下有哪些文件以及文件夹</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -A</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前路径下有哪些隐藏文件(.开头即为隐藏文件)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">文件浏览器下Ctrl+h也可以显示对应的隐藏文件</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir test</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在当前路径下创建一个新文件夹(<span class="built_in">test</span>)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd test/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">从终端进入到该文件夹(进入到<span class="built_in">test</span>文件夹下)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch readme.txt</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在当前文件夹下创建一个新文件(readme.txt)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm readme.txt</span><br><span class="line"># 删除当前文件夹下的指定文件(readme.txt)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br><span class="line"># 返回上一级目录</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -R test </span><br><span class="line"># 删除当前文件夹下的指定文件夹(test)</span><br><span class="line"># -R:递归删除，查询该文件夹下有哪些文件和子文件夹，依次递归删除</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install XXXX</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装功能包(XXXX)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518152818.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- Ctrl+Alt+T 打开终端</span><br><span class="line">pi@pi-desktop:~$ ros2 run turtlesim turtlesim_node</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ros2 run turtlesim:运行了 turtlesim 功能包提供的第一个功能;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">turtlesim_node:一个海龟仿真器的节点</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 重新打开一个终端</span><br><span class="line">ros2 run turtlesim turtle_teleop_key</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动 turtlesim 功能包提供的一个功能节点;</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">turtle_teleop_key: 功能:读取键盘按键值变为素指令，从而控制海龟</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518154007.png" alt="成果如下"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查看某个节点的基本信息，或者当前系统里有哪些节点</span><br><span class="line">- 打开一个新的终端</span><br><span class="line">ros2 node</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518154433.png" alt="弹出了帮助信息，后面可以跟 info list 参数"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ros2 node list</span><br><span class="line"># 打印所有正在运行的raw系统中的节点</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518155322.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ros2 node info /turtlesim</span><br><span class="line"># 得知某一指定节点的信息(/turtlesim)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/4fcbd058a877123249f3311ab97916b7.png" alt="查看了海龟仿真器的一些基本信息"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ros2 topic</span><br><span class="line"># 显示当前话题参数</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518164347.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">得知当前系统有哪些话题正在发布和订阅</span></span><br><span class="line">ros2 topic list</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 对(/turtlel/pose)话题进行订阅并打印(数据会周期性地打印出来)</span><br><span class="line">ros2 topic echo /turtle1/pose</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518182231.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">控制海龟运动(转圈)</span></span><br><span class="line">ros2 topic pub --rate 1 /turtle1/cmd_vel geometry_msgs/msg/Twist &quot;&#123;linear: &#123;x: 2.0,y: 0.0,z: 0.0&#125;, angular:&#123;x: 0.0,y: 0.0,z: 1.8&#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518183600.png" alt="如图，海龟在转圈"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一只新的海龟，名为<span class="string">&quot;haigui&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ros2 service call /spawn turtlesim/srv/Spawn <span class="string">&quot;&#123;x: 2, y: 2, theta: 0.2, name: &#x27;haigui&#x27;&#125;&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518184057.png"></p>
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518184345.png" alt="此时查看新增接口"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将上面命令中参数 <span class="string">&quot;turtle1&quot;</span> 改为 <span class="string">&quot;haigui&quot;</span>，可以看到<span class="string">&quot;haigui&quot;</span>开始转圈了</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ros2 topic pub --rate 1 /haigui/cmd_vel geometry_msgs/msg/Twist <span class="string">&quot;&#123;linear: &#123;x: 2.0,y: 0.0,z: 0.0&#125;, angular:&#123;x: 0.0,y: 0.0,z: 1.8&#125;&#125;&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518184552.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ros2 bag</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 录制动作(ctrl+c停止，保存在当前终端所在路径下面)</span><br><span class="line">ros2 bag record /turtlel/cmd_vel</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 复现录制的动作(善用Tab)</span><br><span class="line">ros2 bag play rosbag2_2024_05_18-18_55_12/</span><br></pre></td></tr></table></figure>
 
 
                 
@@ -997,7 +1058,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.9k</span>&nbsp;字
+                class="white-color">34.5k</span>&nbsp;字
             
             
             

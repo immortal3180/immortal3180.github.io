@@ -441,14 +441,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-18
+                    2024-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.8k
                 </div>
                 
 
@@ -728,6 +728,47 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 复现录制的动作(善用Tab)</span><br><span class="line">ros2 bag play rosbag2_2024_05_18-18_55_12/</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h3 id="镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程"><a href="#镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程" class="headerlink" title="镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程"></a>镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程</h3><hr>
+<h3 id="安装Ros2"><a href="#安装Ros2" class="headerlink" title="安装Ros2"></a>安装Ros2</h3><p>#重装了系统，系统初始化后#</p>
+<p>sudo apt update</p>
+<p>sudo apt install locales</p>
+<p>sudo locale-gen en_US en_US.UTF-8</p>
+<p>sudo update-locale LC_ALL&#x3D;en_US.UTF-8 LANG&#x3D;en_US.UTF-8</p>
+<p>export LANG&#x3D;en_US.UTF-8</p>
+<p>#配置了远程连接#</p>
+<p>sudo ufw allow 5900&#x2F;tcp</p>
+<p>sudo ufw allow 3389&#x2F;tcp</p>
+<p>sudo apt install net-tools</p>
+<p>ifconfig</p>
+<p>#-#-#-#-#</p>
+<hr>
+<h3 id="从头配一遍"><a href="#从头配一遍" class="headerlink" title="从头配一遍"></a>从头配一遍</h3><p>1.起手初始化配置</p>
+<p>​	Settings – Power – Screen Blank –&gt; Never 永不息屏</p>
+<p>2.连接WiFi</p>
+<p>3.设置 - Sharing</p>
+<p>​	要你设置密码 - 直接空着点继续 - Remote Desktop 开起来</p>
+<p>​	ip a 看ip</p>
+<p>​	远程连接(今天的远程连接非常奇怪，只能看和共享剪切板，不能控制)</p>
+<p>4.happy@happy:~&#x2F;Desktop$ cd</p>
+<p>happy@happy:~$ wget <a target="_blank" rel="noopener" href="http://fishros.com/install">http://fishros.com/install</a> -O fishros &amp;&amp; . fishros</p>
+<p>选5 – 更换系统源； 再选2 –；再选1 – 添加Ros&#x2F;Ros2源</p>
+<p>草，换源更新失败三次，第四次换成http-ROS官方源才成功</p>
+<p>5.happy@happy:~$ wget <a target="_blank" rel="noopener" href="http://fishros.com/install">http://fishros.com/install</a> -O fishros &amp;&amp; . fishros</p>
+<p>选1 – 装Ros2</p>
+<p> 再选2 – 不更换源 继续安装（但它貌似还是帮我还原了 并且还是换源两次失败 第三次换成https-ROS官方源成功）</p>
+<p>再选1 – humble</p>
+<p>再选1 - 桌面版</p>
+<p>跑到最后没跑通。。关了终端重来一遍</p>
+<p>选1选1选2 – 选1 humble – 选1 桌面版  成功了</p>
+<p>6.- Ctrl+Alt+T 打开终端<br>pi@pi-desktop:~$ ros2 run turtlesim turtlesim_node 启动小乌龟</p>
+<p>7.- 重新打开一个终端<br>ros2 run turtlesim turtle_teleop_key 启动键盘映射</p>
+<p>测试完毕，证明ROS环境安装成功</p>
+<p>8.Ctrl+C 关闭海龟和键盘</p>
+<p>9.再跑小鱼 选3 – 配rosdepc</p>
+<p>rosdepc update</p>
+<p>10.再跑小鱼 选4 – 检测到有Ros环境 成功了</p>
+<hr>
 
                 
             </div>
@@ -1058,7 +1099,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">34.5k</span>&nbsp;字
+                class="white-color">34.9k</span>&nbsp;字
             
             
             

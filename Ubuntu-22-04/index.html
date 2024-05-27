@@ -441,14 +441,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-19
+                    2024-05-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3.2k
                 </div>
                 
 
@@ -668,7 +668,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-roslaunch</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">不知道啥 ros的工具包</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="Ros2-命令行操作"><a href="#Ros2-命令行操作" class="headerlink" title="Ros2 命令行操作"></a>Ros2 命令行操作</h3><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518150817.png" alt=" 终端 - Terminal 快捷键 - CTRL+ALT+T "></p>
+<h2 id="Ros2-命令行操作"><a href="#Ros2-命令行操作" class="headerlink" title="Ros2 命令行操作"></a>Ros2 命令行操作</h2><p><img src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/Ubuntu/20240518150817.png" alt=" 终端 - Terminal 快捷键 - CTRL+ALT+T "></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前终端所在的路径在哪里</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前路径下有哪些文件以及文件夹</span></span><br></pre></td></tr></table></figure>
@@ -729,7 +729,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 复现录制的动作(善用Tab)</span><br><span class="line">ros2 bag play rosbag2_2024_05_18-18_55_12/</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程"><a href="#镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程" class="headerlink" title="镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程"></a>镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程</h3><hr>
+<h3 id="镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程"><a href="#镭神N10激光雷达-在-Ubuntu22-04LTS-Ros2-中的驱动使用安装流程" class="headerlink" title="镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程"></a>镭神N10激光雷达 在 Ubuntu22.04LTS Ros2 中的驱动使用安装流程</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 777 /dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG dialout happy</span><br></pre></td></tr></table></figure>
+
+<hr>
 <h3 id="安装Ros2"><a href="#安装Ros2" class="headerlink" title="安装Ros2"></a>安装Ros2</h3><p>#重装了系统，系统初始化后#</p>
 <p>sudo apt update</p>
 <p>sudo apt install locales</p>
@@ -769,6 +773,50 @@
 <p>rosdepc update</p>
 <p>10.再跑小鱼 选4 – 检测到有Ros环境 成功了</p>
 <hr>
+<h3 id="Ros2开发环境配置"><a href="#Ros2开发环境配置" class="headerlink" title="Ros2开发环境配置"></a>Ros2开发环境配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装git：</span></span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 VSCode：</span></span><br><span class="line">sudo dpkg -i code_1.89.1-1715060508_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<p>安装VSCode schinese 插件</p>
+<p>安装 python 插件</p>
+<p>安装 C&#x2F;C++ 插件</p>
+<p>安装 cmake 插件</p>
+<p>安装 vscode-icons 插件</p>
+<p>安装 ROS 插件</p>
+<p>安装 Msg language support 插件</p>
+<p>安装 URDF 插件（机器人模型）</p>
+<p>安装 intelliCode 插件 （人工智能助手）</p>
+<p>安装 Markdown All in One 插件</p>
+<hr>
+<h4 id="工作空间与功能包：开发过程的大本营"><a href="#工作空间与功能包：开发过程的大本营" class="headerlink" title="工作空间与功能包：开发过程的大本营"></a>工作空间与功能包：开发过程的大本营</h4><p>工作空间（workspace）：存放项目开发相关文件的文件夹；是开发过程的大本营。</p>
+<p>Home&#x2F;</p>
+<p>Home&#x2F;dev_ws(dev workspace)：工作空间的根目录，内有四个子空间（工作空间的名字可以自定义，数量也并不是唯一）</p>
+<ul>
+<li>src：代码空间（Source Space）</li>
+<li>install：安装空间（Install Space）</li>
+<li>build：编译空间（Build Space）</li>
+<li>log：日志空间（Log Space）</li>
+</ul>
+<hr>
+<h5 id="开始创建工作空间："><a href="#开始创建工作空间：" class="headerlink" title="开始创建工作空间："></a>开始创建工作空间：</h5><p>1.创建文件夹 dev_ws ；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2.# 创建dev_ws：</span><br><span class="line">mkdir -p ~/dev_ws/src</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.# 进入src空间：</span><br><span class="line">cd dev_ws/src/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4.# 安装 pip</span><br><span class="line">sudo apt install python3-pip</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5.# 使用 pip 安装 ros 小依赖工具 rosdepc(解决ROS网络访问问题)</span><br><span class="line">sudo pip3 install rosdepc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6.# 初始化 rosdepc 工具</span><br><span class="line">sudo rosdepc init &amp; rosdepc udate</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7.# 回到工作空间根目录</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">8.# 从src文件夹下搜索所有功能包的依赖项并判断是否安装好</span><br><span class="line">rosdepc install -i --from-path src --rosdistro hummble -y</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9.# 安装 colcon</span><br><span class="line">sudo apt install python3-colcon-ros</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10.# 使用 colcon 对整个工作空间进行完整编译</span><br><span class="line">colcon build</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -1099,7 +1147,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.1k</span>&nbsp;字
+                class="white-color">36k</span>&nbsp;字
             
             
             

@@ -445,14 +445,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-20
+                    2024-05-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.9k
                 </div>
                 
 
@@ -581,6 +581,116 @@
 <p>信道容量：信道上数据能够达到的传输速率</p>
 <p>带宽：发送器和传输媒体的特性限制下的带宽（Hz&#x2F;每秒周期）</p>
 <p>噪声：信息在传输过程中收到的外界干扰</p>
+<hr>
+<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p>1974年，IBM第一次提出 <strong>系统网络体系架构</strong> (System Network Architecture，SNA)，第一个应用了分层的方法。</p>
+<hr>
+<h4 id="在网络线路施工中应遵守哪些规范？"><a href="#在网络线路施工中应遵守哪些规范？" class="headerlink" title="在网络线路施工中应遵守哪些规范？"></a>在网络线路施工中应遵守哪些规范？</h4><p>1.水平子双绞线系统&lt;&#x3D;90米，工作区线缆&lt;&#x3D;10米</p>
+<p>2.强电和弱点应该分开部署，并适当保持距离 </p>
+<hr>
+<p>虚拟存储技术把 内存和外存 结合使用</p>
+<hr>
+<p>百兆以太网采用的数据编码方法是 4B&#x2F;5B</p>
+<table>
+<thead>
+<tr>
+<th>编码类型</th>
+<th>编码效率</th>
+<th>应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>曼彻斯特</td>
+<td>50%</td>
+<td>以太网</td>
+</tr>
+<tr>
+<td>拆分曼彻斯特</td>
+<td>50%</td>
+<td>令牌环</td>
+</tr>
+<tr>
+<td>4B&#x2F;5B</td>
+<td>80%</td>
+<td>百兆以太网</td>
+</tr>
+<tr>
+<td>8B&#x2F;10B</td>
+<td>80%</td>
+<td>千兆以太网</td>
+</tr>
+<tr>
+<td>64B&#x2F;66B</td>
+<td>97%</td>
+<td>万兆以太网</td>
+</tr>
+</tbody></table>
+<hr>
+<p>尼奎斯特定理 R&#x3D;Blog2N</p>
+<hr>
+<p>WiFi6 对应的标准是 802.11ax</p>
+<hr>
+<h4 id="OSI每层作用"><a href="#OSI每层作用" class="headerlink" title="OSI每层作用"></a>OSI每层作用</h4><table>
+<thead>
+<tr>
+<th>OSI</th>
+<th>职能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>各种应用程序、协议</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>数据<strong>压缩解压、加密解密</strong></td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>为通信双方指定通话方式，并创建、注销会话</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>提供可靠&#x2F;不可靠的<strong>端到端传输</strong></td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>逻辑寻址；路由选择</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>将分组封装成帧；提供节点到节点的传输；差错控制</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>在媒介上传输比特流；提供机械和电气规约</td>
+</tr>
+</tbody></table>
+<hr>
+<p>RIP最大跳数是15跳，16跳意味着不可达。</p>
+<p>RIP防环机制：水平分割；路由毒化</p>
+<hr>
+<p>Telnet 采用TCP协议。</p>
+<hr>
+<h4 id="邮件三剑客：SMTP发，POP3收，IMAP同步。"><a href="#邮件三剑客：SMTP发，POP3收，IMAP同步。" class="headerlink" title="邮件三剑客：SMTP发，POP3收，IMAP同步。"></a>邮件三剑客：SMTP发，POP3收，IMAP同步。</h4><hr>
+<p>Windows下远程管理：</p>
+<ul>
+<li>RDP：TCP 3389</li>
+</ul>
+<p>Linux下远程管理：</p>
+<ul>
+<li>SSH(命令行)：TCP 22</li>
+<li>VNC(图形化)：TCP 5900</li>
+</ul>
+<hr>
+<p>ICMP：IP</p>
+<p>SNMP：UDP</p>
+<hr>
+<h4 id="SSL："><a href="#SSL：" class="headerlink" title="SSL："></a>SSL：</h4><p>SSL（加密套接字协议层）位于 HTTP 和 TCP 层之间。</p>
+<p>SSL：公开密钥机制</p>
+<p>任何用户都可以获得公共密钥来加密数据，但解密数据必须通过相应的私人密钥。</p>
+<p>1.客户端与服务器建立连接 –&gt; 服务器把它的数字证书与公共密钥一并发送给客户端 –&gt; 客户端随机生成会话密钥，用从服务器获得的公共密钥对会话密钥进行加密 –&gt; 并把会话密钥在网络上传递给服务器 –&gt; 而会话密钥只要在服务器用私人密钥才能解密 –&gt; </p>
+<p>2.这样客户端和服务器就建立了一个唯一的安全通道。</p>
+<hr>
 
                 
             </div>
@@ -913,7 +1023,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.1k</span>&nbsp;字
+                class="white-color">36k</span>&nbsp;字
             
             
             

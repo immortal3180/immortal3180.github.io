@@ -28,7 +28,7 @@
 <meta property="og:description" content="ipconfig_usageipconfig 查看基本网络配置信息ipconfig &#x2F;all 查看详细网络配置信息ipconfig &#x2F;release 释放当前的ip地址ipconfig &#x2F;renew 重新获取ip地址ipconfig &#x2F;flushdns 清除dns缓存ipconfig &#x2F;displaydns 显示dns缓存内容ipconfig &amp;#">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-28T17:47:37.000Z">
-<meta property="article:modified_time" content="2024-10-29T14:00:21.888Z">
+<meta property="article:modified_time" content="2024-11-01T05:34:13.586Z">
 <meta property="article:author" content="霜晴">
 <meta name="twitter:card" content="summary">
   
@@ -65,7 +65,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/alist/"><span class="title">alist - 拼凑更加实用的网盘</span></a><a class="item title" href="/learn-mathjax/"><span class="title">learn-mathjax</span></a><a class="item title" href="/Networking-commands/"><span class="title">Networking-commands</span></a><a class="item title" href="/hello-hexo/"><span class="title">Hexo欢迎你(:!</span></a><a class="item title" href="/PicGo/"><span class="title">PicGo+GitHub图床：你的下一个图片召唤器</span></a><a class="item title" href="/eNSP/"><span class="title">华为eNSP资源及安装教程</span></a><a class="item title" href="/music-scinese/"><span class="title">乐理</span></a><a class="item title" href="/glue-and-tape/"><span class="title">胶和胶带-当你想把物品粘合起来</span></a><a class="item title" href="/Win10-Update/"><span class="title">Windows 10 优化策略/必要组件</span></a><a class="item title" href="/Win-activation/"><span class="title">Windows激活/升级教程收录</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/Networking-commands/"><span class="title">Networking-commands</span></a><a class="item title" href="/LLM/"><span class="title">LLM</span></a><a class="item title" href="/Web-Development/"><span class="title">Web-Development</span></a><a class="item title" href="/hello-hexo/"><span class="title">Hexo欢迎你(:!</span></a><a class="item title" href="/alist/"><span class="title">alist - 拼凑更加实用的网盘</span></a><a class="item title" href="/learn-mathjax/"><span class="title">learn-mathjax</span></a><a class="item title" href="/PicGo/"><span class="title">PicGo+GitHub图床：你的下一个图片召唤器</span></a><a class="item title" href="/eNSP/"><span class="title">华为eNSP资源及安装教程</span></a><a class="item title" href="/music-scinese/"><span class="title">乐理</span></a><a class="item title" href="/glue-and-tape/"><span class="title">胶和胶带-当你想把物品粘合起来</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-28T17:47:37.000Z">2024-10-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-29T14:00:21.888Z">2024-10-29</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-28T17:47:37.000Z">2024-10-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-01T05:34:13.586Z">2024-11-01</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -93,32 +93,11 @@
 <h4 id="netstat-usage"><a href="#netstat-usage" class="headerlink" title="netstat_usage"></a>netstat_usage</h4><p>netstat 是一个用于监控网络连接和网络统计信息的命令行工具<br>netstat -a 显示所有的网络连接<br>netstat -at 显示活动的TCP连接<br>netstat -r 显示路由表<br>netstat -ano 显示PID(进程标识符)和程序名称<br>netstat -ano | grep 端口数字 结合grep进行过滤，只显示所有与目标端口相关的连接信息<br>netstat -at | grep :443 查看特定协议和端口的连接（grep是linux内置的shell命令，windows系统需要安装如cygwin等第三方软件支持它）</p>
 <h4 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h4><p>ping IP地址&#x2F;域名 测试基本连通性<br>ping -n 数字 IP地址&#x2F;域名  自定义数据包发送数量的基本连通性测试<br>ping -t IP地址&#x2F;域名 持续不断地测试<br>ping -l 大小 IP地址&#x2F;域名 自定义数据包大小的基本连通性测试<br>ping -r 数量 IP地址 记录数据包经过的路由信息，上限为9<br>ping -a IP地址 将目标IP地址解析为主机名</p>
 <h4 id="tracert"><a href="#tracert" class="headerlink" title="tracert"></a>tracert</h4><p>（Trace Route 的缩写）是一个网络诊断工具，用于确定IP数据包访问目标所采取的路径。它通过向目标发送具有不同生存时间(TTL)值的 Internet控制消息协议(ICMP,Internet control message protocol) 回显数据包，来确定到达目标的路径</p>
-<h4 id="arp"><a href="#arp" class="headerlink" title="arp"></a>arp</h4><p>arp -a<br>查看arp缓存表：显示该计算机所有网卡每个网卡通信过的设备的IP地址和MAC地址的对应关系<br>arp -a IP地址<br>查看特定IP地址的ARP缓存项<br>arp -s IP地址 MAC地址<br>人工向ARP缓存中添加静态ARP条目，将某IP地址和特定MAC地址绑定，确保通信时始终使用该MAC地址。作用一：防止ARP欺骗攻击 作用二：一些固定IP与MAC地址对应关系的场景<br>arp -d IP地址 人工删除ARP缓存表中的指定条目<br>arp </p>
-<p>C:\Users\LZF67&gt;ipconfig &#x2F;all</p>
-<p>Windows IP 配置</p>
-<p>   主机名  . . . . . . . . . . . . . : LapTop-8860<br>   主 DNS 后缀 . . . . . . . . . . . :<br>   节点类型  . . . . . . . . . . . . : 混合<br>   IP 路由已启用 . . . . . . . . . . : 否<br>   WINS 代理已启用 . . . . . . . . . : 否</p>
-<p>以太网适配器 Radmin VPN:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Famatech Radmin VPN Ethernet Adapter<br>   物理地址. . . . . . . . . . . . . : 02-50-7E-BA-F5-33<br>   DHCP 已启用 . . . . . . . . . . . : 否<br>   自动配置已启用. . . . . . . . . . : 是<br>   IPv6 地址 . . . . . . . . . . . . : fdfd::1a10:2a05(首选)<br>   本地链接 IPv6 地址. . . . . . . . : fe80::5957:7518:b7df:bc98%12(首选)<br>   IPv4 地址 . . . . . . . . . . . . : 26.16.42.5(首选)<br>   子网掩码  . . . . . . . . . . . . : 255.0.0.0<br>   默认网关. . . . . . . . . . . . . :<br>   DHCPv6 IAID . . . . . . . . . . . : 906121342<br>   DHCPv6 客户端 DUID  . . . . . . . : 00-01-00-01-2D-24-52-F5-38-D5-7A-DF-96-CF<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已启用</p>
-<p>未知适配器 本地连接:</p>
-<p>   媒体状态  . . . . . . . . . . . . : 媒体已断开连接<br>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : TAP-Windows Adapter V9<br>   物理地址. . . . . . . . . . . . . : 00-FF-B5-1C-10-75<br>   DHCP 已启用 . . . . . . . . . . . : 是<br>   自动配置已启用. . . . . . . . . . : 是</p>
-<p>无线局域网适配器 WLAN 2:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter #2<br>   物理地址. . . . . . . . . . . . . : 5A-D5-7A-DF-96-CF<br>   DHCP 已启用 . . . . . . . . . . . : 否<br>   自动配置已启用. . . . . . . . . . : 是<br>   本地链接 IPv6 地址. . . . . . . . : fe80::c2f1:4f24:488c:51ee%23(首选)<br>   IPv4 地址 . . . . . . . . . . . . : 192.168.137.1(首选)<br>   子网掩码  . . . . . . . . . . . . : 255.255.255.0<br>   默认网关. . . . . . . . . . . . . :<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已启用</p>
-<p>无线局域网适配器 WLAN 3:</p>
-<p>   媒体状态  . . . . . . . . . . . . : 媒体已断开连接<br>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter #3<br>   物理地址. . . . . . . . . . . . . : 3A-D5-7A-DF-96-CF<br>   DHCP 已启用 . . . . . . . . . . . : 是<br>   自动配置已启用. . . . . . . . . . : 是</p>
-<p>以太网适配器 VMware Network Adapter VMnet1:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1<br>   物理地址. . . . . . . . . . . . . : 00-50-56-C0-00-01<br>   DHCP 已启用 . . . . . . . . . . . : 否<br>   自动配置已启用. . . . . . . . . . : 是<br>   本地链接 IPv6 地址. . . . . . . . : fe80::626:622f:199c:64ca%16(首选)<br>   IPv4 地址 . . . . . . . . . . . . : 192.168.254.1(首选)<br>   子网掩码  . . . . . . . . . . . . : 255.255.255.0<br>   默认网关. . . . . . . . . . . . . :<br>   DHCPv6 IAID . . . . . . . . . . . : 687886422<br>   DHCPv6 客户端 DUID  . . . . . . . : 00-01-00-01-2D-24-52-F5-38-D5-7A-DF-96-CF<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已启用</p>
-<p>以太网适配器 VMware Network Adapter VMnet8:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8<br>   物理地址. . . . . . . . . . . . . : 00-50-56-C0-00-08<br>   DHCP 已启用 . . . . . . . . . . . : 否<br>   自动配置已启用. . . . . . . . . . : 是<br>   本地链接 IPv6 地址. . . . . . . . : fe80::70e1:361:619d:4b55%6(首选)<br>   IPv4 地址 . . . . . . . . . . . . : 192.168.10.1(首选)<br>   子网掩码  . . . . . . . . . . . . : 255.255.255.0<br>   默认网关. . . . . . . . . . . . . :<br>   DHCPv6 IAID . . . . . . . . . . . : 704663638<br>   DHCPv6 客户端 DUID  . . . . . . . : 00-01-00-01-2D-24-52-F5-38-D5-7A-DF-96-CF<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已启用</p>
-<p>无线局域网适配器 WLAN:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter<br>   物理地址. . . . . . . . . . . . . : 38-D5-7A-DF-96-CF<br>   DHCP 已启用 . . . . . . . . . . . : 是<br>   自动配置已启用. . . . . . . . . . : 是<br>   本地链接 IPv6 地址. . . . . . . . : fe80::b89b:4764:f211:8cc2%14(首选)<br>   IPv4 地址 . . . . . . . . . . . . : 10.21.22.194(首选)<br>   子网掩码  . . . . . . . . . . . . : 255.255.0.0<br>   获得租约的时间  . . . . . . . . . : 2024年10月29日 1:28:48<br>   租约过期的时间  . . . . . . . . . : 2024年10月30日 19:43:56<br>   默认网关. . . . . . . . . . . . . : 10.21.0.1<br>   DHCP 服务器 . . . . . . . . . . . : 10.21.0.1<br>   DHCPv6 IAID . . . . . . . . . . . : 121165178<br>   DHCPv6 客户端 DUID  . . . . . . . : 00-01-00-01-2D-24-52-F5-38-D5-7A-DF-96-CF<br>   DNS 服务器  . . . . . . . . . . . : 10.23.0.10<br>                                       10.23.0.11<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已启用</p>
-<p>以太网适配器 蓝牙网络连接:</p>
-<p>   媒体状态  . . . . . . . . . . . . : 媒体已断开连接<br>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Bluetooth Device (Personal Area Network)<br>   物理地址. . . . . . . . . . . . . : 38-D5-7A-DF-96-D0<br>   DHCP 已启用 . . . . . . . . . . . : 是<br>   自动配置已启用. . . . . . . . . . : 是</p>
-<p>隧道适配器 Teredo Tunneling Pseudo-Interface:</p>
-<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   描述. . . . . . . . . . . . . . . : Microsoft Teredo Tunneling Adapter<br>   物理地址. . . . . . . . . . . . . : 00-00-00-00-00-00-00-E0<br>   DHCP 已启用 . . . . . . . . . . . : 否<br>   自动配置已启用. . . . . . . . . . : 是<br>   IPv6 地址 . . . . . . . . . . . . : 2001:0:2851:b9f0:303b:c515:871f:1334(首选)<br>   本地链接 IPv6 地址. . . . . . . . : fe80::303b:c515:871f:1334%15(首选)<br>   默认网关. . . . . . . . . . . . . :<br>   DHCPv6 IAID . . . . . . . . . . . : 234881024<br>   DHCPv6 客户端 DUID  . . . . . . . : 00-01-00-01-2D-24-52-F5-38-D5-7A-DF-96-CF<br>   TCPIP 上的 NetBIOS  . . . . . . . : 已禁用</p>
+<h4 id="arp"><a href="#arp" class="headerlink" title="arp"></a>arp</h4><p>arp -a<br>查看arp缓存表：显示该计算机所有网卡每个网卡通信过的设备的IP地址和MAC地址的对应关系<br>arp -a IP地址<br>查看特定IP地址的ARP缓存项<br>arp -s IP地址 MAC地址<br>人工向ARP缓存中添加静态ARP条目，将某IP地址和特定MAC地址绑定，确保通信时始终使用该MAC地址。作用一：防止ARP欺骗攻击 作用二：一些固定IP与MAC地址对应关系的场景<br>arp -d IP地址 人工删除ARP缓存表中的指定条目<br>arp -d * 删除ARP缓存表中的所有条目<br>arp &#x2F;? 查看arp命令的帮助信息</p>
 
 
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/alist/">alist - 拼凑更加实用的网盘</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/LLM/">LLM</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/alist/">alist - 拼凑更加实用的网盘</a></div></section></div>
 
 
 

@@ -29,12 +29,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/07/js-logo.png">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411291531747.png">
-<meta property="og:image" content="https://immortal3180.github.io/images/pic_bulboff.gif">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411291550793.png">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411291555849.png">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411291609216.png">
 <meta property="article:published_time" content="2024-11-29T06:44:14.000Z">
-<meta property="article:modified_time" content="2024-11-29T08:16:30.324Z">
+<meta property="article:modified_time" content="2024-11-29T10:45:12.588Z">
 <meta property="article:author" content="霜晴">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2013/07/js-logo.png">
@@ -85,7 +84,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-29T06:44:14.000Z">2024-11-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-29T08:16:30.324Z">2024-11-29</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-29T06:44:14.000Z">2024-11-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-29T10:45:12.588Z">2024-11-29</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -140,7 +139,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本例会动态地改变 HTML &lt;image&gt; 的来源（src）：</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">changeImage</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    element=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;myimage&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> (element.<span class="property">src</span>.<span class="title function_">match</span>(<span class="string">&quot;bulbon&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        element.<span class="property">src</span>=<span class="string">&quot;/images/pic_bulboff.gif&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        element.<span class="property">src</span>=<span class="string">&quot;/images/pic_bulbon.gif&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">&quot;myimage&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;changeImage()&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/images/pic_bulboff.gif&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">height</span>=<span class="string">&quot;180&quot;</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p><em>以上实例中代码</em> <strong>element.src.match(“bulbon”)</strong> <em>的作用意思是：检索</em> <strong><img class="lazy" id="myimage" onclick="changeImage()" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/pic_bulboff.gif" width="100" height="180"></strong> <em>里面 src 属性的值有没有包含</em> <strong>bulbon</strong> <em>这个字符串，如果存在字符串</em> <em><em>bulbon，图片 <strong>src</strong> <em>更新为</em> <strong>bulboff.gif</strong></em>，若匹配不到</em> <strong>bulbon</strong> <em>字符串，</em><strong>src</strong> <em>则更新为</em> <strong>bulbon.gif</strong>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*以上实例中代码* **element.src.match(&quot;bulbon&quot;)** *的作用意思是：检索* **&lt;img id=&quot;myimage&quot; onclick=&quot;changeImage()&quot; src=&quot;/images/pic_bulboff.gif&quot; width=&quot;100&quot; height=&quot;180&quot;&gt;** *里面 src 属性的值有没有包含* **bulbon** *这个字符串，如果存在字符串* **bulbon，图片 **src** *更新为* **bulboff.gif***，若匹配不到* **bulbon** *字符串，***src** *则更新为* **bulbon.gif**.</span><br></pre></td></tr></table></figure>
+
 <p>JavaScript 能够改变任意 HTML 元素的大多数属性，而不仅仅是图片。</p>
 </blockquote>
 <p>5.JS改变文字颜色</p>
@@ -156,8 +156,7 @@
 
 <hr>
 <h4 id="JavaScript-用法"><a href="#JavaScript-用法" class="headerlink" title="JavaScript 用法"></a>JavaScript 用法</h4><blockquote>
-<p>HTML 中的 Javascript 脚本代码必须位于 <strong><script></strong> 与 <strong></script></strong> 标签之间。</p>
-<p>Javascript 脚本代码可被放置在 HTML 页面的 <strong><body></strong> 和 <strong><head></strong> 部分中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML 中的 Javascript 脚本代码必须位于 **&lt;script&gt;** 与 **&lt;/script&gt;** 标签之间。</span><br><span class="line"></span><br><span class="line">Javascript 脚本代码可被放置在 HTML 页面的 **&lt;body&gt;** 和 **&lt;head&gt;** 部分中。</span><br></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!- 如需在 HTML 页面中插入 JavaScript，请使用 <span class="tag">&lt;<span class="name">script</span>&gt;</span> 标签。-&gt;</span><br></pre></td></tr></table></figure>
 
@@ -167,7 +166,8 @@
 <p>如需使用外部文件，请在 <script> 标签的 "src" 属性中设置该 .js 文件：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;myScript.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>你可以将脚本放置于 <head> 或者 <body>中，放在 <script> 标签中的脚本与外部引用的脚本运行效果完全一致。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你可以将脚本放置于 &lt;head&gt; 或者 &lt;body&gt;中，放在 &lt;script&gt; 标签中的脚本与外部引用的脚本运行效果完全一致。</span><br></pre></td></tr></table></figure>
+
 <p>myScript.js 文件代码如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;demo&quot;</span>).<span class="property">innerHTML</span>=<span class="string">&quot;我的第一个 JavaScript 函数&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -196,9 +196,7 @@
 <p>效果：文字 "段落已修改" 替代了 文字 "我的第一个段落"</p>
 </blockquote>
 <blockquote>
-<p>以上 JavaScript 语句（在 <script> 标签中）可以在 web 浏览器中执行：</p>
-<p><strong>document.getElementById("demo")</strong> 是使用 id 属性来查找 HTML 元素的 JavaScript 代码 。</p>
-<p><strong>innerHTML = "段落已修改。"</strong> 是用于修改元素的 HTML 内容(innerHTML)的 JavaScript 代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">以上 JavaScript 语句（在 &lt;script&gt; 标签中）可以在 web 浏览器中执行：</span><br><span class="line"></span><br><span class="line">**document.getElementById(&quot;demo&quot;)** 是使用 id 属性来查找 HTML 元素的 JavaScript 代码 。</span><br><span class="line"></span><br><span class="line">**innerHTML = &quot;段落已修改。&quot;** 是用于修改元素的 HTML 内容(innerHTML)的 JavaScript 代码。</span><br></pre></td></tr></table></figure>
 </blockquote>
 <hr>
 <h4 id="写到控制台"><a href="#写到控制台" class="headerlink" title="写到控制台"></a>写到控制台</h4><p>如果您的浏览器支持调试，你可以使用 <strong>console.log()</strong> 方法在浏览器中显示 JavaScript 值。</p>

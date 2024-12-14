@@ -17,25 +17,30 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>装机常见故障排除教程 - 霜晴避风港</title>
+  <title>Wireshark - 霜晴避风港</title>
 
   
-    <meta name="description" content="装机常见故障排除教程问题：装机点不亮，如何解决？（默认已经组装好机子） 首先要了解电脑开机的过程，只有了解开机过程才能知道故障原因，只有了解故障原因才能真正解决故障。 提示：如果有关键词看不懂意思，浏览器&#x2F;AI 输入关键词(附带一些相关信息以辅助)搜索 补全相关知识 +5Vsb：电脑的电源只要在通电状态下，就算没开机，也会有待机电路在工作，输出+5Vsb(5 Volt Standby,5">
+    <meta name="description" content="Wireshark 相关 下载软件Wireshark 官网下载：Wireshark · Download Npcap 官网下载：Npcap: Windows Packet Capture Library &amp; Driver  初次使用实践：抓包分析TCP首部1.打开Wireshark(1) 打开Wireshark，所见即所得  (2) 右键你正在使用的网口(比如WLAN)，单击”Start">
 <meta property="og:type" content="article">
-<meta property="og:title" content="装机常见故障排除教程">
-<meta property="og:url" content="https://immortal3180.github.io/PC-building-solution/index.html">
+<meta property="og:title" content="Wireshark">
+<meta property="og:url" content="https://immortal3180.github.io/Wireshark/index.html">
 <meta property="og:site_name" content="霜晴避风港">
-<meta property="og:description" content="装机常见故障排除教程问题：装机点不亮，如何解决？（默认已经组装好机子） 首先要了解电脑开机的过程，只有了解开机过程才能知道故障原因，只有了解故障原因才能真正解决故障。 提示：如果有关键词看不懂意思，浏览器&#x2F;AI 输入关键词(附带一些相关信息以辅助)搜索 补全相关知识 +5Vsb：电脑的电源只要在通电状态下，就算没开机，也会有待机电路在工作，输出+5Vsb(5 Volt Standby,5">
+<meta property="og:description" content="Wireshark 相关 下载软件Wireshark 官网下载：Wireshark · Download Npcap 官网下载：Npcap: Windows Packet Capture Library &amp; Driver  初次使用实践：抓包分析TCP首部1.打开Wireshark(1) 打开Wireshark，所见即所得  (2) 右键你正在使用的网口(比如WLAN)，单击”Start">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-15T01:20:28.000Z">
-<meta property="article:modified_time" content="2024-11-17T09:56:20.532Z">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213091018.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213090958.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213084812.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213085713.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213090300.png">
+<meta property="article:published_time" content="2024-12-14T14:34:50.000Z">
+<meta property="article:modified_time" content="2024-12-14T14:36:06.476Z">
 <meta property="article:author" content="霜晴">
-<meta property="article:tag" content="装机">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213091018.png">
   
   
   
-  <meta name="keywords" content="装机">
+  
 
   <!-- feed -->
   
@@ -78,37 +83,42 @@
 <div class="article banner top">
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
-<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%A3%85%E6%9C%BA/">装机</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-15T01:20:28.000Z">2024-11-15</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-17T09:56:20.532Z">2024-11-17</time></span></div></div></div>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-14T14:34:50.000Z">2024-12-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-14T14:36:06.476Z">2024-12-14</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>装机常见故障排除教程</span></h1>
+        <h1 class="text title"><span>Wireshark</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><h5 id="装机常见故障排除教程"><a href="#装机常见故障排除教程" class="headerlink" title="装机常见故障排除教程"></a>装机常见故障排除教程</h5><p>问题：装机点不亮，如何解决？（默认已经组装好机子）</p>
-<p>首先要了解电脑开机的过程，只有了解开机过程才能知道故障原因，只有了解故障原因才能真正解决故障。</p>
-<p>提示：如果有<strong>关键词</strong>看不懂意思，浏览器&#x2F;AI 输入关键词(附带一些相关信息以辅助)搜索 补全相关知识</p>
-<p><strong>+5Vsb</strong>：电脑的电源只要在通电状态下，就算没开机，也会有待机电路在工作，输出+5Vsb(5 Volt Standby,5伏特待机电源)电压，这个功能是给带开机功能的键盘、网卡等用的。因此有的电脑USB接口关机也是有电的。</p>
-<p><strong>PS_ON</strong>：管开机的是电源24pin接口的一根。这个针脚在关机状态下是高电平，简单来说也是有电的。</p>
-<p>当你按下开机按钮的时候，会把这个高电平接地，变成低电平。这就是电源开启的信号。</p>
-<p>电源检测到低电平就会从待机电路切换到工作电路，开始给所有硬件上电。</p>
-<p>主板上电后，首先会产生时钟信号给所有芯片(这一部分一般都是没问题的)。然后芯片组或者其他芯片发出一个复位信号给CPU。CPU复位，电源稳定后启动BIOS，BIOS开始自检。</p>
-<p>首先如果CPU错误，BIOS根本不会启动。(检查CPU，但是一般都不会有问题)</p>
-<p>自检程序启动后会载入一些到内存里。（首先检查内存）</p>
-<p>如果内存错误BIOS无法载入就会卡在黑屏，但是这个时候所有的硬件已经收到供电启动了，于是就会变成常见的显示器上没图像，但是主板灯、键盘灯什么的都亮</p>
-<p>内存检测成功后，电脑开始检测显卡、硬盘，以及CPU风扇、io设备等其他项目。这些如果都通过了，或者主要部分通过了，就会在屏幕上显示主板的logo，或者一个Ami bios 的图标和硬件信息。这时候键盘上的三个灯一般会闪烁一次。</p>
-<p>而如果显卡没通过，有的主板可以正常启动，有的主板则会报错，这个不好判断。一般来说家用级主板都会报错，而服务器主板和某些发烧级主板则可以正常启动。</p>
-<p>自检通过后，bios会在硬盘寻找系统引导，简单地说就是找到系统，然后启动系统，并把硬件的操控权移交给系统。</p>
-<p>以上就是电脑启动的大致过程。</p>
+  </div><article class="md-text content"><h4 id="Wireshark-相关"><a href="#Wireshark-相关" class="headerlink" title="Wireshark 相关"></a>Wireshark 相关</h4><hr>
+<h5 id="下载软件"><a href="#下载软件" class="headerlink" title="下载软件"></a>下载软件</h5><p>Wireshark 官网下载：<a target="_blank" rel="noopener" href="https://www.wireshark.org/download.html">Wireshark · Download</a></p>
+<p>Npcap 官网下载：<a target="_blank" rel="noopener" href="https://npcap.com/#download">Npcap: Windows Packet Capture Library &amp; Driver</a></p>
+<hr>
+<h5 id="初次使用"><a href="#初次使用" class="headerlink" title="初次使用"></a>初次使用</h5><h5 id="实践：抓包分析TCP首部"><a href="#实践：抓包分析TCP首部" class="headerlink" title="实践：抓包分析TCP首部"></a>实践：抓包分析TCP首部</h5><h6 id="1-打开Wireshark"><a href="#1-打开Wireshark" class="headerlink" title="1.打开Wireshark"></a>1.打开Wireshark</h6><p>(1) 打开Wireshark，所见即所得</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213091018.png"></p>
+<p>(2) 右键你正在使用的网口(比如WLAN)，单击”Start Capture&#x2F;开始捕获”</p>
+<h6 id="2-访问目标网站得知其ip"><a href="#2-访问目标网站得知其ip" class="headerlink" title="2.访问目标网站得知其ip"></a>2.访问目标网站得知其ip</h6><p>(1) win+R 打开cmd</p>
+<p>(2) ping <a target="_blank" rel="noopener" href="http://www.baidu.com,得知其ip为/">www.baidu.com，得知其ip为</a> 39.156.66.14；</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213090958.png"></p>
+<h6 id="3-使用Wireshark捕获TCP报文"><a href="#3-使用Wireshark捕获TCP报文" class="headerlink" title="3.使用Wireshark捕获TCP报文"></a>3.使用Wireshark捕获TCP报文</h6><p>(1) 打开浏览器，URL栏输入<a target="_blank" rel="noopener" href="http://www.baidu.com,回车访问/">www.baidu.com，回车访问</a></p>
+<p>(2) 回到Wireshark，命令行中输入指令 ip.addr &#x3D;&#x3D; 39.156.66.14，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 从该网口捕获的所有报文里筛选只与 ip 39.156.66.14 有关的报文</span><br><span class="line">ip.addr == 39.156.66.14</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-分析TCP数据包"><a href="#4-分析TCP数据包" class="headerlink" title="4.分析TCP数据包"></a>4.分析TCP数据包</h6><p>(1) 点中 SYN seq&#x3D;0 的数据包，这类数据包只有 TCP 的选项，没有数据，是计算机通信前和服务器之间建立会话协商通信参数的数据包。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213084812.png"></p>
+<p>(2) 点击传输数据的数据包，可以看到传输层首部和数据。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213085713.png"></p>
+<p>如下图所示，可以看到传输层首部对应的字段。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20241213090300.png"></p>
 
 
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/IDA-Pro/">Assembly-Language</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/PPT-master/">PPT-master</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/JavaScript/">JavaScript</a></div></section></div>
 
 
 
@@ -122,7 +132,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A3%85%E6%9C%BA%E5%B8%B8%E8%A7%81%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%95%99%E7%A8%8B"><span class="toc-text">装机常见故障排除教程</span></a></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Wireshark-%E7%9B%B8%E5%85%B3"><span class="toc-text">Wireshark 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="toc-text">下载软件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%9D%E6%AC%A1%E4%BD%BF%E7%94%A8"><span class="toc-text">初次使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5%EF%BC%9A%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90TCP%E9%A6%96%E9%83%A8"><span class="toc-text">实践：抓包分析TCP首部</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E6%89%93%E5%BC%80Wireshark"><span class="toc-text">1.打开Wireshark</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E8%AE%BF%E9%97%AE%E7%9B%AE%E6%A0%87%E7%BD%91%E7%AB%99%E5%BE%97%E7%9F%A5%E5%85%B6ip"><span class="toc-text">2.访问目标网站得知其ip</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8Wireshark%E6%8D%95%E8%8E%B7TCP%E6%8A%A5%E6%96%87"><span class="toc-text">3.使用Wireshark捕获TCP报文</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-%E5%88%86%E6%9E%90TCP%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-text">4.分析TCP数据包</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel blur'>

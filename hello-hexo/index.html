@@ -28,8 +28,8 @@
 <meta property="og:description" content="欢迎来到Hexo!这是一篇关于博客搭建的引导文章.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240322203552.png">
-<meta property="article:published_time" content="2024-02-18T15:49:15.127Z">
-<meta property="article:modified_time" content="2024-12-31T12:06:56.644Z">
+<meta property="article:published_time" content="2025-01-30T21:42:08.266Z">
+<meta property="article:modified_time" content="2025-02-06T10:37:08.073Z">
 <meta property="article:author" content="霜晴">
 <meta property="article:tag" content="博客搭建">
 <meta property="article:tag" content="Hexo">
@@ -69,7 +69,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/Hexo/"><span class="title">Hexo 静态网站搭建过程</span></a><a class="item title" href="/live2d/"><span class="title">live2d</span></a><a class="item title" href="/PicGo/"><span class="title">PicGo+GitHub图床：你的下一个图片召唤器</span></a><a class="item title" href="/RPGMaker-MZ/"><span class="title">RPGMaker-MZ 相关资料收集</span></a><a class="item title" href="/Node-js/"><span class="title">Node.js</span></a><a class="item title" href="/hello-hexo/"><span class="title">Hexo欢迎你(:!</span></a><a class="item title" href="/Word/"><span class="title">Word 使用快捷键</span></a><a class="item title" href="/1-eNSP-topo/"><span class="title">记录一次eNSP拓扑</span></a><a class="item title" href="/eNSP/"><span class="title">华为eNSP资源及安装教程</span></a><a class="item title" href="/html5up/"><span class="title">html5up</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/Hexo/"><span class="title">Hexo 静态网站搭建过程</span></a><a class="item title" href="/hello-hexo/"><span class="title">Hexo欢迎你(:!</span></a><a class="item title" href="/live2d/"><span class="title">live2d</span></a><a class="item title" href="/PicGo/"><span class="title">PicGo+GitHub图床：你的下一个图片召唤器</span></a><a class="item title" href="/RPGMaker-MZ/"><span class="title">RPGMaker-MZ 相关资料收集</span></a><a class="item title" href="/Node-js/"><span class="title">Node.js</span></a><a class="item title" href="/Word/"><span class="title">Word 使用快捷键</span></a><a class="item title" href="/1-eNSP-topo/"><span class="title">记录一次eNSP拓扑</span></a><a class="item title" href="/eNSP/"><span class="title">华为eNSP资源及安装教程</span></a><a class="item title" href="/html5up/"><span class="title">html5up</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -82,7 +82,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Hexo/">Hexo</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-02-18T15:49:15.127Z">2024-02-18</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-31T12:06:56.644Z">2024-12-31</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-01-30T21:42:08.266Z">2025-01-31</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-06T10:37:08.073Z">2025-02-06</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -151,7 +151,7 @@ layout: <span class="token boolean">false</span>
 <p>在C盘——用户——你的主机名文件夹中找到.ssh文件夹；（此前配置SSH时会生成该文件夹）<br>在.ssh文件夹中新建文件 config,不带后缀（可以新建文本文档，去掉.txt后缀）<br>使用notepad++（或其他方式）打开config文件，输入以下内容，保存后即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User YourEmail（你的邮箱）</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
 
-<h3 id="Hexo-d-时显示-CRLF-LF-Warning-问题、"><a href="#Hexo-d-时显示-CRLF-LF-Warning-问题、" class="headerlink" title="Hexo d 时显示 CRLF LF Warning 问题、"></a>Hexo d 时显示 CRLF LF Warning 问题、</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br><span class="line"><span class="comment"># Git 配置命令：全局 自动转换换行符 禁止</span></span><br></pre></td></tr></table></figure>
+<h3 id="Hexo-d-时显示-CRLF-LF-Warning-问题、"><a href="#Hexo-d-时显示-CRLF-LF-Warning-问题、" class="headerlink" title="Hexo d 时显示 CRLF LF Warning 问题、"></a>Hexo d 时显示 CRLF LF Warning 问题、</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Git 全局禁用自动转换换行符</span></span><br><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 
 <hr>
@@ -185,7 +185,7 @@ layout: <span class="token boolean">false</span>
 
 
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/OpenCV/">基于 OpenCV-Python 和 Mediapipe 的手部识别教程</a></div><div class="item" id="next"></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Hexo/">Hexo 静态网站搭建过程</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Node-js/">Node.js</a></div></section></div>
 
 
 

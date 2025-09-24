@@ -56,7 +56,7 @@
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411252108234.png">
 <meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202411252109101.png">
 <meta property="article:published_time" content="2024-03-14T06:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-16T11:21:38.380Z">
+<meta property="article:modified_time" content="2025-09-24T08:32:12.089Z">
 <meta property="article:author" content="霜晴">
 <meta property="article:tag" content="嵌入式">
 <meta property="article:tag" content="ESP32-Cam">
@@ -106,7 +106,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/Linux-Learner/"><span class="title">Linux 基础命令学习</span></a><a class="item title" href="/Java/"><span class="title">Java 入门</span></a><a class="item title" href="/PHP/"><span class="title">PHP 入门</span></a><a class="item title" href="/GeoGebra/"><span class="title">使用 GeoGebra 辅助数学学习</span></a><a class="item title" href="/1Panel/"><span class="title">阿里云服务器搭建1Panel面板</span></a><a class="item title" href="/SQL-Server/"><span class="title">SQL-Server</span></a><a class="item title" href="/Word/"><span class="title">Word 使用快捷键</span></a><a class="item title" href="/CUMCM/"><span class="title">数学建模</span></a><a class="item title" href="/Yuzu/"><span class="title">Yuzu 模拟器合集</span></a><a class="item title" href="/PowerShell7/"><span class="title">更新PowerShell至7.0以适配VSCode Cline</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/ESP32-Cam/"><span class="title">ESP32-Cam 初步使用：网络摄像头示例</span></a><a class="item title" href="/Linux-Learner/"><span class="title">Linux 基础命令学习</span></a><a class="item title" href="/Java/"><span class="title">Java 入门</span></a><a class="item title" href="/PHP/"><span class="title">PHP 入门</span></a><a class="item title" href="/GeoGebra/"><span class="title">使用 GeoGebra 辅助数学学习</span></a><a class="item title" href="/1Panel/"><span class="title">阿里云服务器搭建1Panel面板</span></a><a class="item title" href="/SQL-Server/"><span class="title">SQL-Server</span></a><a class="item title" href="/Word/"><span class="title">Word 使用快捷键</span></a><a class="item title" href="/CUMCM/"><span class="title">数学建模</span></a><a class="item title" href="/Yuzu/"><span class="title">Yuzu 模拟器合集</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -119,7 +119,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-03-14T06:00:00.000Z">2024-03-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-03-16T11:21:38.380Z">2025-03-16</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-03-14T06:00:00.000Z">2024-03-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-24T08:32:12.089Z">2025-09-24</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -133,6 +133,8 @@
   </div><article class="md-text content"><meta name="referrer" content="no-referrer"/>
 
 <p>[TOC]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># ESP32-Cam 初步使用导图</span><br><span class="line">- Arduino 环境准备</span><br><span class="line">  - 下载 Arduino</span><br><span class="line">  - 安装 Arduino</span><br><span class="line">  - 汉化设置</span><br><span class="line">- ESP32-Cam 初始化与示例</span><br><span class="line">  - 安装 ESP32 开发板包并选择板卡</span><br><span class="line">  - 示例：CameraWebServer</span><br><span class="line">  - 修改示例代码并编译上传</span><br><span class="line">  - 通过串口获取设备 IP</span><br><span class="line">  - 浏览器访问 Web 控制界面</span><br><span class="line">- 项目保存</span><br><span class="line">  - 保存方式与位置</span><br></pre></td></tr></table></figure>
+
 <p><strong>此片意在教会你如何初步使用ESP32-cam</strong></p>
 <p><strong>阅读本文，你将学会：</strong><br>一. 学会安装Arduino<br>二. 学会使用相关例程</p>
 <hr>

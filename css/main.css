@@ -871,7 +871,7 @@ svg.loading {
   margin: 4px;
 }
 .loading-wrap:after {
-  content: '正在加载';
+  content: '正在加载~';
   color: var(--text-p1);
   display: block;
   font-size: 14px;

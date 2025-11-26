@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 6.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,18 +17,25 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>归档 - 霜晴避风港</title>
+  <title>网络协议分析 - 霜晴避风港</title>
 
   
-    <meta name="description" content="... la ringrazio.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://immortal3180.github.io/archives/2024/04/index.html">
+    <meta name="description" content="网络协议分析RIP v2 抓包与分析 实验环境：eNSP   如图在 R1的 GE0&#x2F;0&#x2F;1 端口上开启 Wireshark 抓包： 先进入R1：关闭该端口，在开启该端口，让 Wireshark 能抓到 RIP Request 和 RIP Response 包。  RIP Request 包：  RIPv2 协议的交互报文，对应的是Frame 57这条 RIPv2 请求包，下面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议分析">
+<meta property="og:url" content="https://immortal3180.github.io/Protocol-Analysis/index.html">
 <meta property="og:site_name" content="霜晴避风港">
-<meta property="og:description" content="... la ringrazio.">
+<meta property="og:description" content="网络协议分析RIP v2 抓包与分析 实验环境：eNSP   如图在 R1的 GE0&#x2F;0&#x2F;1 端口上开启 Wireshark 抓包： 先进入R1：关闭该端口，在开启该端口，让 Wireshark 能抓到 RIP Request 和 RIP Response 包。  RIP Request 包：  RIPv2 协议的交互报文，对应的是Frame 57这条 RIPv2 请求包，下面">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126110700.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126110848.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126113102.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126114337.png">
+<meta property="article:published_time" content="2025-11-26T03:04:57.000Z">
+<meta property="article:modified_time" content="2025-11-26T04:01:57.517Z">
 <meta property="article:author" content="霜晴">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126110700.png">
   
   
   
@@ -59,7 +66,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="undefined" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
@@ -71,21 +78,149 @@
 <nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
 </div>
 <div class="widgets">
+
+
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/Protocol-Analysis/"><span class="title">网络协议分析</span></a><a class="item title" href="/frp/"><span class="title">frp内网穿透 (在部署了1Panel的阿里云服务器上)</span></a><a class="item title" href="/CET-6/"><span class="title">CET-6</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/GNS3/"><span class="title">GNS3</span></a><a class="item title" href="/eNSP/"><span class="title">华为eNSP资源及安装教程</span></a><a class="item title" href="/kali-linux/"><span class="title">kali-linux</span></a><a class="item title" href="/OpenCV/"><span class="title">基于 OpenCV-Python 和 Mediapipe 的手部识别教程</span></a><a class="item title" href="/Cudy/"><span class="title">Cudy TR3000 便携路由器上手体验</span></a><a class="item title" href="/Linux-Learner/"><span class="title">Linux 基础命令学习</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><nav class="post"><a href="/">近期发布</a><a href="/categories">分类</a><a href="/tags">标签</a><a class="active" href="/archives">归档</a><a href="/friends">友链</a></nav></div><div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2025</div><div class="archive-list"><a class='post fs14' href="/Protocol-Analysis/"><time>11-26</time><span>网络协议分析</span></a></div><div class="archive-list"><a class='post fs14' href="/CET-6/"><time>11-24</time><span>CET-6</span></a></div><div class="archive-list"><a class='post fs14' href="/ruijie/"><time>11-22</time><span>锐捷</span></a></div><div class="archive-list"><a class='post fs14' href="/frp/"><time>11-18</time><span>frp内网穿透 (在部署了1Panel的阿里云服务器上)</span></a></div><div class="archive-list"><a class='post fs14' href="/GNS3/"><time>11-15</time><span>GNS3</span></a></div><div class="archive-list"><a class='post fs14' href="/kali-linux/"><time>11-06</time><span>kali-linux</span></a></div><div class="archive-list"><a class='post fs14' href="/Cudy/"><time>10-29</time><span>Cudy TR3000 便携路由器上手体验</span></a></div><div class="archive-list"><a class='post fs14' href="/english-words/"><time>09-25</time><span>english-words</span></a></div><div class="archive-list"><a class='post fs14' href="/history-of-programming-language/"><time>09-25</time><span>了解编程语言发展史</span></a></div><div class="archive-list"><a class='post fs14' href="/talk-to-llm/"><time>09-24</time><span>talk-to-llm</span></a></div><div class="archive-list"><a class='post fs14' href="/try-new-web/"><time>09-24</time><span>试图借助Cursor搭建网站</span></a></div><div class="archive-list"><a class='post fs14' href="/GeoGebra/"><time>09-15</time><span>使用 GeoGebra 辅助数学学习</span></a></div><div class="archive-list"><a class='post fs14' href="/Linux-Learner/"><time>09-15</time><span>Linux 基础命令学习</span></a></div><div class="archive-list"><a class='post fs14' href="/1Panel/"><time>09-11</time><span>阿里云服务器搭建1Panel面板</span></a></div><div class="archive-list"><a class='post fs14' href="/SQL-Server/"><time>09-11</time><span>SQL-Server</span></a></div><div class="archive-list"><a class='post fs14' href="/Java/"><time>09-02</time><span>Java 入门</span></a></div><div class="archive-list"><a class='post fs14' href="/PHP/"><time>09-01</time><span>PHP 入门</span></a></div><div class="archive-list"><a class='post fs14' href="/Embedded/"><time>08-18</time><span>嵌入式暂时的总结</span></a></div><div class="archive-list"><a class='post fs14' href="/flashplayer/"><time>08-18</time><span>flashplayer 使用相关</span></a></div><div class="archive-list"><a class='post fs14' href="/musicca/"><time>08-11</time><span>通过Musicca网站，增强读谱、记谱、演奏乐器的能力</span></a></div><div class="archive-list"><a class='post fs14' href="/Network-proxy-tool/"><time>08-07</time><span>网络代理工具的使用</span></a></div><div class="archive-list"><a class='post fs14' href="/ring-buffer/"><time>07-22</time><span>环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a></div><div class="archive-list"><a class='post fs14' href="/valera/"><time>07-08</time><span>Valera 基于兴趣的新人编曲教程</span></a></div><div class="archive-list"><a class='post fs14' href="/Computer-Network-Security/"><time>06-22</time><span>计算机网络安全-复习题目</span></a></div><div class="archive-list"><a class='post fs14' href="/ANO-LX-FC-2/"><time>05-22</time><span>匿名凌霄飞控(TM4C)源码分析(2)-拓展</span></a></div><div class="archive-list"><a class='post fs14' href="/ANO-LX-FC/"><time>05-21</time><span>匿名凌霄飞控(TM4C)源码分析(1)-过程</span></a></div><div class="archive-list"><a class='post fs14' href="/PowerShell7/"><time>05-16</time><span>更新PowerShell至7.0以适配VSCode Cline</span></a></div><div class="archive-list"><a class='post fs14' href="/CUMCM/"><time>05-10</time><span>数学建模</span></a></div><div class="archive-list"><a class='post fs14' href="/Matlab/"><time>05-08</time><span>Matlab 相关</span></a></div><div class="archive-list"><a class='post fs14' href="/mbp2015-windows10/"><time>05-03</time><span>Mbp2015 安装 Windows10</span></a></div><div class="archive-list"><a class='post fs14' href="/ni-m32/"><time>05-02</time><span>ni-m32入手流程</span></a></div><div class="archive-list"><a class='post fs14' href="/Drums/"><time>04-19</time><span>认识架子鼓</span></a></div><div class="archive-list"><a class='post fs14' href="/buid-your-own-text-editor/"><time>04-15</time><span>构建您自己的文本编辑器</span></a></div><div class="archive-list"><a class='post fs14' href="/Hugo/"><time>04-05</time><span>Hugo 网站安装与部署</span></a></div><div class="archive-list"><a class='post fs14' href="/Staff/"><time>04-04</time><span>五线谱</span></a></div><div class="archive-list"><a class='post fs14' href="/Principles-of-computer-composition/"><time>04-03</time><span>计算机组成原理相关笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/Arturia-minilab-3/"><time>04-02</time><span>Minilab3入手流程</span></a></div><div class="archive-list"><a class='post fs14' href="/S5700-28C-HI/"><time>03-31</time><span>S5700-28C-HI</span></a></div><div class="archive-list"><a class='post fs14' href="/Linear-algebra/"><time>03-16</time><span>线性代数</span></a></div><div class="archive-list"><a class='post fs14' href="/adigital-electricity/"><time>03-14</time><span>数电</span></a></div><div class="archive-list"><a class='post fs14' href="/mermaid-js/"><time>03-13</time><span>使用 Mermaid.js 画流程图</span></a></div><div class="archive-list"><a class='post fs14' href="/Probability-theory-and-mathematical-statistics/"><time>03-12</time><span>概率论与数理统计</span></a></div><div class="archive-list"><a class='post fs14' href="/VMware/"><time>03-10</time><span>使用VMware</span></a></div><div class="archive-list"><a class='post fs14' href="/Unity-Apk/"><time>03-07</time><span>Unity-Apk</span></a></div><div class="archive-list"><a class='post fs14' href="/Godot/"><time>02-25</time><span>Godot 笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/Hexo/"><time>02-02</time><span>Hexo 静态网站搭建过程</span></a></div></article><article class="" id="archive"><div class='archive-header h4'>2024</div><div class="archive-list"><a class='post fs14' href="/Node-js/"><time>12-22</time><span>Node.js</span></a></div><div class="archive-list"><a class='post fs14' href="/Word/"><time>12-21</time><span>Word 使用快捷键</span></a></div><div class="archive-list"><a class='post fs14' href="/html5up/"><time>12-15</time><span>html5up</span></a></div><div class="archive-list"><a class='post fs14' href="/Wireshark/"><time>12-14</time><span>Wireshark</span></a></div><div class="archive-list"><a class='post fs14' href="/Music_Arrangement/"><time>12-01</time><span>初步接触 FL Studio</span></a></div><div class="archive-list"><a class='post fs14' href="/JavaScript/"><time>11-29</time><span>JavaScript</span></a></div><div class="archive-list"><a class='post fs14' href="/RPGMaker-MZ/"><time>11-24</time><span>RPGMaker-MZ 相关资料收集</span></a></div><div class="archive-list"><a class='post fs14' href="/1063-6g/"><time>11-21</time><span>戴尔1060-3g显卡 刷bios成6g显存</span></a></div><div class="archive-list"><a class='post fs14' href="/PC-building-solution/"><time>11-15</time><span>装机常见故障排除教程</span></a></div><div class="archive-list"><a class='post fs14' href="/PPT-master/"><time>11-06</time><span>PPT-master</span></a></div><div class="archive-list"><a class='post fs14' href="/LLM/"><time>11-01</time><span>LLM</span></a></div><div class="archive-list"><a class='post fs14' href="/Networking-commands/"><time>10-29</time><span>Networking-commands</span></a></div><div class="archive-list"><a class='post fs14' href="/alist/"><time>10-28</time><span>alist - 拼凑更加实用的网盘</span></a></div><div class="archive-list"><a class='post fs14' href="/music-theory/"><time>10-26</time><span>乐理</span></a></div><div class="archive-list"><a class='post fs14' href="/eNSP-learn/"><time>09-23</time><span>eNSP-learn</span></a></div><div class="archive-list"><a class='post fs14' href="/Net/"><time>09-23</time><span>Net</span></a></div><div class="archive-list"><a class='post fs14' href="/Web-Development/"><time>09-15</time><span>前端知识积累</span></a></div><div class="archive-list"><a class='post fs14' href="/Windows-Solution/"><time>09-15</time><span>禁用win10自动更新/关闭Windows Denfender/windows缺少必要运行库的解决方法</span></a></div><div class="archive-list"><a class='post fs14' href="/NCRE3-Embedded/"><time>09-15</time><span>三级嵌入式笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/MMD/"><time>09-13</time><span>MMD</span></a></div><div class="archive-list"><a class='post fs14' href="/git/"><time>09-11</time><span>git</span></a></div><div class="archive-list"><a class='post fs14' href="/Android-Studio/"><time>09-11</time><span>Android-Studio</span></a></div><div class="archive-list"><a class='post fs14' href="/live2d/"><time>09-06</time><span>live2d</span></a></div><div class="archive-list"><a class='post fs14' href="/STM32/"><time>09-04</time><span>STM32 产品资料</span></a></div><div class="archive-list"><a class='post fs14' href="/SQL/"><time>09-04</time><span>数据库系统概论笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/OpenCV-Python/"><time>08-26</time><span>OpenCV-Python 文档汉化</span></a></div><div class="archive-list"><a class='post fs14' href="/Python/"><time>08-26</time><span>Python</span></a></div><div class="archive-list"><a class='post fs14' href="/learn-mediapipe/"><time>08-25</time><span>learn-mediapipe</span></a></div><div class="archive-list"><a class='post fs14' href="/glue-and-tape/"><time>08-20</time><span>胶和胶带-当你想把物品粘合起来</span></a></div><div class="archive-list"><a class='post fs14' href="/Android/"><time>08-06</time><span>Android 手机研究</span></a></div><div class="archive-list"><a class='post fs14' href="/ffmpeg/"><time>07-16</time><span>ffmpeg 下载及安装</span></a></div><div class="archive-list"><a class='post fs14' href="/k210/"><time>07-05</time><span>CanMV k210/k230 相关资料</span></a></div><div class="archive-list"><a class='post fs14' href="/vocaloid/"><time>06-24</time><span>vocaloid</span></a></div><div class="archive-list"><a class='post fs14' href="/Discrete-mathematics/"><time>06-23</time><span>离散数学笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/Ros2/"><time>06-11</time><span>Ros2相关文档</span></a></div><div class="archive-list"><a class='post fs14' href="/Storage-Devices/"><time>06-01</time><span>一些存储的不严谨测试记录</span></a></div><div class="archive-list"><a class='post fs14' href="/ruankao-intermediate-network/"><time>05-15</time><span>软考中级网工</span></a></div><div class="archive-list"><a class='post fs14' href="/Tools/"><time>04-22</time><span>霜晴的工具箱</span></a></div><div class="archive-list"><a class='post fs14' href="/eNSP/"><time>04-22</time><span>华为eNSP资源及安装教程</span></a></div><div class="archive-list"><a class='post fs14' href="/How-To-Search/"><time>04-15</time><span>信息化时代，如何提高你的搜索能力</span></a></div><div class="archive-list"><a class='post fs14' href="/Ubuntu-22-04/"><time>04-14</time><span>树莓派 Ubuntu 22.04 配置记录</span></a></div><div class="archive-list"><a class='post fs14' href="/Disk/"><time>04-13</time><span>Windows 磁盘分区</span></a></div><div class="archive-list"><a class='post fs14' href="/keil-setup-fast/"><time>04-13</time><span>Keil+CubeMX 快速安装</span></a></div><div class="archive-list"><a class='post fs14' href="/Datang-Cup/"><time>04-09</time><span>残缺的大唐杯相关知识</span></a></div><div class="archive-list"><a class='post fs14' href="/Yuzu/"><time>04-03</time><span>Yuzu 模拟器合集</span></a></div><div class="archive-list"><a class='post fs14' href="/Win-activation/"><time>04-02</time><span>Win10/11专业版激活</span></a></div><div class="archive-list"><a class='post fs14' href="/pyinstaller/"><time>03-29</time><span>Pyinstaller 打包教程</span></a></div><div class="archive-list"><a class='post fs14' href="/Netlify/"><time>03-27</time><span>Netlify使用</span></a></div><div class="archive-list"><a class='post fs14' href="/Data-structure/"><time>03-25</time><span>数据结构笔记</span></a></div><div class="archive-list"><a class='post fs14' href="/brush-NCRE3/"><time>03-23</time><span>NCRE3网络大题</span></a></div><div class="archive-list"><a class='post fs14' href="/Xshell-7/"><time>03-23</time><span>Xshell 7 下载及安装</span></a></div><div class="archive-list"><a class='post fs14' href="/PicGo/"><time>03-21</time><span>PicGo+GitHub图床：你的下一个图片召唤器</span></a></div><div class="archive-list"><a class='post fs14' href="/suffix/"><time>03-21</time><span>文件后缀相关知识大全</span></a></div><div class="archive-list"><a class='post fs14' href="/Try-New/"><time>03-18</time><span>实验性页面</span></a></div><div class="archive-list"><a class='post fs14' href="/OpenMV/"><time>03-15</time><span>OpenMV</span></a></div><div class="archive-list"><a class='post fs14' href="/ESP32-Cam/"><time>03-14</time><span>ESP32-Cam 初步使用：网络摄像头示例</span></a></div><div class="archive-list"><a class='post fs14' href="/NCRE-3/"><time>03-13</time><span>计算机三级网络技术考过指南</span></a></div><div class="archive-list"><a class='post fs14' href="/NCRE3-Net/"><time>02-25</time><span>计算机三级-题型</span></a></div><div class="archive-list"><a class='post fs14' href="/OpenCV/"><time>02-19</time><span>基于 OpenCV-Python 和 Mediapipe 的手部识别教程</span></a></div><div class="archive-list"><a class='post fs14' href="/hello-hexo/"><time>02-15</time><span>Hexo欢迎你(:!</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-11-26T03:04:57.000Z">2025-11-26</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-11-26T04:01:57.517Z">2025-11-26</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>网络协议分析</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h3 id="网络协议分析"><a href="#网络协议分析" class="headerlink" title="网络协议分析"></a>网络协议分析</h3><h4 id="RIP-v2-抓包与分析"><a href="#RIP-v2-抓包与分析" class="headerlink" title="RIP v2 抓包与分析"></a>RIP v2 抓包与分析</h4><blockquote>
+<p>实验环境：eNSP</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126110700.png"></p>
+<p>如图在 R1的 GE0&#x2F;0&#x2F;1 端口上开启 Wireshark 抓包：</p>
+<p>先进入R1：关闭该端口，在开启该端口，让 Wireshark 能抓到 RIP Request 和 RIP Response 包。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126110848.png"></p>
+<p>RIP Request 包：</p>
+<blockquote>
+<p><strong>RIPv2</strong> <strong>协议的交互报文</strong>，对应的是Frame 57这条 RIPv2 请求包，下面从<strong>报文类型、协议字段、交互逻辑</strong>三方面分析：</p>
+<p><strong>一、报文基本信息（<strong><strong>Frame 57</strong></strong>）</strong></p>
+<ul>
+<li><p><strong>报文类型</strong>：RIPv2 的Request（请求包）</p>
+</li>
+<li><p><strong>传输层</strong>：基于 UDP 协议，端口号固定为520（RIP 协议的标准端口）</p>
+</li>
+<li><p><strong>源</strong> <strong>&#x2F;</strong> <strong>目的</strong> <strong>IP</strong>：</p>
+</li>
+<li><ul>
+<li>源 IP：2.2.2.1（对应拓扑中 R1 的 G0&#x2F;0&#x2F;1 接口 IP）</li>
+<li>目的 IP：2.2.2.2（对应拓扑中 R2 的 G0&#x2F;0&#x2F;0 接口 IP）</li>
+</ul>
+</li>
+<li><p><strong>报文长度</strong>：66 字节（符合 RIPv2 请求包的典型长度）</p>
+</li>
+</ul>
+<p><strong>二、****RIPv2</strong> <strong>协议字段解析（关键部分）</strong></p>
+<p>从抓包的Routing Information Protocol部分可以看到 RIPv2 的核心字段：</p>
+<ol>
+<li><strong>Command****（命令字段）</strong>：值为1 → 表示这是Request（请求包），用于向对方请求路由信息；</li>
+</ol>
+<p>（若值为2则是Response响应包，用于发送自己的路由表）</p>
+<ol>
+<li><strong>Version****（版本字段）</strong>：值为2 → 明确是 RIPv2 协议（支持无类路由、子网掩码、认证等）；</li>
+<li><strong>Route Entry****（路由条目）</strong>：</li>
+</ol>
+<p>抓包中该请求包<strong>未携带具体路由条目</strong>（属于 “全路由请求”），作用是让对方（R2）返回自己的完整路由表。</p>
+<p><strong>三、交互逻辑（结合拓扑）</strong></p>
+<p>结合拓扑中 R1 和 R2 的 RIP 配置，这条报文的交互场景是：</p>
+<ul>
+<li><strong>发送方</strong>：R1（IP&#x3D;2.2.2.1）主动向 R2（IP&#x3D;2.2.2.2）发送 RIPv2 请求包，请求 R2 的路由信息；</li>
+<li><strong>后续动作</strong>：R2 收到请求后，会回复Response响应包（对应抓包中Frame 58的 RIPv2     Response），将自己的路由表（如 3.3.3.0&#x2F;24）发送给 R1；</li>
+<li><strong>协议意义</strong>：RIPv2 通过 “请求 - 响应” 的方式同步路由，确保 R1 和 R2 的路由表一致，实现动态互通。</li>
+</ul>
+<p><strong>四、补充验证（抓包中其他</strong> <strong>RIP</strong> <strong>报文）</strong></p>
+<p>从抓包列表可以看到：</p>
+<ul>
+<li>Frame     52&#x2F;54&#x2F;59：RIPv2 的Response包（Command&#x3D;2），是设备主动发送的路由更新；</li>
+<li>Frame 51：ARP 报文（用于解析 2.2.2.1 的 MAC 地址），是 RIP 报文传输前的链路层准备。</li>
+</ul>
+<p>这条抓包完整体现了 RIPv2 的<strong>请求交互流程</strong>，符合 RIP 协议的动态路由同步逻辑，和我们之前配置的 R1&#x2F;R2 的 RIP 策略完全匹配。</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126113102.png"></p>
+<p>RIP Response 包：</p>
+<blockquote>
+<p><strong>RIPv2</strong> <strong>的</strong> <strong>Response****（响应包）</strong>（Frame 58），是 RIP 动态路由同步的核心报文之一，下面从<strong>报文属性、协议字段、交互逻辑</strong>三方面分析：</p>
+<p><strong>一、报文基本信息（<strong><strong>Frame 58</strong></strong>）</strong></p>
+<ul>
+<li><p><strong>报文类型</strong>：RIPv2 的Response（响应包）</p>
+</li>
+<li><p><strong>传输层</strong>：基于 UDP 协议，源 &#x2F; 目的端口均为520（RIP 协议的标准端口）</p>
+</li>
+<li><p><strong>源</strong> <strong>&#x2F;</strong> <strong>目的</strong> <strong>IP</strong>：</p>
+</li>
+<li><ul>
+<li>源 IP：2.2.2.2（对应拓扑中 R2 的 G0&#x2F;0&#x2F;0 接口 IP）</li>
+<li>目的 IP：224.0.0.9（RIPv2 的<strong>组播地址</strong>，用于向同一 RIP 域内的设备广播路由更新）</li>
+</ul>
+</li>
+<li><p><strong>报文长度</strong>：66 字节（符合 RIPv2 单条路由响应包的典型长度）</p>
+</li>
+</ul>
+<p><strong>二、****RIPv2</strong> <strong>协议字段解析（关键部分）</strong></p>
+<p>从Routing Information Protocol部分可以看到核心字段：</p>
+<ol>
+<li><strong>Command****（命令字段）</strong>：值为2 → 明确是Response（响应包），用于主动发送 &#x2F; 回复路由信息；</li>
+<li><strong>Version****（版本字段）</strong>：值为2 → 是 RIPv2 协议（支持组播更新、子网掩码等特性）；</li>
+<li><strong>Route Entry****（路由条目）</strong>：</li>
+</ol>
+<p>该响应包携带了 R2 的<strong>直连</strong> <strong>&#x2F;</strong> <strong>学习到的路由</strong>（如拓扑中 R2 的3.3.3.0&#x2F;24网段），通过该字段同步给 R1 及其他 RIP 域内设备。</p>
+<p><strong>三、交互逻辑（结合拓扑）</strong></p>
+<p>结合之前的配置，这条报文的场景是：</p>
+<ul>
+<li><strong>发送方</strong>：R2（IP&#x3D;2.2.2.2）主动向 RIP 组播地址224.0.0.9发送响应包，同步自己的路由表；</li>
+<li><strong>接收方</strong>：同一 RIP 域内的设备（如 R1）会监听224.0.0.9，收到后更新本地路由表（比如 R1 会学习到 R2 的3.3.3.0&#x2F;24网段）；</li>
+<li><strong>协议优势</strong>：RIPv2 用组播（224.0.0.9）替代 RIPv1 的广播，减少了网络中无关设备的报文开销。</li>
+</ul>
+<p><strong>四、抓包中其他关联信息</strong></p>
+<p>从抓包列表能看到：</p>
+<ul>
+<li><strong>Frame 57</strong>：是 R1 向 R2 发送的Request请求包，触发了本次 R2 的Response响应；</li>
+<li><strong>组播特性</strong>：目的 IP224.0.0.9是 RIPv2 的专属组播地址，体现了 RIPv2 相比 v1 的优化（广播→组播，更高效）。</li>
+</ul>
+<p>这条抓包完整呈现了 RIPv2 的<strong>主动路由更新流程</strong>，和我们配置的 R1&#x2F;R2 动态路由互通逻辑完全一致，是 RIP 协议实现全网路由同步的关键交互。</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20251126114337.png"></p>
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/CET-6/">CET-6</a></div></section></div>
+
+
+
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90"><span class="toc-text">网络协议分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RIP-v2-%E6%8A%93%E5%8C%85%E4%B8%8E%E5%88%86%E6%9E%90"><span class="toc-text">RIP v2 抓包与分析</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>

@@ -1,0 +1,573 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>华为eNSP资源及安装教程 - 霜晴避风港</title>
+
+  
+    <meta name="description" content="华为eNSP资源及安装教程前言：eNSP概述eNSP下载链接  ​        eNSP(Enterprise Network Simulation Platform)是一款由华为提供的免费的、可扩展的、图形化的网络设备仿真平台，主要对企业网路由器、交换机、WLAN等设备进行软件仿真，完美呈现真实设备部署实景，支持大型网络模拟，让你有机会在没有真实设备的情况下也能够开展实验测试，学习网络技术。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为eNSP资源及安装教程">
+<meta property="og:url" content="https://immortal3180.github.io/eNSP/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="华为eNSP资源及安装教程前言：eNSP概述eNSP下载链接  ​        eNSP(Enterprise Network Simulation Platform)是一款由华为提供的免费的、可扩展的、图形化的网络设备仿真平台，主要对企业网路由器、交换机、WLAN等设备进行软件仿真，完美呈现真实设备部署实景，支持大型网络模拟，让你有机会在没有真实设备的情况下也能够开展实验测试，学习网络技术。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422163445.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164043.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164136.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164158.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164218.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164548.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211610264.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211612206.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211615485.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211621039.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220921922.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220926373.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220931214.png">
+<meta property="article:published_time" content="2024-04-22T08:26:17.000Z">
+<meta property="article:modified_time" content="2026-01-18T20:19:01.609Z">
+<meta property="article:author" content="霜晴">
+<meta property="article:tag" content="网络技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422163445.png">
+  
+  
+  
+  <meta name="keywords" content="网络技术">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/try-new-web/"><span class="title">试图借助Cursor搭建网站</span></a><a class="item title" href="/valera/"><span class="title">Valera 基于兴趣的新人编曲教程</span></a><a class="item title" href="/vocaloid/"><span class="title">vocaloid</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/talk-to-llm/"><span class="title">talk-to-llm</span></a><a class="item title" href="/suffix/"><span class="title">文件后缀相关知识大全</span></a><a class="item title" href="/talk/"><span class="title">talk</span></a><a class="item title" href="/ring-buffer/"><span class="title">环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a><a class="item title" href="/pyinstaller/"><span class="title">Pyinstaller 打包教程</span></a><a class="item title" href="/ruankao-intermediate-network/"><span class="title">软考中级网工</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/">网络技术</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-22T08:26:17.000Z">2024-04-22</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-18T20:19:01.609Z">2026-01-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>华为eNSP资源及安装教程</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><hr>
+<h2 id="华为eNSP资源及安装教程"><a href="#华为eNSP资源及安装教程" class="headerlink" title="华为eNSP资源及安装教程"></a>华为eNSP资源及安装教程</h2><h4 id="前言：eNSP概述"><a href="#前言：eNSP概述" class="headerlink" title="前言：eNSP概述"></a>前言：eNSP概述</h4><p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1zorIrGO9hw9pVU6kB05vfA?pwd=s73b">eNSP下载链接</a></p>
+<blockquote>
+<p>​        eNSP(Enterprise Network Simulation Platform)是一款由华为提供的免费的、可扩展的、图形化的网络设备仿真平台，主要对企业网路由器、交换机、WLAN等设备进行软件仿真，完美呈现真实设备部署实景，支持大型网络模拟，让你有机会在没有真实设备的情况下也能够开展实验测试，学习网络技术。</p>
+</blockquote>
+<hr>
+<h4 id="安装流程："><a href="#安装流程：" class="headerlink" title="安装流程："></a>安装流程：</h4><h5 id="一、下载提供的安装包，解压"><a href="#一、下载提供的安装包，解压" class="headerlink" title="一、下载提供的安装包，解压"></a>一、下载提供的安装包，解压</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422163445.png"></p>
+<hr>
+<h5 id="二、先安装-WinPcap-https-www-winpcap-org"><a href="#二、先安装-WinPcap-https-www-winpcap-org" class="headerlink" title="二、先安装 WinPcap  https://www.winpcap.org/"></a>二、先安装 WinPcap  <a target="_blank" rel="noopener" href="https://www.winpcap.org/">https://www.winpcap.org/</a></h5><blockquote>
+<p>​      多年来，WinPcap 一直被公认为 Windows 环境中链路层网络访问的行业标准工具，允许应用程序绕过协议栈捕获和传输网络数据包，并包括内核级数据包过滤、网络统计引擎和对远程<a target="_blank" rel="noopener" href="http://www.riverbed.com/us/products/cascade/cascade_shark_overview.php">数据包捕获</a>的支持。</p>
+<p>​      WinPcap 由一个扩展操作系统以提供低级网络访问的驱动程序和一个用于轻松访问低级网络层的库组成。该库还包含著名的 libpcap Unix API 的 Windows 版本。</p>
+<p>​      由于其一系列功能，WinPcap 已成为许多开源和商业网络工具的<a target="_blank" rel="noopener" href="http://www.riverbed.com/us/products/cascade/cascade_shark_overview.php">数据包捕获</a>和过滤引擎，包括协议分析器、网络监视器、网络入侵检测系统、嗅探器、流量生成器和网络测试器。其中一些<a target="_blank" rel="noopener" href="http://www.riverbed.com/">网络工具</a>，如 <a target="_blank" rel="noopener" href="http://www.wireshark.org/">Wireshark</a>、Nmap、Snort 和 ntop，在整个网络社区中广为人知和使用。</p>
+<p>​      Winpcap.org 也是 <a target="_blank" rel="noopener" href="https://www.winpcap.org/">WinDump 的所在地，WinDump</a> 是流行的 tcpdump 工具的 Windows 版本。WinDump 可用于根据各种复杂的规则监视、诊断和保存到磁盘网络流量。—</p>
+</blockquote>
+<hr>
+<h5 id="三、安装-VirtualBox-https-www-virtualbox-org"><a href="#三、安装-VirtualBox-https-www-virtualbox-org" class="headerlink" title="三、安装 VirtualBox  https://www.virtualbox.org/"></a>三、安装 VirtualBox  <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></h5><blockquote>
+<p>​    VirtualBox是一款功能强大的x86和AMD64&#x2F;Intel64虚拟化产品，适合企业和家庭使用。VirtualBox不仅是面向企业客户的功能极其丰富的高性能产品,而且是唯一一个根据GNU通用公共许可证(GPL)第3版条款作为开源软件免费提供的专业解决方案。</p>
+<p>​    目前, VirtualBox可以在Windows, Linux, macOS和Solaris主机上运行,并支持大量的客户操作系统,包括但不限于Windows (NT 4.0, 2000、XP, Server 2003、 Vista7、 8、 Windows 10和Windows 11)、 DOS&#x2F;Windows 3。 x、 Linux(2.4、 2.6、 3.x4.x, 5。x和6.x),Solaris和OpenSolaris, OS&#x2F;2,OpenBSD, NetBSD和FreeBSDVirtualBox正在积极开发，频繁发布，并且拥有不断增长的功能列表，支持客户操作系统和平台。VirtualBox是一个由专门的公司支持的社区努力：每个人都被鼓励贡献，而Oracle确保产品始终符合专业质量标准。</p>
+</blockquote>
+<p> 一直点击下一步直到点击安装，安装的时候会出现一个对话框，提示是否允许程序对你的设备进 行更改，这里选择“<strong>是</strong>”，安装完成。</p>
+<hr>
+<h5 id="四、wireshark-的安装-https-www-wireshark-org"><a href="#四、wireshark-的安装-https-www-wireshark-org" class="headerlink" title="四、wireshark 的安装  https://www.wireshark.org/"></a>四、wireshark 的安装  <a target="_blank" rel="noopener" href="https://www.wireshark.org/">https://www.wireshark.org/</a></h5><p><strong>什么是 Wireshark？</strong></p>
+<blockquote>
+<p>​    Wireshark® 是一个网络协议分析器。它可以让您捕获和 以交互方式浏览计算机网络上运行的流量。它有一个 丰富而强大的功能集，是世界上最受欢迎的工具 类。它可以在大多数计算平台上运行，包括 Windows、macOS、 Linux 和 UNIX。网络专业人员、安全专家、开发人员、 世界各地的教育工作者都经常使用它。它是免费提供的 作为开源，并在 GNU 通用公共许可证下发布 版本 2。</p>
+<p>​    它由全球协议专家团队开发和维护， 这是<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Disruptive_technology">破坏性的一个例子 技术</a>。</p>
+<p>​    Wireshark 曾经被称为 Ethereal®。请参阅下一个问题 有关名称更改的详细信息。如果您仍在使用 Ethereal，那么它是 强烈建议您像 Ethereal 一样升级到 Wireshark 不受支持且存在已知的安全漏洞。</p>
+<p>​    有关更多信息，请参阅<a target="_blank" rel="noopener" href="https://www.wireshark.org/about.html">关于 Wireshark</a> 页面。</p>
+</blockquote>
+<p>安装途中可能会有附带安装 Npcap 和 USBPcap，一起安装了就行。</p>
+<hr>
+<h5 id="五、eNSP-的安装"><a href="#五、eNSP-的安装" class="headerlink" title="五、eNSP 的安装"></a>五、eNSP 的安装</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164043.png"></p>
+<p>一直到这一步，检查其他程序是否安装完成，如果安装完成，则点击“<strong>下一步</strong>“，然后点击安装；</p>
+<p>没有安装完成的 则按照安装教程重新安装一遍。然后静静等待安装完成，安装完成后会出现安装完成的界面</p>
+<hr>
+<h5 id="六、eNSP的注册"><a href="#六、eNSP的注册" class="headerlink" title="六、eNSP的注册"></a>六、eNSP的注册</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164136.png"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164158.png"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164218.png"></p>
+<hr>
+<p><em><strong>至此就可以使用ENSP了~~</strong></em></p>
+<hr>
+<h3 id="N-各种eNSP报错汇集-不一定有解决方案"><a href="#N-各种eNSP报错汇集-不一定有解决方案" class="headerlink" title="N.各种eNSP报错汇集(不一定有解决方案)"></a>N.各种eNSP报错汇集(不一定有解决方案)</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/honoron/articles/19175548">ENSP报错&#x2F;安装错误&#x2F;排错汇总&#x2F;疑难杂症汇总</a></p>
+</blockquote>
+<h5 id="1-启动AR设备失败-错误代码40-41"><a href="#1-启动AR设备失败-错误代码40-41" class="headerlink" title="1.启动AR设备失败(错误代码40&#x2F;41)"></a>1.启动AR设备失败(错误代码40&#x2F;41)</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/eNSP/20240422164548.png"></p>
+<p>解决方法：</p>
+<p>(1) Ctrl+Shift+Esc 打开任务管理器，检查eNSP模拟器所依赖的VirtualBox虚拟网卡是否还存在(大概率不在了才会报错)</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211610264.png"></p>
+<p>打开VirtualBox - <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211612206.png"> - 删除它们</p>
+<p>(2) 进入eNSP安装目录 - vboxserver ;</p>
+<p>删除 AR_Base、WLAN_AC_Base、WLAN_AD_Base、WLAN_AP_Base、WLAN_SAP_Base 这五个文件夹</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211615485.png"></p>
+<p>(3) 回到eNSP，界面右上角菜单-工具-注册设备：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412211621039.png"></p>
+<p>看到注册都是成功的就OK了。</p>
+<h5 id="2-启动PC设备失败-错误代码2"><a href="#2-启动PC设备失败-错误代码2" class="headerlink" title="2.启动PC设备失败(错误代码2)"></a>2.启动PC设备失败(错误代码2)</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220921922.png"></p>
+<p>进入eNSP安装目录 - vboxserver - AR_Base</p>
+<p>找到AR_Base.vbox，用记事本打开；</p>
+<p>CTRL+F 查找”HostOnlyInterface”，这一行包含对应的虚拟网卡；</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220926373.png"></p>
+<p>打开任务管理器，查看Virtual Box虚拟网卡；</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202412220931214.png"></p>
+<p>如果发现前面两者名称对不上，将AR_Base.vbox中”HostOnlyInterface”一栏的网卡名称改为任务管理器中所显示的；</p>
+<p>再重启eNSP，此时应该没有问题了。</p>
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Tools/">霜晴的工具箱</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/How-To-Search/">信息化时代，如何提高你的搜索能力</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BAeNSP%E8%B5%84%E6%BA%90%E5%8F%8A%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="toc-text">华为eNSP资源及安装教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9AeNSP%E6%A6%82%E8%BF%B0"><span class="toc-text">前言：eNSP概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">安装流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E6%8F%90%E4%BE%9B%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%8C%E8%A7%A3%E5%8E%8B"><span class="toc-text">一、下载提供的安装包，解压</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%88%E5%AE%89%E8%A3%85-WinPcap-https-www-winpcap-org"><span class="toc-text">二、先安装 WinPcap  https:&#x2F;&#x2F;www.winpcap.org&#x2F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85-VirtualBox-https-www-virtualbox-org"><span class="toc-text">三、安装 VirtualBox  https:&#x2F;&#x2F;www.virtualbox.org&#x2F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E3%80%81wireshark-%E7%9A%84%E5%AE%89%E8%A3%85-https-www-wireshark-org"><span class="toc-text">四、wireshark 的安装  https:&#x2F;&#x2F;www.wireshark.org&#x2F;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E3%80%81eNSP-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">五、eNSP 的安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%AD%E3%80%81eNSP%E7%9A%84%E6%B3%A8%E5%86%8C"><span class="toc-text">六、eNSP的注册</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#N-%E5%90%84%E7%A7%8DeNSP%E6%8A%A5%E9%94%99%E6%B1%87%E9%9B%86-%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%9C%89%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">N.各种eNSP报错汇集(不一定有解决方案)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%90%AF%E5%8A%A8AR%E8%AE%BE%E5%A4%87%E5%A4%B1%E8%B4%A5-%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%8140-41"><span class="toc-text">1.启动AR设备失败(错误代码40&#x2F;41)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%90%AF%E5%8A%A8PC%E8%AE%BE%E5%A4%87%E5%A4%B1%E8%B4%A5-%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%812"><span class="toc-text">2.启动PC设备失败(错误代码2)</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

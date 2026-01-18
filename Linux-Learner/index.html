@@ -1,0 +1,953 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>Linux 基础命令学习 - 霜晴避风港</title>
+
+  
+    <meta name="description" content="Linux 文件权限12# 列出文件信息ls-l   12# 修改文件权限chmod [选项] 用户属性+权限属性 文件名   用户12345678910# 查看当前登录用户whoami# 查看所有登录用户who# 简洁显示登录用户users# 详细查看用户活动w# 查看当前终端设备tty  系统信息12345678# 显示基本系统信息uname# 显示主机名uname -n# 显示硬件平台(平台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 基础命令学习">
+<meta property="og:url" content="https://immortal3180.github.io/Linux-Learner/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="Linux 文件权限12# 列出文件信息ls-l   12# 修改文件权限chmod [选项] 用户属性+权限属性 文件名   用户12345678910# 查看当前登录用户whoami# 查看所有登录用户who# 简洁显示登录用户users# 详细查看用户活动w# 查看当前终端设备tty  系统信息12345678# 显示基本系统信息uname# 显示主机名uname -n# 显示硬件平台(平台">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/c0f98e47843a0296761c58d66b2950fa.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20250923205242.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20250930223340.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014084635.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014085552.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014093932.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014094324.png">
+<meta property="article:published_time" content="2025-09-15T03:36:53.000Z">
+<meta property="article:modified_time" content="2026-01-18T20:19:01.591Z">
+<meta property="article:author" content="霜晴">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/c0f98e47843a0296761c58d66b2950fa.png">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/try-new-web/"><span class="title">试图借助Cursor搭建网站</span></a><a class="item title" href="/valera/"><span class="title">Valera 基于兴趣的新人编曲教程</span></a><a class="item title" href="/vocaloid/"><span class="title">vocaloid</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/talk-to-llm/"><span class="title">talk-to-llm</span></a><a class="item title" href="/suffix/"><span class="title">文件后缀相关知识大全</span></a><a class="item title" href="/talk/"><span class="title">talk</span></a><a class="item title" href="/ring-buffer/"><span class="title">环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a><a class="item title" href="/pyinstaller/"><span class="title">Pyinstaller 打包教程</span></a><a class="item title" href="/ruankao-intermediate-network/"><span class="title">软考中级网工</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-09-15T03:36:53.000Z">2025-09-15</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-18T20:19:01.591Z">2026-01-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Linux 基础命令学习</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h5 id="Linux-文件权限"><a href="#Linux-文件权限" class="headerlink" title="Linux 文件权限"></a>Linux 文件权限</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出文件信息</span></span><br><span class="line">ls-l</span><br></pre></td></tr></table></figure>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://i-blog.csdnimg.cn/blog_migrate/c0f98e47843a0296761c58d66b2950fa.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改文件权限</span></span><br><span class="line"><span class="built_in">chmod</span> [选项] 用户属性+权限属性 文件名</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前登录用户</span></span><br><span class="line"><span class="built_in">whoami</span></span><br><span class="line"><span class="comment"># 查看所有登录用户</span></span><br><span class="line"><span class="built_in">who</span></span><br><span class="line"><span class="comment"># 简洁显示登录用户</span></span><br><span class="line"><span class="built_in">users</span></span><br><span class="line"><span class="comment"># 详细查看用户活动</span></span><br><span class="line">w</span><br><span class="line"><span class="comment"># 查看当前终端设备</span></span><br><span class="line"><span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示基本系统信息</span></span><br><span class="line"><span class="built_in">uname</span></span><br><span class="line"><span class="comment"># 显示主机名</span></span><br><span class="line"><span class="built_in">uname</span> -n</span><br><span class="line"><span class="comment"># 显示硬件平台(平台架构)</span></span><br><span class="line"><span class="built_in">uname</span> -i</span><br><span class="line"><span class="comment"># 显示全部系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a</span><br></pre></td></tr></table></figure>
+
+<h5 id="时间-日历"><a href="#时间-日历" class="headerlink" title="时间&#x2F;日历"></a>时间&#x2F;日历</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前完整时间</span></span><br><span class="line"><span class="built_in">date</span></span><br><span class="line"><span class="comment"># 自定义时间显示格式</span></span><br><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%Y-%m-%d %H:%M:%S&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ubuntu 安装 bsdmainutils(包含cal)</span></span><br><span class="line">sudo apt install bsdmainutils</span><br><span class="line"><span class="comment"># 显示当前月份日历</span></span><br><span class="line">cal</span><br><span class="line"><span class="comment"># 查看指定年月日历(如2024年12月)</span></span><br><span class="line">cal 12 2024</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用root用户，设置root密码</span></span><br><span class="line">sudo passwd root</span><br><span class="line"><span class="comment"># 切换至root用户(不切换目录)</span></span><br><span class="line">su root</span><br><span class="line"><span class="comment"># 切换至root用户(同时切换到root根目录)</span></span><br><span class="line">su - root</span><br><span class="line"><span class="comment"># 切换回普通用户(同时切换到普通用户根目录)</span></span><br><span class="line">su - user <span class="comment"># user 替换为实际的普通用户名</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="whatis-从系统的man手册数据库中提取命令-函数的一句话简介"><a href="#whatis-从系统的man手册数据库中提取命令-函数的一句话简介" class="headerlink" title="whatis - 从系统的man手册数据库中提取命令&#x2F;函数的一句话简介"></a>whatis - 从系统的<code>man</code>手册数据库中提取命令&#x2F;函数的一句话简介</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 ls 命令的简介</span></span><br><span class="line">whatis <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 查看 mkdir 命令和 passwd 配置文件的简介</span></span><br><span class="line">whatis <span class="built_in">mkdir</span> passwd</span><br></pre></td></tr></table></figure>
+
+<h5 id="help-查询-Bash-Shell-内置命令的帮助"><a href="#help-查询-Bash-Shell-内置命令的帮助" class="headerlink" title="help - 查询 Bash Shell 内置命令的帮助"></a>help - 查询 Bash Shell 内置命令的帮助</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 cd 命令的帮助</span></span><br><span class="line"><span class="built_in">help</span> <span class="built_in">cd</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="man-系统的命令-工具-手册页"><a href="#man-系统的命令-工具-手册页" class="headerlink" title="man - 系统的命令&#x2F;工具 手册页"></a>man - 系统的命令&#x2F;工具 手册页</h5><ul>
+<li>翻页：<code>PageUp</code>&#x2F;<code>PageDown</code> 或 <code>Ctrl+F</code>（下翻）&#x2F;<code>Ctrl+B</code>（上翻）</li>
+<li>退出：按 <code>q</code> 键</li>
+<li>搜索：<code>/关键词</code>（向下搜）、<code>?关键词</code>（向上搜），按 <code>n</code> 继续下一个结果</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 man 手册页自身的使用帮助</span></span><br><span class="line">man man</span><br><span class="line"><span class="comment"># 查看 ls 命令的完整手册（默认打开第1章）</span></span><br><span class="line">man <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="info-命令的结构化-文档"><a href="#info-命令的结构化-文档" class="headerlink" title="info - 命令的结构化 文档"></a>info - 命令的结构化 文档</h5><ul>
+<li>进入子节点：按 <code>Enter</code>（点击带有 <code>*</code> 或 <code>[...]</code> 的节点名称）</li>
+<li>返回上一级节点：按 <code>u</code></li>
+<li>查看目录（所有节点）：按 <code>d</code></li>
+<li>搜索关键词：按 <code>s</code> 输入关键词</li>
+<li>退出：按 <code>q</code> 键</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 info 文档</span></span><br><span class="line">info</span><br><span class="line"><span class="comment"># 查看 info 工具自身的使用帮助</span></span><br><span class="line">info info</span><br><span class="line"><span class="comment"># 查看 ls 命令的 info 文档</span></span><br><span class="line">info <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="echo-显示一行文本"><a href="#echo-显示一行文本" class="headerlink" title="echo - 显示一行文本"></a>echo - 显示一行文本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示内容：The shirt costs $23.50.</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;The shirt costs $23.50.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 echo 显示环境变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$USER</span></span><br><span class="line"><span class="comment"># 显示用户家目录</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line"><span class="comment"># 显示系统命令搜索路径</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="printf-格式化并打印数据"><a href="#printf-格式化并打印数据" class="headerlink" title="printf - 格式化并打印数据"></a>printf - 格式化并打印数据</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式化并打印数据</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&#x27;Hello, World!&#x27;</span></span><br><span class="line"><span class="comment"># 句末添加换行符&#x27;\n&#x27;，打印后自动换行</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&#x27;Hello, World!\n&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="touch-新建文件"><a href="#touch-新建文件" class="headerlink" title="touch - 新建文件"></a>touch - 新建文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个新文件</span></span><br><span class="line"><span class="built_in">touch</span> 1.txt</span><br><span class="line"><span class="comment"># 同时创建多个文件</span></span><br><span class="line"><span class="built_in">touch</span> 1.txt 2.md 3.py</span><br><span class="line"><span class="comment"># 指定时间戳</span></span><br><span class="line"><span class="built_in">touch</span> -t 202509230830 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="file-查看文件类型"><a href="#file-查看文件类型" class="headerlink" title="file - 查看文件类型"></a>file - 查看文件类型</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看单个文件类型</span></span><br><span class="line">file 1.txt</span><br><span class="line"><span class="comment"># 查看多个文件类型</span></span><br><span class="line">file 1.txt 2.md 3.py</span><br><span class="line"><span class="comment"># 查看可执行文件类型</span></span><br><span class="line">file /bin/ls</span><br><span class="line"><span class="comment"># 检查压缩包</span></span><br><span class="line">file archive.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h5 id="gedit-图形化文本编辑器"><a href="#gedit-图形化文本编辑器" class="headerlink" title="gedit - 图形化文本编辑器"></a>gedit - 图形化文本编辑器</h5><ul>
+<li>使用 <code>Ctrl+S</code> <strong>保存</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载安装 gedit</span></span><br><span class="line">sudo apt install gedit </span><br><span class="line"><span class="comment"># 使用 gedit 打开文件</span></span><br><span class="line"><span class="comment"># -&amp;:在后台启动 gedit,可以继续在终端输入其他命令</span></span><br><span class="line">gedit 1.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h5 id="vim-终端式文本编辑器"><a href="#vim-终端式文本编辑器" class="headerlink" title="vim - 终端式文本编辑器"></a>vim - 终端式文本编辑器</h5><ol>
+<li><p>打开后，默认在 <strong>命令模式</strong>，先按 <code>i</code> 进入 <strong>插入模式</strong> 以输入。</p>
+</li>
+<li><p>输入完后，按 <strong>Esc</strong> 返回命令模式。</p>
+</li>
+<li><p>输入 <code>:wq</code> 保存并退出。</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载安装 vim</span></span><br><span class="line">sudo apt install vim</span><br><span class="line"><span class="comment"># 使用 vim 编辑文件</span></span><br><span class="line">vim 1.py</span><br></pre></td></tr></table></figure>
+
+<h5 id="cat-合并-合并显示文件内容"><a href="#cat-合并-合并显示文件内容" class="headerlink" title="cat - 合并&#x2F;合并显示文件内容"></a>cat - 合并&#x2F;合并显示文件内容</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 依次把两个文件的内容合并输出到终端</span></span><br><span class="line"><span class="built_in">cat</span> 1.txt 2.txt</span><br><span class="line"><span class="comment"># 将两个文件合并保存到一个新文件</span></span><br><span class="line"><span class="built_in">cat</span> 1.txt 2.txt &gt; all.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="Ubuntu-系统软件源-位置"><a href="#Ubuntu-系统软件源-位置" class="headerlink" title="Ubuntu 系统软件源 位置"></a>Ubuntu 系统软件源 位置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Ubuntu 22.04 版本前</span></span><br><span class="line">/etc/apt/sources.list</span><br><span class="line"><span class="comment"># Ubuntu 22.04 版本及以后</span></span><br><span class="line">/etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure>
+
+<h5 id="more-一页一页显示大文件"><a href="#more-一页一页显示大文件" class="headerlink" title="more - 一页一页显示大文件"></a>more - 一页一页显示大文件</h5><ul>
+<li><strong>空格键</strong> 翻页，<strong>q</strong> 退出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 more 在命令行中一页一页地显示大文件</span></span><br><span class="line">more 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="less-更强大的分页显示"><a href="#less-更强大的分页显示" class="headerlink" title="less - 更强大的分页显示"></a>less - 更强大的分页显示</h5><ul>
+<li><strong>上下方向键</strong> 翻页，支持搜索（输入 <code>/关键词</code>），用 <strong>q</strong> 退出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 less 单独地显示大文件</span></span><br><span class="line">less 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="head-显示文件开头几行"><a href="#head-显示文件开头几行" class="headerlink" title="head - 显示文件开头几行"></a>head - 显示文件开头几行</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示 1.txt 的前X行</span></span><br><span class="line"><span class="built_in">head</span> -n X 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="tail-显示文件结尾几行"><a href="#tail-显示文件结尾几行" class="headerlink" title="tail - 显示文件结尾几行"></a>tail - 显示文件结尾几行</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示 1.txt 的后X行</span></span><br><span class="line"><span class="built_in">tail</span> -n X 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="grep-在文件中搜索关键词"><a href="#grep-在文件中搜索关键词" class="headerlink" title="grep - 在文件中搜索关键词"></a>grep - 在文件中搜索关键词</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示 1.txt 中带有&quot;xx&quot;的内容行(&quot;xx&quot;标红)</span></span><br><span class="line">grep <span class="string">&quot;xx&quot;</span> 1.txt</span><br><span class="line"><span class="comment"># 附带行号</span></span><br><span class="line">grep -n <span class="string">&quot;xx&quot;</span> 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="find-查找文件"><a href="#find-查找文件" class="headerlink" title="find - 查找文件"></a>find - 查找文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># (如果没有的话)先创建几个以main开头的文件</span></span><br><span class="line"><span class="built_in">touch</span> main1.txt main2.py main_test.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;This is main1&quot;</span> &gt; main1.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;print(&#x27;hello from main2&#x27;)&quot;</span> &gt; main2.py</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;main file test&quot;</span> &gt; main_test.txt</span><br><span class="line"><span class="comment"># 查找当前目录下所有以 main 开头的文件，并显示文件内容</span></span><br><span class="line">find . -<span class="built_in">type</span> f -name <span class="string">&quot;main*&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="diff-比较文件"><a href="#diff-比较文件" class="headerlink" title="diff - 比较文件"></a>diff - 比较文件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 比较两个文件</span></span><br><span class="line">diff 1.txt 2.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>例：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20250923205242.png"></p>
+<ul>
+<li>1c1：表明 1.txt 的第1行 和 2.txt 的第1行不同。</li>
+<li><strong>&lt;</strong> 表示左边文件(1.txt)的内容</li>
+<li><strong>&gt;</strong> 表示右边文件(2.txt)的内容</li>
+</ul>
+</blockquote>
+<h5 id="cat-显示文件内容"><a href="#cat-显示文件内容" class="headerlink" title="cat - 显示文件内容"></a>cat - 显示文件内容</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示 1.txt 内容</span></span><br><span class="line"><span class="built_in">cat</span> 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="sort-显示排序后的文件内容"><a href="#sort-显示排序后的文件内容" class="headerlink" title="sort - 显示排序后的文件内容"></a>sort - 显示排序后的文件内容</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对文件的行内容进行 字典序排序 显示</span></span><br><span class="line"><span class="built_in">sort</span> 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="wc-统计文件信息"><a href="#wc-统计文件信息" class="headerlink" title="wc - 统计文件信息"></a>wc - 统计文件信息</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 统计行数</span></span><br><span class="line"><span class="built_in">wc</span> -l 1.txt</span><br><span class="line"><span class="comment"># 统计单词数</span></span><br><span class="line"><span class="built_in">wc</span> -w 1.txt</span><br><span class="line"><span class="comment"># 统计字节数</span></span><br><span class="line"><span class="built_in">wc</span> -c 1.txt</span><br><span class="line"><span class="comment"># 统计文件的 行数、单词数、字节数</span></span><br><span class="line"><span class="built_in">wc</span> 1.txt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="cp-复制"><a href="#cp-复制" class="headerlink" title="cp - 复制"></a>cp - 复制</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据 1.txt 复制出 1_copy.txt </span></span><br><span class="line"><span class="built_in">cp</span> 1.txt 1_copy.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="mkdir-创建文件夹"><a href="#mkdir-创建文件夹" class="headerlink" title="mkdir - 创建文件夹"></a>mkdir - 创建文件夹</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建文件夹 example</span></span><br><span class="line"><span class="built_in">mkdir</span> example</span><br></pre></td></tr></table></figure>
+
+<h5 id="mv-移动"><a href="#mv-移动" class="headerlink" title="mv - 移动"></a>mv - 移动</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移动 a文件夹、b.txt 至 c文件夹</span></span><br><span class="line"><span class="built_in">mv</span> a b.txt c</span><br></pre></td></tr></table></figure>
+
+<h5 id="ls-列出当前目录相关内容"><a href="#ls-列出当前目录相关内容" class="headerlink" title="ls - 列出当前目录相关内容"></a>ls - 列出当前目录相关内容</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出当前目录及其所有子目录中的文件和目录</span></span><br><span class="line"><span class="built_in">ls</span> -R</span><br><span class="line"><span class="comment"># 以长格式（详细信息）列出文件（权限、所有者、大小、修改时间等）</span></span><br><span class="line"><span class="built_in">ls</span> -l</span><br></pre></td></tr></table></figure>
+
+<h5 id="rmdir-删除文件夹"><a href="#rmdir-删除文件夹" class="headerlink" title="rmdir - 删除文件夹"></a>rmdir - 删除文件夹</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除文件夹 example</span></span><br><span class="line"><span class="built_in">rmdir</span> example</span><br></pre></td></tr></table></figure>
+
+<h5 id="pwd-显示当前所在的绝对路径"><a href="#pwd-显示当前所在的绝对路径" class="headerlink" title="pwd - 显示当前所在的绝对路径"></a>pwd - 显示当前所在的绝对路径</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前所在的绝对路径</span></span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="chmod-修改用户对文件的权限"><a href="#chmod-修改用户对文件的权限" class="headerlink" title="chmod - 修改用户对文件的权限"></a>chmod - 修改用户对文件的权限</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20250930223340.png"></p>
+<blockquote>
+<p><strong>用户</strong>：</p>
+<p>user - 文件拥有者</p>
+<p>group - 用户组</p>
+<p>others - 其他人</p>
+<p><strong>文件权限</strong>：</p>
+<p>r - read - 可读 - 4</p>
+<p>w - write - 可写 - 2</p>
+<p>x - execute - 可执行 - 1</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置一个文件权限为:所有人可执行、拥有者和用户组可度取、拥有者可写</span></span><br><span class="line"><span class="built_in">chmod</span> u+rwx g+rx o+x 1.txt</span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line"><span class="built_in">chmod</span> u=rwx g=rx o=x 1.txt</span><br><span class="line"><span class="comment"># 方法三(推荐)</span></span><br><span class="line"><span class="built_in">chmod</span> 751 1.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="umask-设置文件默认权限"><a href="#umask-设置文件默认权限" class="headerlink" title="umask - 设置文件默认权限"></a>umask - 设置文件默认权限</h5><blockquote>
+<p>User File Creation Mask (用户文件创建屏蔽码)，它决定了当你 <strong>新建文件或目录时默认的权限</strong>。</p>
+<p>Linux 创建文件&#x2F;目录的默认权限：</p>
+<ul>
+<li>普通文件：666(rw-rw-rw-)</li>
+<li>目录：777(rwxrwxrwx)</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前 umask</span></span><br><span class="line"><span class="built_in">umask</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>例：输入 umask 输出 0022，意味着屏蔽了组和其他用户的写权限。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时设置 umask 为 xxxx (关闭终端后失效)</span></span><br><span class="line"><span class="built_in">umask</span> xxxx</span><br></pre></td></tr></table></figure>
+
+<p><strong>永久设置 umask</strong></p>
+<table>
+<thead>
+<tr>
+<th>作用范围</th>
+<th>修改文件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>当前用户</td>
+<td><code>~/.bashrc</code> 或 <code>~/.profile</code></td>
+</tr>
+<tr>
+<td>全局生效</td>
+<td><code>/etc/profile</code> 或 <code>/etc/bash.bashrc</code></td>
+</tr>
+</tbody></table>
+<p>添加一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">umask</span> 0022</span><br></pre></td></tr></table></figure>
+
+<p>保存后执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="tar-归档"><a href="#tar-归档" class="headerlink" title="tar - 归档"></a>tar - 归档</h5><hr>
+<h4 id="用户-组-信息管理与用户-组-的增删"><a href="#用户-组-信息管理与用户-组-的增删" class="headerlink" title="用户(组)信息管理与用户(组)的增删"></a>用户(组)信息管理与用户(组)的增删</h4><h5 id="1-用户信息文件-etc-passwd"><a href="#1-用户信息文件-etc-passwd" class="headerlink" title="1. 用户信息文件 &#x2F;etc&#x2F;passwd"></a>1. 用户信息文件 &#x2F;etc&#x2F;passwd</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看用户信息文件 /etc/passwd</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例输出</span></span><br><span class="line"><span class="comment"># 用户名:x(表示密码已存储):UID:GID:用户说明:主目录:登录Shell</span></span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">user1:x:1001:1001::/home/user1:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x2F;etc&#x2F;passwd 文件的每一行共有7个字段，以冒号:为分隔，含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段位置</th>
+<th>字段名称</th>
+<th>示例值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>用户名</td>
+<td>user1</td>
+<td>登录系统时使用的用户名</td>
+</tr>
+<tr>
+<td>2</td>
+<td>密码占位符</td>
+<td>x</td>
+<td>表示密码已加密存储在 <code>/etc/shadow</code> 文件中</td>
+</tr>
+<tr>
+<td>3</td>
+<td>UID</td>
+<td>1001</td>
+<td>用户 ID（0 为 root，普通用户从 1000 起）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GID</td>
+<td>1001</td>
+<td>用户所属主群组的 ID</td>
+</tr>
+<tr>
+<td>5</td>
+<td>用户说明</td>
+<td>（空）</td>
+<td>可存放用户描述或备注</td>
+</tr>
+<tr>
+<td>6</td>
+<td>主目录</td>
+<td>&#x2F;home&#x2F;user1</td>
+<td>用户登录后的默认目录</td>
+</tr>
+<tr>
+<td>7</td>
+<td>登录 Shell</td>
+<td>&#x2F;bin&#x2F;bash</td>
+<td>用户登录后使用的命令解释器</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h5 id="2-用户密码信息文件-etc-shadow"><a href="#2-用户密码信息文件-etc-shadow" class="headerlink" title="2. 用户密码信息文件 &#x2F;etc&#x2F;shadow"></a>2. 用户密码信息文件 &#x2F;etc&#x2F;shadow</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看密码信息文件 /etc/shadow</span></span><br><span class="line">sudo <span class="built_in">cat</span> /etc/shadow</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例输出</span></span><br><span class="line">root:$6<span class="variable">$8cFp9b</span>...<span class="variable">$FHYyADw</span>...:19931:0:99999:7:::</span><br><span class="line">user1:$6<span class="variable">$ABc123</span>...<span class="variable">$xyZpQe</span>...:19931:0:99999:7:::</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x2F;etc&#x2F;shadow 文件的每一行包含9个字段，以冒号:为分隔，含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段位置</th>
+<th align="left">含义</th>
+<th>示例值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="left">用户名</td>
+<td>user1</td>
+<td>与 <code>/etc/passwd</code> 对应</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">加密密码</td>
+<td>$6$ABc123…</td>
+<td><code>$6$</code> 表示使用 SHA-512 加密算法</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">上次修改密码的日期</td>
+<td>19931</td>
+<td>从1970-01-01起的天数</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">最短改密间隔</td>
+<td>0</td>
+<td>多少天后才能修改密码</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left">最长改密间隔</td>
+<td>99999</td>
+<td>密码最长有效天数</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="left">提前警告天数</td>
+<td>7</td>
+<td>密码过期前几天开始警告</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="left">账号不活动天数</td>
+<td>（空）</td>
+<td>过期后多少天禁用账号</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="left">账号失效日期</td>
+<td>（空）</td>
+<td>从1970起的天数，表示账号失效时间</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="left">保留</td>
+<td>（空）</td>
+<td>暂未使用</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h5 id="用户-增删改查"><a href="#用户-增删改查" class="headerlink" title="用户 - 增删改查"></a>用户 - 增删改查</h5><h6 id="增加用户-useradd-adduser"><a href="#增加用户-useradd-adduser" class="headerlink" title="增加用户 - useradd&#x2F;adduser"></a>增加用户 - useradd&#x2F;adduser</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 useradd 增加用户，自动创建主目录，自动输入新密码 </span></span><br><span class="line">sudo useradd -m usera</span><br><span class="line">sudo passwd usera</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 adduser 创建用户，自动创建主目录、设置权限、交互式输入密码和用户信息</span></span><br><span class="line">sudo adduser usera</span><br></pre></td></tr></table></figure>
+
+<h6 id="删除用户-userdel-deluser"><a href="#删除用户-userdel-deluser" class="headerlink" title="删除用户 - userdel&#x2F;deluser"></a>删除用户 - userdel&#x2F;deluser</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -r:使用userdel删除用户userc，连同/home/userc一并删除</span></span><br><span class="line">sudo userdel -r userc</span><br><span class="line"><span class="comment"># 使用deluser将userc及其主目录一并删除</span></span><br><span class="line">sudo deluser userb --remove-home</span><br></pre></td></tr></table></figure>
+
+<h6 id="修改用户信息-usermod"><a href="#修改用户信息-usermod" class="headerlink" title="修改用户信息 - usermod"></a>修改用户信息 - usermod</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改用户名 usera 为 userc</span></span><br><span class="line">sudo usermod -l userc usera</span><br><span class="line"><span class="comment"># 修改 userb 主群组为 sudo</span></span><br><span class="line">sudo usermod -g sudo userb</span><br><span class="line"><span class="comment"># 把 userb 加入附加群组 adm</span></span><br><span class="line">sudo usermod -aG adm userb</span><br></pre></td></tr></table></figure>
+
+<h6 id="id-显示用户的-ID、GID以及所属的用户组信息"><a href="#id-显示用户的-ID、GID以及所属的用户组信息" class="headerlink" title="id - 显示用户的 ID、GID以及所属的用户组信息"></a>id - 显示用户的 ID、GID以及所属的用户组信息</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示 userb 的 ID、GID以及所属的用户组信息</span></span><br><span class="line"><span class="built_in">id</span> userb</span><br><span class="line"><span class="comment"># 可能的输出示例</span></span><br><span class="line">uid=1002(userb) gid=27(sudo) <span class="built_in">groups</span>=27(sudo),4(adm)</span><br><span class="line"><span class="comment"># uid=1002(userb) -&gt; 用户ID是1002，用户名是userb</span></span><br><span class="line"><span class="comment"># gid=27(sudo) → 主组ID是27，组名是sudo</span></span><br><span class="line"><span class="comment"># groups=... → 所属的所有组（主组 + 附属组）</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="检验用户数据"><a href="#检验用户数据" class="headerlink" title="检验用户数据"></a>检验用户数据</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.查看用户信息文件 /etc/passwd</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd</span><br><span class="line"><span class="comment"># 2.查看 /home/ 目录中生成的主目录(有多少用户)</span></span><br><span class="line"><span class="built_in">ls</span> /home/</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-用户组信息文件-etc-group"><a href="#3-用户组信息文件-etc-group" class="headerlink" title="3. 用户组信息文件 &#x2F;etc&#x2F;group"></a>3. 用户组信息文件 &#x2F;etc&#x2F;group</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看用户组信息文件</span></span><br><span class="line"><span class="built_in">cat</span> /etc/group</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&#x2F;etc&#x2F;group 文件的每一行有4个字段，以冒号:分隔</p>
+<table>
+<thead>
+<tr>
+<th>字段位置</th>
+<th>字段名称</th>
+<th>示例值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>组名</td>
+<td>testgroup</td>
+<td>群组名称</td>
+</tr>
+<tr>
+<td>2</td>
+<td>密码占位符</td>
+<td>x</td>
+<td>表示加密密码存储在 <code>/etc/gshadow</code> 文件中</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GID</td>
+<td>1002</td>
+<td>群组 ID</td>
+</tr>
+<tr>
+<td>4</td>
+<td>组成员</td>
+<td>user1,user2</td>
+<td>属于该组的用户列表（多个用户以逗号分隔）</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h5 id="4-用户组密码信息文件-etc-gshadow"><a href="#4-用户组密码信息文件-etc-gshadow" class="headerlink" title="4. 用户组密码信息文件 &#x2F;etc&#x2F;gshadow"></a>4. 用户组密码信息文件 &#x2F;etc&#x2F;gshadow</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看用户组密码信息文件</span></span><br><span class="line">sudo <span class="built_in">cat</span> /etc/gshadow</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例输出</span></span><br><span class="line">root:*::</span><br><span class="line">sudo:*::</span><br><span class="line">testgroup:!:user1,user2:</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以 <code>testgroup:!:user1,user2:</code> 为例，<code>/etc/gshadow</code> 文件每行包含 <strong>4 个字段</strong>，含义如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段位置</th>
+<th>字段名称</th>
+<th>示例值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>组名</td>
+<td>testgroup</td>
+<td>群组名称，与 <code>/etc/group</code> 对应</td>
+</tr>
+<tr>
+<td>2</td>
+<td>密码</td>
+<td>!</td>
+<td>表示群组无密码（通常为空或<code>!</code>）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>组管理员</td>
+<td>user1,user2</td>
+<td>有权管理该组的用户</td>
+</tr>
+<tr>
+<td>4</td>
+<td>组成员</td>
+<td>（空）</td>
+<td>组中普通成员列表</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h5 id="用户组-增删改查"><a href="#用户组-增删改查" class="headerlink" title="用户组 增删改查"></a>用户组 增删改查</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加用户组</span></span><br><span class="line">sudo groupadd xxx</span><br><span class="line"><span class="comment"># 删除用户组</span></span><br><span class="line">sudo groupdel xxx</span><br><span class="line"><span class="comment"># 修改用户组名xxx为yyy</span></span><br><span class="line">sudo groupmod -n yyy xxx</span><br><span class="line"><span class="comment"># 修改用户组ID</span></span><br><span class="line">sudo groupmod -g 1200 xxx</span><br><span class="line"><span class="comment"># 查看检验用户组</span></span><br><span class="line"><span class="built_in">cat</span> /etc/group</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 为用户组添加用户</span></span><br><span class="line">sudo usermod -aG xxx user1</span><br><span class="line"><span class="comment"># 验证</span></span><br><span class="line"><span class="built_in">id</span> user1</span><br><span class="line"><span class="comment"># 输出示例</span></span><br><span class="line">uid=1001(user1) gid=1001(user1) <span class="built_in">groups</span>=1001(user1),1200(xxx)</span><br></pre></td></tr></table></figure>
+
+<h5 id="文件所属群组修改"><a href="#文件所属群组修改" class="headerlink" title="文件所属群组修改"></a>文件所属群组修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建</span></span><br><span class="line"><span class="built_in">touch</span> testfile.txt</span><br><span class="line"><span class="comment"># 查看文件初始属性</span></span><br><span class="line"><span class="built_in">ls</span> -l testfile.txt</span><br><span class="line"><span class="comment"># 示例输出(更改前)：</span></span><br><span class="line">-rw-r--r-- 1 user1 user1 0 Oct 11 09:00 testfile.txt</span><br><span class="line"><span class="comment"># 更改文件所属群组为xxx</span></span><br><span class="line">sudo <span class="built_in">chgrp</span> xxx testfile.txt</span><br><span class="line"><span class="comment"># 示例输出(更改后)</span></span><br><span class="line">-rw-r--r-- 1 user1 xxx 0 Oct 11 09:05 testfile.txt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h4><p>1.添加虚拟硬盘</p>
+<ul>
+<li>关机状态下，在 VMware - 虚拟机管理中添加一块新的虚拟硬盘，大小10GB</li>
+<li>启动系统</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install util-linux</span><br><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014084635.png"></p>
+<p>新磁盘显示为 &#x2F;dev&#x2F;sdb</p>
+<p>2.使用 <code>fdisk</code> 工具对新磁盘进行分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk /dev/sdb</span><br><span class="line">n   <span class="comment"># 新建分区</span></span><br><span class="line">p   <span class="comment"># 主分区</span></span><br><span class="line">1   <span class="comment"># 分区号1</span></span><br><span class="line">回车 <span class="comment"># 起始位置默认</span></span><br><span class="line">+5G  <span class="comment"># 分区大小5G</span></span><br><span class="line"></span><br><span class="line">n</span><br><span class="line">p</span><br><span class="line">2</span><br><span class="line">回车</span><br><span class="line">回车</span><br><span class="line"></span><br><span class="line">w   <span class="comment"># 保存退出</span></span><br></pre></td></tr></table></figure>
+
+<p>3.重新读取分区表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo partprobe /dev/sdb</span><br><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014085552.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 两个分区都格式化为 ext4 文件系统</span></span><br><span class="line">sudo mkfs.ext4 /dev/sdb1</span><br><span class="line">sudo mkfs.ext4 /dev/sdb2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建挂载点目录</span></span><br><span class="line">sudo <span class="built_in">mkdir</span> /web /data</span><br><span class="line"><span class="comment"># 挂载分区</span></span><br><span class="line">sudo mount /dev/sdb1 /web</span><br><span class="line">sudo mount /dev/sdb2 /data</span><br><span class="line"><span class="comment"># 查看挂载结果</span></span><br><span class="line">mount | grep sdb</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /ect/fstab</span><br><span class="line"><span class="comment"># 在 /ect/fstab 末尾添加两行</span></span><br><span class="line">UUID=af34b98d-8f38-438c-8a4c-1d4d6c917361 /web ext4 defaults 0 0</span><br><span class="line">UUID=cac848c8-1a2d-4501-9739-91fd55ead002 /data ext4 defaults 0 0</span><br><span class="line"><span class="comment"># 保存并测试配置，若无错误输出，说明配置正确</span></span><br><span class="line">sudo mount -a</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>无误后重启系统，验证是否挂载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br><span class="line">mount | grep sdb</span><br></pre></td></tr></table></figure>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014093932.png"></p>
+<h5 id="设置磁盘配额并测试"><a href="#设置磁盘配额并测试" class="headerlink" title="设置磁盘配额并测试"></a>设置磁盘配额并测试</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20251014094324.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑 /etc/fstab 文件</span></span><br><span class="line">sudo nano /etc/fstab</span><br><span class="line"><span class="comment"># 为 /data 挂载项添加 usrquota 标志</span></span><br><span class="line">UUID=af34b98d-8f38-438c-8a4c-1d4d6c917361 /web ext4 defaults 0 0</span><br><span class="line">UUID=cac848c8-1a2d-4501-9739-91fd55ead002 /data ext4 defaults,usrquota 0 0</span><br><span class="line"><span class="comment"># 重新挂载该分区</span></span><br><span class="line">sudo mount -o remount /data</span><br><span class="line"><span class="comment"># 验证挂载参数中是否包含 usrquota</span></span><br><span class="line"><span class="comment"># (输出应包含/dev/sdb2 on /data type ext4 (rw,usrquota,...)</span></span><br><span class="line">mount | grep data</span><br></pre></td></tr></table></figure>
+
+<p>建立配额数据库文件并启动配额功能</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入 /data 目录</span></span><br><span class="line"><span class="built_in">cd</span> /data</span><br><span class="line"></span><br><span class="line">sudo apt insatll quota</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建配额数据库文件</span></span><br><span class="line">sudo quotacheck -cum /data</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">-c：创建新的配额文件。</span><br><span class="line">-u：为用户启用配额。</span><br><span class="line">-m：忽略挂载点的只读标志</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看是否生成两个文件</span></span><br><span class="line"><span class="built_in">ls</span> -l /data | grep quota</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动配额功能</span></span><br><span class="line">sudo quotaon /data</span><br><span class="line"><span class="comment"># 验证</span></span><br><span class="line">sudo repquota /data</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Linux-编程"><a href="#Linux-编程" class="headerlink" title="Linux 编程"></a>Linux 编程</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 GCC 编译器</span></span><br><span class="line">sudo apt install gcc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 gcc 编译.c文件，生成指定名称的可执行文件</span></span><br><span class="line"><span class="comment"># -o:指定输出文件的名称</span></span><br><span class="line">gcc xxx.c -o xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行存在于当前工作目录的 可执行文件xxx</span></span><br><span class="line">./xxx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># -c:仅编译,仅预处理、编译和汇编,生成目标文件.o/.obj,不进行链接操作(不会生成可执行文件)</span></span><br><span class="line">gcc -c xxx.c -o xxx.o</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 SDL 基本库</span></span><br><span class="line">sudo apt install libsdl1.2-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装SDL图像处理库（支持BMP等图片格式加载）</span></span><br><span class="line">sudo apt install libsdl-image1.2-dev</span><br><span class="line"><span class="comment"># 安装SDL字体处理库（支持文字显示功能）</span></span><br><span class="line">sudo apt install libsdl-ttf2.0-dev</span><br><span class="line"><span class="comment"># 安装SDL绘图扩展库（支持圆、曲线等图形绘制，用于任务四）</span></span><br><span class="line">sudo apt install libsdl-draw1.2-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证SDL核心库版本</span></span><br><span class="line">sdl-config --version</span><br><span class="line"><span class="comment"># 验证SDL图像库是否存在</span></span><br><span class="line">dpkg -l | grep libsdl-image</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看并显示 SDL 目录中所需头文件</span></span><br><span class="line">sdl-config --cflags</span><br><span class="line"><span class="comment"># 进入SDL头文件目录</span></span><br><span class="line"><span class="built_in">cd</span> /usr/include/SDL</span><br><span class="line"><span class="comment"># 列出目录中的核心头文件（过滤无关文件，显示主要开发用头文件）</span></span><br><span class="line"><span class="built_in">ls</span> -l SDL.h SDL_video.h SDL_surface.h SDL_events.h SDL_draw.h</span><br></pre></td></tr></table></figure>
+
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/GeoGebra/">使用 GeoGebra 辅助数学学习</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/1Panel/">阿里云服务器搭建1Panel面板</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux-%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-text">Linux 文件权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7"><span class="toc-text">用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="toc-text">系统信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%B6%E9%97%B4-%E6%97%A5%E5%8E%86"><span class="toc-text">时间&#x2F;日历</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#whatis-%E4%BB%8E%E7%B3%BB%E7%BB%9F%E7%9A%84man%E6%89%8B%E5%86%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E6%8F%90%E5%8F%96%E5%91%BD%E4%BB%A4-%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E5%8F%A5%E8%AF%9D%E7%AE%80%E4%BB%8B"><span class="toc-text">whatis - 从系统的man手册数据库中提取命令&#x2F;函数的一句话简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#help-%E6%9F%A5%E8%AF%A2-Bash-Shell-%E5%86%85%E7%BD%AE%E5%91%BD%E4%BB%A4%E7%9A%84%E5%B8%AE%E5%8A%A9"><span class="toc-text">help - 查询 Bash Shell 内置命令的帮助</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#man-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%91%BD%E4%BB%A4-%E5%B7%A5%E5%85%B7-%E6%89%8B%E5%86%8C%E9%A1%B5"><span class="toc-text">man - 系统的命令&#x2F;工具 手册页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#info-%E5%91%BD%E4%BB%A4%E7%9A%84%E7%BB%93%E6%9E%84%E5%8C%96-%E6%96%87%E6%A1%A3"><span class="toc-text">info - 命令的结构化 文档</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#echo-%E6%98%BE%E7%A4%BA%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC"><span class="toc-text">echo - 显示一行文本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#printf-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B9%B6%E6%89%93%E5%8D%B0%E6%95%B0%E6%8D%AE"><span class="toc-text">printf - 格式化并打印数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#touch-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">touch - 新建文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#file-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">file - 查看文件类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gedit-%E5%9B%BE%E5%BD%A2%E5%8C%96%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">gedit - 图形化文本编辑器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vim-%E7%BB%88%E7%AB%AF%E5%BC%8F%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">vim - 终端式文本编辑器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cat-%E5%90%88%E5%B9%B6-%E5%90%88%E5%B9%B6%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-text">cat - 合并&#x2F;合并显示文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Ubuntu-%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E6%BA%90-%E4%BD%8D%E7%BD%AE"><span class="toc-text">Ubuntu 系统软件源 位置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#more-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E6%98%BE%E7%A4%BA%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="toc-text">more - 一页一页显示大文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#less-%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%88%86%E9%A1%B5%E6%98%BE%E7%A4%BA"><span class="toc-text">less - 更强大的分页显示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#head-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%BC%80%E5%A4%B4%E5%87%A0%E8%A1%8C"><span class="toc-text">head - 显示文件开头几行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tail-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E7%BB%93%E5%B0%BE%E5%87%A0%E8%A1%8C"><span class="toc-text">tail - 显示文件结尾几行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#grep-%E5%9C%A8%E6%96%87%E4%BB%B6%E4%B8%AD%E6%90%9C%E7%B4%A2%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="toc-text">grep - 在文件中搜索关键词</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#find-%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6"><span class="toc-text">find - 查找文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#diff-%E6%AF%94%E8%BE%83%E6%96%87%E4%BB%B6"><span class="toc-text">diff - 比较文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cat-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-text">cat - 显示文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#sort-%E6%98%BE%E7%A4%BA%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-text">sort - 显示排序后的文件内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#wc-%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-text">wc - 统计文件信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6"><span class="toc-text">cp - 复制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">mkdir - 创建文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8"><span class="toc-text">mv - 移动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9"><span class="toc-text">ls - 列出当前目录相关内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#rmdir-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">rmdir - 删除文件夹</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#pwd-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-text">pwd - 显示当前所在的绝对路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#chmod-%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-text">chmod - 修改用户对文件的权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#umask-%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90"><span class="toc-text">umask - 设置文件默认权限</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#tar-%E5%BD%92%E6%A1%A3"><span class="toc-text">tar - 归档</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7-%E7%BB%84-%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E4%B8%8E%E7%94%A8%E6%88%B7-%E7%BB%84-%E7%9A%84%E5%A2%9E%E5%88%A0"><span class="toc-text">用户(组)信息管理与用户(组)的增删</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6-etc-passwd"><span class="toc-text">1. 用户信息文件 &#x2F;etc&#x2F;passwd</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6-etc-shadow"><span class="toc-text">2. 用户密码信息文件 &#x2F;etc&#x2F;shadow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">用户 - 增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E7%94%A8%E6%88%B7-useradd-adduser"><span class="toc-text">增加用户 - useradd&#x2F;adduser</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7-userdel-deluser"><span class="toc-text">删除用户 - userdel&#x2F;deluser</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF-usermod"><span class="toc-text">修改用户信息 - usermod</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#id-%E6%98%BE%E7%A4%BA%E7%94%A8%E6%88%B7%E7%9A%84-ID%E3%80%81GID%E4%BB%A5%E5%8F%8A%E6%89%80%E5%B1%9E%E7%9A%84%E7%94%A8%E6%88%B7%E7%BB%84%E4%BF%A1%E6%81%AF"><span class="toc-text">id - 显示用户的 ID、GID以及所属的用户组信息</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE"><span class="toc-text">检验用户数据</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%94%A8%E6%88%B7%E7%BB%84%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6-etc-group"><span class="toc-text">3. 用户组信息文件 &#x2F;etc&#x2F;group</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E7%94%A8%E6%88%B7%E7%BB%84%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF%E6%96%87%E4%BB%B6-etc-gshadow"><span class="toc-text">4. 用户组密码信息文件 &#x2F;etc&#x2F;gshadow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">用户组 增删改查</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%BE%A4%E7%BB%84%E4%BF%AE%E6%94%B9"><span class="toc-text">文件所属群组修改</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="toc-text">磁盘管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D%E5%B9%B6%E6%B5%8B%E8%AF%95"><span class="toc-text">设置磁盘配额并测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-%E7%BC%96%E7%A8%8B"><span class="toc-text">Linux 编程</span></a></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

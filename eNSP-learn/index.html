@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>eNSP-learn - 霜晴避风港</title>
+
+  
+    <meta name="description" content="Telnet^1、进入远程登录接口(vty)2、配置认证模式(null &#x2F; 密码 &#x2F; aaa) 1234[R1]telnet server enable[R2]user-interface vty 0 4   进入远程登录接口(vty)，允许五个用户同时登录[R2-ui-vty0-4] authentication-mode password 认证模式改为密码认证[R2-ui-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eNSP-learn">
+<meta property="og:url" content="https://immortal3180.github.io/eNSP-learn/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="Telnet^1、进入远程登录接口(vty)2、配置认证模式(null &#x2F; 密码 &#x2F; aaa) 1234[R1]telnet server enable[R2]user-interface vty 0 4   进入远程登录接口(vty)，允许五个用户同时登录[R2-ui-vty0-4] authentication-mode password 认证模式改为密码认证[R2-ui-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240923203248.png">
+<meta property="article:published_time" content="2024-09-23T12:28:58.000Z">
+<meta property="article:modified_time" content="2026-01-18T20:19:01.609Z">
+<meta property="article:author" content="霜晴">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240923203248.png">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/try-new-web/"><span class="title">试图借助Cursor搭建网站</span></a><a class="item title" href="/valera/"><span class="title">Valera 基于兴趣的新人编曲教程</span></a><a class="item title" href="/vocaloid/"><span class="title">vocaloid</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/talk-to-llm/"><span class="title">talk-to-llm</span></a><a class="item title" href="/suffix/"><span class="title">文件后缀相关知识大全</span></a><a class="item title" href="/talk/"><span class="title">talk</span></a><a class="item title" href="/ring-buffer/"><span class="title">环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a><a class="item title" href="/pyinstaller/"><span class="title">Pyinstaller 打包教程</span></a><a class="item title" href="/ruankao-intermediate-network/"><span class="title">软考中级网工</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-23T12:28:58.000Z">2024-09-23</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-18T20:19:01.609Z">2026-01-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>eNSP-learn</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h5 id="Telnet"><a href="#Telnet" class="headerlink" title="Telnet^"></a>Telnet^</h5><p>1、进入远程登录接口(vty)<br>2、配置认证模式(null &#x2F; 密码 &#x2F; aaa)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[R1]telnet server enable</span><br><span class="line">[R2]user-interface vty 0 4   进入远程登录接口(vty)，允许五个用户同时登录</span><br><span class="line">[R2-ui-vty0-4] authentication-mode password 认证模式改为密码认证</span><br><span class="line">[R2-ui-vty0-4]set authentication password simple/cipher xx 设置明文/密文显示の密码xx</span><br></pre></td></tr></table></figure>
+
+<p>telnet 用户登录的权限默认是 0—-查看权限，若需要管理、配置需要提权</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[R2-ui-vty0-4]user privilege level 3  用户登录权限等级改为3</span><br><span class="line"></span><br><span class="line">[R2]int g0/0/0</span><br><span class="line">[R2-GigabitEthernet0/0/0]mtu 1200   修改mtu</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Huawei&gt;display mac-address 查看MAC地址表</span><br></pre></td></tr></table></figure>
+
+<h5 id="相同网段通信ARP流程与交换机工作原理全过程："><a href="#相同网段通信ARP流程与交换机工作原理全过程：" class="headerlink" title="相同网段通信ARP流程与交换机工作原理全过程："></a>相同网段通信ARP流程与交换机工作原理全过程：</h5><p>PC1,PC2 IP 和MAC<br>PC1和PC2互通</p>
+<p>首先PC1产生数据，传输层封装TCP&#x2F;UDP，网络层封装IP；源IP1.1 目的IP1.2；</p>
+<p>到达数据链路层时，封装帧头和帧尾；源MAC01；</p>
+<p>PC1封装目的MAC时，会首先查看它的ARP表项（arp-a)：发现表项中关于1.2的mac是未知的；于是产生一个ARP广播请求；（广播）</p>
+<p>请求消息首先到达交换机，交换机便开始学习源MAC01和接口GE0&#x2F;0&#x2F;1的关系；然后放入到交换机的MAC地址表中；（学习）</p>
+<p>交换机根据广播帧（FF:FF:FF:FF:FF:FF)进行泛洪动作，会把该帧从交换机的各个接口发出去；（泛洪）</p>
+<p>PC2收到该帧，对它进行解封装，得到1.1的MAC是01，记录到自己的ARP表项中；同时发现1.1在请求自己的MAC；便以单播的形式回复；消息到达交换机；（单播）</p>
+<p>交换机学习MAC02和端口GE0&#x2F;0&#x2F;2的关系，放入到交换机MAC地址表中；（学习）</p>
+<p>根据目的MAC01，查找MAC地址表发现，01对应的GE0&#x2F;0&#x2F;1接口，便从1口转发发送给PC1；（转发)</p>
+<p>PC1解封装，最后得到1.2的MAC为02，至此得到了想要的MAC。</p>
+<hr>
+<h5 id="相同网段通信ARP流程与交换机工作原理—关键要素"><a href="#相同网段通信ARP流程与交换机工作原理—关键要素" class="headerlink" title="相同网段通信ARP流程与交换机工作原理—关键要素"></a>相同网段通信ARP流程与交换机工作原理—关键要素</h5><p>1.源终端设备 产生数据；一系列封装：<br>    应用层（产生数据）(Data)—&gt;传输层（封装TCP&#x2F;UDP）(数据段)—&gt;网络层（封装IP，包括了源IP和目的IP）(数据包)—&gt;数据链路层(数据帧)–从端口发送至交换机</p>
+<p>2.封装目的MAC时，查看ARP表项：<br>（1）目的MAC未知—&gt;ARP广播—&gt;泛洪<br>（2）目的MAC已知—–&gt;单播——&gt;转发</p>
+<p>3.消息到达交换机：<br>*学习动作：学习源MAC与接口关系，放入MAC地址表中</p>
+<p>（1）广播帧&#x2F;未知单播帧：泛洪动作：把该帧从交换机的各个接口（除刚刚接收该帧的口）发送出去<br>（2）单播帧：转发动作：根据MAC地址表，从目的MAC对应的接口转发出去；</p>
+<p>4.所有接收到消息的终端设备 –&gt; 解封装；<br>    数据帧[得知 源 MAC]–&gt;[解封IP]–&gt;数据包[得到 源 的IP]<br>*得到新鲜MAC—&gt;记录到自己的ARP表项中<br>（1）检查其中的目的MAC：是自己的MAC—&gt;请求，需回复；<br>                    不是自己的MAC—&gt;将数据包丢弃</p>
+<p>小问答：</p>
+<p>一、（封装的过程是在哪里发生的？）<br>在发送此数据的设备</p>
+<p>二、（交换机的MAC地址表和终端的ARP表项是一个东西吗？）<br>不是。<br>ARP表项 包含 IP地址 和其对应的 MAC地址；<br>MAC地址表 包含 MAC地址 和其对应的 端口。</p>
+<hr>
+<h5 id="静态路由配置"><a href="#静态路由配置" class="headerlink" title="静态路由配置^"></a>静态路由配置^</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240923203248.png"></p>
+<p>静态路由配置–网络拓扑图 </p>
+<p><strong>大体思路：</strong><br>1.配PC<br>2.配路由接口<br>3.配静态路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">R2：</span><br><span class="line">sys</span><br><span class="line">sys R2</span><br><span class="line">un in en</span><br><span class="line">int g0/0/0</span><br><span class="line">ip a 192.168.1.254 24</span><br><span class="line">int g0/0/1</span><br><span class="line">ip address 23.1.1.2 24</span><br><span class="line">ip route-static 192.168.2.0 24 g0/0/1 23.1.1.3 </span><br><span class="line"></span><br><span class="line">R3：</span><br><span class="line">sys</span><br><span class="line">sys R3</span><br><span class="line">un in en</span><br><span class="line">int g0/0/0</span><br><span class="line">ip a 192.168.2.254 24</span><br><span class="line">int g0/0/1</span><br><span class="line">ip a 23.1.1.3 24</span><br><span class="line">ip route-static 192.168.1.0 24 g0/0/1 23.1.1.2</span><br></pre></td></tr></table></figure>
+
+<p>#ip route-static 目的网段 掩码 出接口 下一跳<br>#[XX]dis ip routing-table #查看IP路由表</p>
+<hr>
+<p>1、数据封装&#x2F;解封装定义<br>    封装：应用层–&gt;物理层；数据–&gt;二进制数<br>    解封装：物理层–&gt;应用层；二进制数–&gt;数据</p>
+<p>2、OSI 模型 TCP&#x2F;IP 协议栈具体内容<br>    OSI：应用层，表示层，</p>
+<p>3、应用层作用，协议内容及端口号（5种以上）<br>作用：产生数据；<br>    Http：超文本传输（TCP 80）<br>    Https：超文本传输安全（TCP 443）<br>    FTP：文件传输（TCP 20&#x2F;21）<br>    TFTP：简单文件传输（UDP 69）<br>    Pop3：邮局协议（TCP 110）<br>    Smtp：简单邮件传输（TCP 25）<br>    DNS：域名解析（TCP&#x2F;UDP 53）<br>    Dhcp：动态IP配置（UDP 67&#x2F;68）<br>    Telnet：远程登录（TCP 23）<br>    Ssh：安全远程登录（TCP 22）</p>
+<p>4、网络层，传输层作用,包含协议及每种协议的作用<br>    传输层：作用：数据分段–&gt;识别上层协议–&gt;根据数据需求封装传输层协议<br>              协议：TCP，UDP<br>    网络层：作用：数据包分片（防止数据过大 MTU-1500B）–&gt;路由寻址和寻路–&gt;实现不同网段通信</p>
+<p>5、(TCP可靠性机制、应用UDP场景)<br>    TCP：三次握手—&gt;确认号确认机制—&gt;滑动窗口机制—&gt;四次挥手<br>    UDP场景：延迟要求低，不在意数据泄露</p>
+<p>6、网络层、传输层如何识别上层协议？<br>    网络层：协议号（Procotol）使用  tcp-6 &#x2F; udp-17<br>    传输层：端口号：大小16bit；一共2^16&#x3D;65536种可能性，能取的0-65535；</p>
+<p>7、园区网三层架构：<br>    接入层，汇聚层，核心层</p>
+<p>8.网络组成四要素：</p>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[R1]info-center enable 信息中心开启</span><br><span class="line">[R1]undo info-center enable 关闭信息中心开启</span><br></pre></td></tr></table></figure>
+
+<p>Tab：自动补齐</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[R1-GigabitEthernet0/0/0]dis this  查看当前接口下关系</span><br><span class="line">[R1]display ip interface brief 查看ip地址和接口简要关系</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">display ip routing-table     查看ip路由表</span><br></pre></td></tr></table></figure>
+
+<p>127.0.0.0&#x2F;8		本地环回网段<br>127.0.0.1			本地环回地址测试本地网卡连通性</p>
+<p>Win+R 运行界面：cmd—打开黑窗口  route print 路由打印</p>
+<hr>
+<h5 id="关于ARP协议提升："><a href="#关于ARP协议提升：" class="headerlink" title="关于ARP协议提升："></a>关于ARP协议提升：</h5><p>PC封装数据—&gt;判断是否在同一网段：<br>同：PC直接请求目的IP地址的MAC地址；<br>不同：PC 请求本机所配置网关 IP 地址对应的MAC地址</p>
+<hr>
+<h5 id="路由器工作原理："><a href="#路由器工作原理：" class="headerlink" title="路由器工作原理："></a>路由器工作原理：</h5><p>1.解封装—解掉帧头帧尾–（路由器是三层设备需要看网络层信息）<br>2.转发动作—路由器收到数据—根据目的IP查路由表转发（默认将路由器直连网段加入路由表）<br>3.重新封装&#x2F;重写—-封装新的帧头、帧尾</p>
+<hr>
+<p>*路由表的查看：<br>Destination&#x2F;MaskProtoPreCostFlags NextHopInterface<br>NextHop（下一跳）</p>
+<p>通不通：<br>1.看每台设备的路由表–大体看出来–默认加直连网段<br>2.确定数据流 源IP地址—</p>
+<p>静态路由：<br>ip route-static 目的网段 掩码 出接口 下一跳<br>ip route-static 目的网段 掩码 下一跳<br>ip route-static 目的网段 掩码 出接口 </p>
+<hr>
+<h5 id="OSPF-实验"><a href="#OSPF-实验" class="headerlink" title="OSPF 实验^"></a>OSPF 实验^</h5><p>要素：<br>设备：PC1，PC2，R1，R2，R3</p>
+<p>大体思路：<br>1.配PC<br>2.配路由接口<br>3.进入OSPF界面，进程1<br>  选择区域<br>  net(连接)相连网段</p>
+<p>R1：<br>sys<br>sys R1<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.254 24<br>int g0&#x2F;0&#x2F;1<br>ip a 12.1.1.1 24</p>
+<p>ospf<br>area 0<br>net 192.168.1.0 0.0.0.255<br>net 12.1.1.0 0.0.0.255</p>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;1<br>ip a 12.1.1.2 24<br>int g0&#x2F;0&#x2F;2<br>ip a 23.1.1.2 24</p>
+<p>ospf<br>area 0<br>net 12.1.1.0 0.0.0.255</p>
+<p>area 2<br>net 23.1.1.0 0.0.0.255</p>
+<p>R3:<br>sys<br>sys R3<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 192.168.2.254 24<br>int g0&#x2F;0&#x2F;2<br>ip a 23.1.1.3 24</p>
+<p>ospf<br>area 2<br>net 192.168.2.0 0.0.0.255<br>net 23.1.1.0 0.0.0.255</p>
+<p>检查：<br>dis os pe br #查看OSPF邻居关系</p>
+<hr>
+<h5 id="1-交换机工作原理"><a href="#1-交换机工作原理" class="headerlink" title="1.交换机工作原理"></a>1.交换机工作原理</h5><p>学习—&gt;泛洪(MAC表)—&gt;转发<br>学习动作:学习源MAC与接口关系,放入MAC地址表中;<br>泛洪动作:接收到广播帧&#x2F;未知单播帧时从每个端口(除接收端口外)发送<br>转发动作:接收到单播帧时根据MAC地址表，从目的MAC对应端口转发</p>
+<h5 id="2-路由器工作原理"><a href="#2-路由器工作原理" class="headerlink" title="2.路由器工作原理"></a>2.路由器工作原理</h5><p>解封装—&gt;转发(IP路由表)—&gt;重新封装<br>解封装:解除帧头帧尾<br>转发动作:根据目的IP查路由表转发<br>重封装:封装新的帧头帧尾</p>
+<h5 id="3-ARP协议作用-工作原理-如何获取对端MAC地址"><a href="#3-ARP协议作用-工作原理-如何获取对端MAC地址" class="headerlink" title="3.ARP协议作用,工作原理,如何获取对端MAC地址"></a>3.ARP协议作用,工作原理,如何获取对端MAC地址</h5><p>根据IP地址寻找目的MAC地址;</p>
+<p>发送数据前检查自己的arp缓存表(记录了IP与MAC地址对应关系)是否存在目的IP对应的MAC,有则作为目的MAC封装进数据帧中</p>
+<p>PC封装数据—&gt;判断是否在同一网段：<br>同：PC直接请求目的IP地址的MAC地址；<br>不同：PC 请求本机所配置网关 IP 地址对应的MAC地址</p>
+<h5 id="4-TCP-IP-协议栈中每层作用及协议"><a href="#4-TCP-IP-协议栈中每层作用及协议" class="headerlink" title="4.TCP IP 协议栈中每层作用及协议"></a>4.TCP IP 协议栈中每层作用及协议</h5><p>应用层:HTTP ftp pop3 tftp telnet ssh 产生数据<br>传输层:TCP UDP  数据分段,再根据需求封装传输层协议(端口号)<br>网络层:ARP IP   包分片,路由寻址和选路<br>数据链路层:以太网(以太Ⅱ,IEEE802.3) 广域网  封装链路层协议,识别上层协议</p>
+<hr>
+<h5 id="1-交换机工作原理-1"><a href="#1-交换机工作原理-1" class="headerlink" title="1.交换机工作原理"></a>1.交换机工作原理</h5><p>学习动作  泛洪动作  转发动作</p>
+<p>学习动作：学习MAC与接口关系放入MAC表<br>泛洪动作：收到未知单播帧&#x2F;广播帧时从每一个端口发送出去<br>转发动作：收到单播帧时根据目的MAC从对应端口转发出去</p>
+<h5 id="2-路由器工作原理-1"><a href="#2-路由器工作原理-1" class="headerlink" title="2.路由器工作原理"></a>2.路由器工作原理</h5><p>解封装  转发动作 重新封装</p>
+<p>解封装：解除帧头帧尾<br>转发动作：根据目的IP查路由表转发<br>重封装：重新封装新的帧头帧尾</p>
+<h5 id="3-ARP协议作用-工作原理-如何获取对端MAC地址-1"><a href="#3-ARP协议作用-工作原理-如何获取对端MAC地址-1" class="headerlink" title="3.ARP协议作用,工作原理,如何获取对端MAC地址"></a>3.ARP协议作用,工作原理,如何获取对端MAC地址</h5><p>作用：根据目的IP寻找目的MAC<br>工作原理：发送数据时查看arp缓存表，若存在目的IP对应MAC则封装进数据帧中<br>如何？：检查是否在同一网段：同：直接请求目的IP对应MAC；不同：请求网关IP对应MAC</p>
+<h5 id="4-TCP-IP-协议栈中每层作用及协议-1"><a href="#4-TCP-IP-协议栈中每层作用及协议-1" class="headerlink" title="4.TCP IP 协议栈中每层作用及协议"></a>4.TCP IP 协议栈中每层作用及协议</h5><p>应用层：产生数据：<br>Http：TCP 80<br>Https：TCP 443<br>Ftp：TCP 20&#x2F;21<br>Tftp：UDP 69<br>Pop3：TCP 110<br>Telnet：TCP 23<br>Ssh：TCP 22</p>
+<p>传输层：数据分段–根据数据需求封装传输层协议（端口号-识别应用层协议）<br>TCP<br>UDP </p>
+<p>网络层：数据包分片–路由寻址和选路–实现不同网段通信  (协议号-识别传输层协议：TCP-6 UDP-17_)<br>IP<br>ARP</p>
+<p>数据链路层：封装帧头帧尾（包括数据链路层协议）–实现同网段通信 （识别上层协议）<br>以太网协议（以太网Ⅱ帧、IEEE802.3帧）<br>广域网协议</p>
+<p>物理层：数据帧转换为二进制数</p>
+<hr>
+<h5 id="浮动静态路由"><a href="#浮动静态路由" class="headerlink" title="浮动静态路由^"></a>浮动静态路由^</h5><p>R1：<br>sys<br>sys R1<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.254 24<br>int g0&#x2F;0&#x2F;1<br>ip a 12.1.1.1 24<br>int e0&#x2F;0&#x2F;1<br>ip a 23.1.1.2 24</p>
+<p>ip route-static 192.168.2.1 24 g0&#x2F;0&#x2F;1 12.1.1.2 preference 50<br>ip route-static 192.168.2.1 24 e0&#x2F;0&#x2F;1 12.1.1.2  </p>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;1<br>ip a 12.1.1.2 24<br>int g0&#x2F;0&#x2F;2<br>ip a 192.168.2.254 24<br>int e0&#x2F;0&#x2F;1<br>ip a 23.1.1.3 24</p>
+<p>ip route-static 192.168.1.1 24 g0&#x2F;0&#x2F;1 12.1.1.1 preference 50<br>ip route-static 192.168.1.1 24 e0&#x2F;0&#x2F;1 12.1.1.1</p>
+<hr>
+<p>#ip route-static 目的IP 掩码 出接口 下一跳 优先级 50（静态默认60，优先级越小越优先）</p>
+<hr>
+<p>只跟下一跳问题：存在迭代查询现象：到达目的网段需要查多次路由表<br>查询速度慢，可能丢包</p>
+<p>只跟出接口：默认不可通信（点到点环境除外）<br>如何互通？开启arp代理：当某个接口开启arp代理功能后，代理目的IP地址回复MAC地址<br>        前提：该接口可以与目的IP地址能互通</p>
+<p>dis arp all 查看ARP缓存表</p>
+<p>[R2]int g0&#x2F;0&#x2F;1<br>[R2-GigabitEthernet0&#x2F;0&#x2F;1]arp-proxy enable 开启arp代理</p>
+<p>默认路由&#x2F;缺省路由：<br>目的网段为0.0.0.0&#x2F;0的路由  代表所有网段<br>注意事项：切记不要互指下一跳为对方<br>Tracert 路径跟踪</p>
+<p>路由表比较规则：<br>1.掩码长度，越长（精确）越优先<br>2.Pre 优先级：越小越优先<br>    直连-0  OSPF(内部)-10  isisp-15  静态-60  rip-100  OSPF(外部)-150  bgp-255<br>3.Cost 度量：开销，跳数 越小越优先</p>
+<p>等价路由：目的网段，掩码，优先级相同的多条路由、</p>
+<p>[R1]ip route-static 192.168.2.0 24 g0&#x2F;0&#x2F;1 12.1.1.2 preference 50 修改优先级</p>
+<p>静态路由不足之处：不适用于中大型网络；灵活性差</p>
+<p>RIP:路由信息协议<br>OSPF:开放式最短路径优先<br>ISIS:中间系统-中间系统<br>BGP:边界网关协议</p>
+<p>按照协议特性：<br>1.距离矢量路由协议  只关心距离和方向，传递的是路由（BGP，RIP）<br>2.链路状态路由协议 传递链路状态信息，形成相同的数据库（地图）<br>    OSPF—LSA（链路状态通告）<br>    ISIS—–LSP（链路状态PDU（协议数据单元））</p>
+<p>按照运行范围（AS：自治区域系统）<br>AS：运行相同路由协议路由器的集合<br>ASBR：AS边界路由器（处于多个AS之间的路由器）<br>IGP（内部网关协议）-运行在AS内的路由协议 - RIP\OSPF\ISIS<br>EGP（外部网关协议）-运行在AS间的路由协议 - BGP</p>
+<p>OSPF：开放式最短路径优先</p>
+<p>定位：动态路由协议；链路状态：传递链路状态信息；IGP<br>工作原理：<br>1、发送Hello建立邻居关系<br>2、进行LSA（链路状态通告）的泛洪，形成相同LSDB（链路状态数据库）<br>3、运行SPF（最短路径优先）算法，得出最优路由</p>
+<p>问题：随着路由器、链路数量的增多，LSDB随着增大、路由表增大，查表速度降低，转发效率降低<br>如何解决：划分区域（area）<br>区域分类：骨干区域：area 0；<br>        非骨干区域：area 1；<br>区域部署原则：非骨干区域之间通信，必须与骨干区域相连<br>区域划分；基于接口划分；<br>区域边界路由器：ABR（至少有一个区域是骨干区域）</p>
+<p>OSPF 配置：<br>1.进入OSPF进程（进程号默认是1）<br>2.进入路由器所属区域<br>3.宣告区域内的直连网段（反掩码）</p>
+<p>[R1]ospf<br>[R1-ospf-1]area 0<br>[R1]display ospf peer brief 查看OSPF对端简要信息</p>
+<p>Router ID：路由器标识：<br>手工配置优先：[R1]ospf 1（进程号） router-id 1.1.1.1（标识名）<br>默认第一个在路由器配置的IP地址为路由器router id<br>You need to restart the OSPF process to validate the new router ID.如果之前存在router id，修改后需要重置OSPF进程<br><R1>reset ospf process<br>Warning: The OSPF process will be reset. Continue? [Y&#x2F;N]:y<br>邻居状态—Full 收敛完成状态</p>
+<p>OSPF 优先级：10<br>OSPF 度量值：开销<br>ospf接口开销cost &#x3D; 带宽参考值（100Mb&#x2F;s） &#x2F;接口带宽；不足1取1    【GE口千兆 E口百兆】<br>ospf路由总开销 &#x3D; 路由器到达目的网段，出方向接口开销之和</p>
+<p>如何修改接口cost？<br>1、修改带宽参考值<br>[R3-ospf-1]bandwidth-reference ?<br>INTEGER&lt;1-2147483648&gt; The reference bandwidth (Mbits&#x2F;s)<br>[R3-ospf-1]bandwidth-reference 10000<br>2、直接修改接口cost<br>[R3]int g0&#x2F;0&#x2F;0<br>[R3-GigabitEthernet0&#x2F;0&#x2F;0]ospf ?      #&lt;65535&gt;<br>[R3-GigabitEthernet0&#x2F;0&#x2F;0]ospf cost 5                                                                                                                                                                    </p>
+<hr>
+<h5 id="OSPF-与优先级"><a href="#OSPF-与优先级" class="headerlink" title="OSPF 与优先级"></a>OSPF 与优先级</h5><p>R1：<br>sys<br>sys R1<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 12.1.1.1 24<br>int g0&#x2F;0&#x2F;1<br>ip a 192.168.1.254 24<br>q<br>os 1 ro 1.1.1.1<br>area 1<br>net 192.168.1.0 0.0.0.255<br>net 12.1.1.0 0.0.0.255</p>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 12.1.1.2 24<br>int g0&#x2F;0&#x2F;1<br>ip a 23.1.1.2 24<br>q<br>os 1 ro 2.2.2.2<br>ar 1<br>net 12.1.1.0 0.0.0.255</p>
+<p>ar 0<br>net 23.1.1.0 0.0.0.255</p>
+<p>int g0&#x2F;0&#x2F;1<br>ospf cost 6</p>
+<p>R3:<br>sys<br>sys R3<br>un in en<br>int g0&#x2F;0&#x2F;1<br>ip a 23.1.1.3 24<br>int g0&#x2F;0&#x2F;2<br>ip a 34.1.1.3 24<br>q<br>os 1 ro 3.3.3.3<br>ar 0<br>net 23.1.1.0 0.0.0.255<br>net 34.1.1.0 0.0.0.255</p>
+<p>R4:<br>sys<br>sys R4<br>un in en<br>int g0&#x2F;0&#x2F;2<br>ip a 34.1.1.4 24<br>int g0&#x2F;0&#x2F;3<br>ip a 45.1.1.4 24<br>int g0&#x2F;0&#x2F;0<br>ip a 47.1.1.4 24<br>q<br>os 1 ro 4.4.4.4<br>ar 0<br>net 34.1.1.0 0.0.0.255</p>
+<p>ip route-static 200.1.1.0 24 g0&#x2F;0&#x2F;3 45.1.1.5 preference 50<br>ip route-static 200.1.1.0 24 g0&#x2F;0&#x2F;0 47.1.1.7</p>
+<p>ospf<br>default-route-advertise always</p>
+<p>R5:<br>sys<br>sys R5<br>un in en<br>int g0&#x2F;0&#x2F;3<br>ip a 45.1.1.5 24<br>int g0&#x2F;0&#x2F;0<br>ip a 56.1.1.5 24<br>q<br>os 100 ro 5.5.5.5<br>ar 0<br>net 56.1.1.0 0.0.0.255</p>
+<p>ip route-static 192.168.1.0 24 g0&#x2F;0&#x2F;3 45.1.1.4</p>
+<p>R7:<br>sys<br>sys R7<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 47.1.1.7 24<br>int g0&#x2F;0&#x2F;1<br>ip a 67.1.1.7 24<br>q<br>os 100 ro 7.7.7.7<br>ar 0<br>net 67.1.1.0 0.0.0.255</p>
+<p>ip route-static 192.168.1.0 24 g0&#x2F;0&#x2F;0 47.1.1.4</p>
+<p>R6:<br>sys<br>sys R6<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 56.1.1.6 24<br>int g0&#x2F;0&#x2F;1<br>ip a 67.1.1.6 24<br>int g0&#x2F;0&#x2F;2<br>ip a 200.1.1.254 24<br>q<br>os 100 ro 6.6.6.6<br>ar 0<br>net 56.1.1.0 0.0.0.255<br>net 67.1.1.0 0.0.0.255<br>net 200.1.1.0 0.0.0.255</p>
+<p>ip route-static 192.168.1.0 24 g0&#x2F;0&#x2F;0 56.1.1.5 preference 40<br>ip route-static 192.168.1.0 24 g0&#x2F;0&#x2F;1 67.1.1.7</p>
+<hr>
+<h5 id="OSPF原理："><a href="#OSPF原理：" class="headerlink" title="OSPF原理："></a>OSPF原理：</h5><p>1.发送Hello报文 建立邻居关系<br>2.进行LSA泛洪，同步LSDB数据库<br>3.运行SPF算法，得出最优路由</p>
+<p>静态配置中<br>只跟下一跳问题：迭代查询现象：到达目的网段需查多次路由表，查速慢，可能丢包；<br>只跟出接口问题：默认不可通信（点到点除外）<br>            如何互通：开启ARP代理：某接口开启ARP代理后，代理目的IP地址回复MAC地址（前提是该接口可以与目的IP地址互通）</p>
+<p>路由表比较规则<br>1、掩码长度 越长越优先<br>2、优先级 越小越优先<br>3、度量：开销 跳数 越小越优先</p>
+<h5 id="OSPF配置："><a href="#OSPF配置：" class="headerlink" title="OSPF配置："></a>OSPF配置：</h5><p>1.进入OSPF进程<br>2.进入路由所属区域<br>3.宣告直连网段</p>
+<p>动态路由分类：<br>协议 运行范围</p>
+<p>距离矢量 RIP BGP<br>链路状态 OSPF ISIS</p>
+<p>内部网关 IGP RIP OSPF ISIS<br>外部网关 EGP BGP</p>
+<hr>
+<h5 id="OSPF-报文实验"><a href="#OSPF-报文实验" class="headerlink" title="OSPF 报文实验^"></a>OSPF 报文实验^</h5><p>OSPF 报文消息(Open Shortest Path First)<br>Hello                                           建立、维护邻居关系<br>DBD&#x2F;DD报文：数据库描述报文       描述本地链路状态数据库信息（LSA摘要）<br>LSR：链路状态请求报文		    请求所缺少的LSA的详细信息<br>LSU：链路状态更新报文		    更新所请求LSA的详细信息<br>LSACK：链路状态确认报文		    确认接收到的LSA</p>
+<p>R1：<br>sys<br>sys R1<br>un in en<br>os 1 ro 1.1.1.1<br>ar 0<br>int g0&#x2F;0&#x2F;0<br>ip a 12.1.1.1 24<br>os en 1 ar 0</p>
+<hr>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 12.1.1.2 24<br>q<br>os 1 ro 2.2.2.2<br>ar 0<br>net 12.1.1.2 0.0.0.0</p>
+<hr>
+<h5 id="两个验证"><a href="#两个验证" class="headerlink" title="两个验证"></a>两个验证</h5><p>第一个验证：<br>R1：<br>sys<br>sys R1<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 1.1.1.1 24<br>q<br>os 1 ro 1.1.1.1<br>ar 0<br>net 1.1.1.1 0.0.0.0</p>
+<p>q<br>q<br>int g0&#x2F;0&#x2F;0<br>os au md 1 pl hcie</p>
+<hr>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 1.1.1.2 24<br>q<br>os 1 ro 2.2.2.2<br>ar 0<br>net 1.1.1.2 0.0.0.0</p>
+<p>au md 1 pl hcie</p>
+<hr>
+<p><R1>ospf reset process</p>
+<p>结果：验证一是通的</p>
+<hr>
+<p>第二个验证：</p>
+<p>R1：<br>sys<br>sys R1<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 1.1.1.1 24<br>q<br>os 1 ro 1.1.1.1<br>ar 0<br>net 1.1.1.1 0.0.0.0</p>
+<p>au md 1 pl huawei</p>
+<p>q<br>q<br>int g0&#x2F;0&#x2F;0<br>os au simple pl bossay</p>
+<hr>
+<p>R2:<br>sys<br>sys R2<br>un in en<br>int g0&#x2F;0&#x2F;0<br>ip a 1.1.1.2 24<br>q<br>os 1 ro 2.2.2.2<br>ar 0<br>net 1.1.1.2 0.0.0.0</p>
+<p>au m 1 p huawei</p>
+<p>q<br>q<br>int g0&#x2F;0&#x2F;0<br>os au s p bossay</p>
+<hr>
+<p>OSPF Header<br>Auth Type: Simple password (1)<br>Auth Data (Simple): bossay</p>
+<p>结果：<br>接口认证优先于区域认证<br>原因：<br>OSPF区域基于接口划分</p>
+<hr>
+<p>loopback接口：环回接口 可以配置IP地址—模拟网段</p>
+<p>[R3]int loopback ?<br>&lt;0-1023&gt; LoopBack interface number<br>[R3]int loopback 0<br>[R3-LoopBack0]ip address 3.3.3.3 32</p>
+<p>在广播型多路访问环境下，LSA泛洪过多，占用大量带宽资源<br>如何解决：选举DR（指定路由器）<br>    路由器都向DR进行LSA泛洪,由DR将LSA向其他路由器泛洪其他路由器之间，不在进行LSA泛洪<br>    为了保证DR可靠，选举出BDR（备份DR）<br>非DR&#x2F;BDR的路由—DRother</p>
+<p>DR&#x2F;BDR选举规则（可能的多路访问环境必定选BR&#x2F;BDR：40s：先选两个BDR，再升一个为DR）：<br>1、先比较路由器优先级(默认值1)，越大越优先<br>    【优先级0–不参与DR&#x2F;BDR选举】<br>2、router id 越大越优先</p>
+<p>DR:123.1.1.4 BDR: 123.1.1.2 MTU: 0</p>
+<p>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf dr-priority ?<br>  INTEGER&lt;0-255&gt; Router priority value<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf dr-priority 100</p>
+<p>DR&#x2F;BDR抢占规则：DR具有不可抢占性</p>
+<p>DR&#x2F;BDR&#x2F;DRother关系：<br>邻居关系(DRother-DRother)：hello-建立&#x2F;维护邻居关系<br>邻接关系(DR&#x2F;BDR-DRother)(DR&#x2F;BDR)：hello-建立&#x2F;维护邻居关系 + 进行LSA泛洪</p>
+<p>[R1]ospf 1 router-id 1.1.1.1<br>[R1-ospf-1]area 0<br>[R1]int g0&#x2F;0&#x2F;0<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ip address 12.1.1.1 24<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf enable 1 area 0</p>
+<p>*[R2]ospf 1 router-id 2.2.2.2<br>[R2-ospf-1]area 0<br>[R2-ospf-1-area-0.0.0.0]network 12.1.1.2 0.0.0.0 宣告地址</p>
+<p><R1>display ospf peer brief<br>    OSPF Process 1 with Router ID 1.1.1.1<br>        Peer Statistic Information</p>
+<p><RI>display ospf peer<br>    OSPF Process 1 with Router ID 1.1.1.1<br>        Neighbors<br>Area 0.0.0.0 interface 12.1.1.1(GigabitEthernet0&#x2F;0&#x2F;0) ‘s neighbors<br>Router ID: 2.2.2.2			Address: 12.1.1.2<br>State: Full 		Mode:Nbr is Master Priority:100<br>DR: 12.1.1.2 	BDR: 12.1.1.1 	MTU: 0<br>………………</p>
+<p>OSPF 报文消息(Open Shortest Path First)<br>Hello                                            建立、维护邻居关系<br>DBD&#x2F;DD报文：数据库描述报文   	    描述本地链路状态数据库信息（LSA摘要）<br>LSR：链路状态请求报文		    请求所缺少的LSA的详细信息<br>LSU：链路状态更新报文		    更新所请求LSA的详细信息<br>LSACK：链路状态确认报文		    确认接收到的LSA</p>
+<p><R1>reset ospf process<br>Warning: The OSPF process will be reset. Continue? [Y&#x2F;N]:y</p>
+<p>抓包：OSPF基于IP封装，协议号89<br>    更新：采用组播更新，更新地址：224.0.0.5、224.0.0.6</p>
+<p>IP规划:<br>A: 0.0.0.0-127.255.255.255<br>B: 128.0.0.0- 191.255.255.255<br>C: 192.0.0.0223.255.255.255<br>    可以在主机上配置的地址<br>D: 224.0.0.0-239.255.255.255<br>    组播地址<br>E: 240.0.0.0- 255.255.255.255<br>    保留地址&#x2F;实验地址</p>
+<p>OSPF Header (ospf头部字段）<br>Version: 2            		         	    版本号：2，主要用于IPV4路由获取<br>Message Type: Hello Packet (1)   	    消息类型(什么报文)：Hello报文(代号为1)<br>Packet Length: 48                        	    数据包长度：48bit<br>Source OSPF Router: 1.1.1.1        	    源Router ID字段：1.1.1.1 【Router ID 必须唯一】<br>Area ID: 0.0.0.0				 	    区域号：0（骨干区域）<br>Checksum: 0xdc8f			 	    校验和<br>Auth Type: Null (0)			 	    认证类型：无<br>Auth Data (none): 0000000000000000   认证数据</p>
+<p>OSPF Hello Packet （OSPF Hello 报文 — 建立并维护邻居关系）<br>Network Mask: 255.255.255.0 		    网络掩码<br>Hello Interval [sec]: 10			    Hello间隔：10s			（心跳更新间隔）<br>Options: 0x02					    选项字段<br>Router Priority: 1				    路由器优先级（用于选举DR和BDR）<br>Router Dead Interval [sec]: 40		    路由器失效时间：40s		（心跳失效时间）<br>Designated Router: 12.1.1.2		    指定路由器（DR)<br>Backup Designated Router: 12.1.1.1	    备份指定路由器（BDR）<br>Active Neighbor: 2.2.2.2			    活跃的邻居</p>
+<p>Hello 报文成立条件：<br>1、Router ID 必须唯一<br>2、区域ID 必须相同<br>3、认证类型、认证数据 必须相同<br>4、网络掩码必须相同<br>5、hello timer，dead timer 必须相同<br>6、选项字段必须相同</p>
+<p>认证方式：<br>基于区域的认证：区域内所有路由器配置<br>基于接口的认证</p>
+<p>认证类型：<br>不认证、明文认证、MD5密文认证</p>
+<p>认证数据：认证密码</p>
+<p>接口的认证:<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf authentication-mode ?<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf authentication-mode md5 ?<br>  INTEGER&lt;1-255&gt;  Key ID<br>  <cr><br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf authentication-mode md5 1 ?<br>  STRING&lt;1-255&gt;&#x2F;&lt;20-392&gt;  The password (key)<br>  cipher                  Encryption type (Cryptogram)<br>  plain                   Encryption type (Plain text)<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf authentication-mode md5 1 cipher huawei </p>
+<p>[R1-GigabitEthernet0&#x2F;0&#x2F;0]undo ospf authentication-mode</p>
+<p>区域的认证:<br>[R1-ospf-1-area-0.0.0.0]authentication-mode md5 1 cipher bossay</p>
+<p>手工修改Hello时间和死亡时间：<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf timer hello 5<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]ospf timer dead 10</p>
+<p>undo ospf timer hello </p>
+<p>邻居关系建立标志：<br>收到hello报文中，发现本路由器的router id（活跃的邻居字段中）</p>
+<p>邻居状态机制（OSPF邻居状态机）<br>Down		开启OSPF但无报文交互<br>Init			收到的Hello中，没有发现自己的router id	<br>2Way		收到的hello中，发现自己的router id（邻居关系建立标志）<br>Exstart		进行主从关系的选举，保证DBD报文可靠<br>Exchange 		进行DBD报文的交互<br>Loading 		进行LSR&#x2F;LSU&#x2F;LSACK报文的交互<br>Full			运行SPF算法，得出最优路由（邻接关系建立标志）</p>
+<p>Interface MTU: 0		接口MTU<br>Options: 0x02			选项字段<br>DB Description：0x07	DBD描述字段<br>{<br>…. .1.. &#x3D; (I) Init: Set 		是否为第一个DBD报文（1是第一个； 0不是第一个）<br>…. ..1. &#x3D; (M) More: Set  	更多位 后续是否还有DBD报文（1：是；0：否）<br>…. …1 &#x3D; (MS) Master: Yes 	主从位（1：主 ；0：从0）<br>}<br>DD Sequence: 277 		DBD序列号（DBD报文）</p>
+<p>何时一直卡在2way：当两台路由器都为DRother路由器</p>
+<p>为什么要保证DBD可靠？<br>1、OSPF由IP封装，IP无可靠性机制；<br>2、Hello 周期性 无需保障<br>3、LLL相互保证可靠<br>4、因此 Exstract 选举主从保证DBD可靠 </p>
+<p>如何保证DBD可靠？<br>1.互发空DBD报文选举主从(router id越大越优先)<br>2.从照主序列号发送含LSA摘要的DBD报文；主序列号+1回复；<br>3.从比主多一个DBD报文,目的保证主最后一个DBD报文的可靠</p>
+<p>什么时候会卡在Exchange？？？？<br>包交换有问题，发出DBD后没有收到LSACK</p>
+<p>MTU：最大传输单元 1500B<br>在OSPF协议中默认MTU不进行协商，也可开启MTU协商<br>[R1]int g0&#x2F;0&#x2F;0<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0] ospf mtu-enable</p>
+<hr>
+<p>1.OSPF 工作原理<br>发送Hello报文，建立邻居关系<br>进行LSA泛洪，形成相同LSDB<br>运行SPF算法，得出最优路由</p>
+<p>2.Ospf 更新方式<br>基于IP封装，协议号89<br>组播，更新地址224.0.0.5，224.0.0.6</p>
+<p>3.OSPF五种报文消息<br>Hello	建立并维护邻居关系<br>DBD		发送数据库概要<br>LSR		数据库补全请求<br>LSU		数据库更新信息<br>LSACK	确认补全数据库</p>
+<p>4.OSPF划分区域原因，部署原则<br>LSDB随链路增多而增大，路由表增大，查表转发速率降低<br>原则：非骨干区域间通信需与骨干区域相连</p>
+<p>5.OSPF选举DR&#x2F;BDR的原因，如何选举<br>防止LSA泛洪过多占用带宽<br>选举：先比较路由器优先级，在比较router id优先级（均越大越优先）</p>
+<p>6.OSPF什么是邻居关系、什么是邻接关系<br>邻居：DRother之间，只建立维护邻居关系<br>邻接：DR&#x2F;BDR-DRother以及DR-BDR之间，建立维护邻居关系并LSA泛洪</p>
+<p>7.OSPF邻居关系建立的条件，标志<br>条件：<br>router id 唯一<br>区域 相同<br>认证类型和认证数据 相同<br>网络掩码 相同<br>hello timer，dead timer 相同<br>选项字段 相同</p>
+<p>标志：收到的Hello中发现自己的router id（2-Way）</p>
+<p>8.OSPF 状态机分别作用<br>Down		开OSPF，无交互<br>Init			hello 无 router id<br>2-Way		hello 有 router id<br>Exstart		选主从，保DBD可靠<br>Exchange		DBD交互<br>Loading		LSR\LSU\LSACT交互<br>Full			运行SPF算法，得出最优路由</p>
+<p>9.如何保证DBD可靠？<br>互发空DBD，根据router id大选主从<br>从照主序列号发送含LSA摘要DBD，主序列号+1回复；<br>从比主多一报文以保证主最后一DBD可靠</p>
+<p>10.何时卡2-Way<br>ospf dr pri 0   接口优先级改为0 不参与DR&#x2F;BDR选举<br>dis ospf pe br  看看在哪个状态机</p>
+<p>reset ospf process 重置OSPF进程<br>11.何时卡Exstart（State： ExStart）<br>int g0&#x2F;0&#x2F;0<br>ospf mtu-enable<br>mtu 1400</p>
+<hr>
+<h5 id="VLAN间路由练习"><a href="#VLAN间路由练习" class="headerlink" title="VLAN间路由练习^"></a>VLAN间路由练习^</h5><p>R3：<br>sys<br>sys R3<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.3.254 24<br>int g0&#x2F;0&#x2F;1<br>ip a 23.1.1.3 24<br>q</p>
+<p>v b 10 20 40</p>
+<p>LSW2:<br>sys<br>sys SW2<br>un in en</p>
+<p>v b 10 20 40</p>
+<p>int v 10<br>ip a 192.168.1.254 24<br>int v 20<br>ip a 192.168.2.254 24<br>int v 40<br>ip a 23.1.1.2 24</p>
+<p>int g0&#x2F;0&#x2F;1<br>port link-type trunk<br>po tr a v 10 20 40<br>po tr pvid vl 40</p>
+<p>[SW2]interface Vlanif 10<br>[SW2-Vlanif10]ip address 192.168.1.254 24<br>[SW2]interface Vlanif 20<br>[SW2-Vlanif10]ip address192.168.2.254 24</p>
+<p>[SW1]int g0&#x2F;0&#x2F;5<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port link-type trunk<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk allow-pass vlan 10 20<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk pvid vlan 100 </p>
+<p>[SW1]vlan batch 20 30</p>
+<p>display vlan<br>display port vlan</p>
+<hr>
+<p>二层技术：</p>
+<p>VLAN：虚拟局域网<br>为什么要有VLAN？<br>交换机工作原理：学习，泛洪，转发<br>广播域：能收到广播消息的范围&#x2F;区域<br>交换机默认所有接口都在同一个广播域<br>广播域大–占用带宽资源，安全性低；<br>VLAN作用：隔离广播域<br>如何实现隔离？交换机为数据打上Tag，利用Tag区分不同VLAN</p>
+<p>不带tag数据（untagged）<br>帧头(DMAC&lt;–SMAC type)|ip(SIP–&gt;DIP)|tcp&#x2F;udp|data|帧尾</p>
+<p>携带tag数据（tagged）<br>帧头(DMAC&lt;–SMAC|tag(4bytes)|type)|ip(SIP–&gt;DIP)|tcp&#x2F;udp|data|帧尾</p>
+<p>Tag&#x3D;4B<br>1.Type 类型  					0X8100-802.1Q标准—-vlan<br>2.PRI 优先级					用于QOS (服务质量)<br>3.CFI MAC地址是否支持经典格式<br>4.VID(12bits   2^12&#x3D;4096vlan  范围：0-4095 能用的：1-4094) VLAN标识</p>
+<p>VLAN 对于tag不同处理动作–端口处理类型<br>Access：接入链路：只允许一个vlan通过				交换机–终端设备<br>Trunk： 干道链路：允许多个vlan通过					交换机–交换机<br>Hybrid：混合链路：手工定义允许通过的vlan及vlan通过时的动作	默认类型</p>
+<p>VLAN配置：<br>创建单个vlan：[SW1]vlan 10 –&gt; [SW1-vlan10]<br>描述备注vlan：[SW1-vlan10]description HR<br>创建多个vlan：[SW1]vlan batch 20 30<br>创建连续vlan：[SW1]vlan batch 40 to 100<br>查看vlan：[sw1]display vlan<br>查看端口和vlan关系：display port vlan</p>
+<p>Access配置：1. 进入接口  2. 端口链路类型-access  3. 端口所属的vlan<br>[SW1]int g0&#x2F;0&#x2F;1<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;1]port link-type access<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;1]port default vlan 10</p>
+<p>Trunk配置：1. 进入接口  2. 端口链路类型-trunk  3. trunk端口允许通过的vlan<br>[SW1]int g0&#x2F;0&#x2F;5<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port link-type trunk<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk allow-pass vlan 10 20<br>*[SW1-GigabitEthernet0&#x2F;0&#x2F;5]undo port trunk allow-pass vlan 1 删除vlan1<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk pvid vlan 100    修改trunk接口pvid</p>
+<p>删除命令 倒着删<br>看到<cr>回车</p>
+<p>Hybrid配置：<br>tagged：携带标记<br>untagged：不携带标记<br>[SW1]int g0&#x2F;0&#x2F;6<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port link-type hybrid<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port hybrid untagged vlan 30<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port hybrid pvid vlan 30</p>
+<p>Tag的处理：允许列表下，不带标记打标记，相同标记去标转发，不同标记A丢T转<br>{<br>Access：（不带标记打标记，相同标记去标转发，不同标记直接丢弃）<br>入：不带标记，打上PVID<br>出：PVID比较，同就去标记转发，不同就丢弃<br>Trunk：<br>出：允许列表下，不同标记直接转发，相同标记去标转发<br>入：允许列表下，不带标记打标记，带着标记直接转发<br>Hybrid：<br>出：允许列表下，手工定义允许通过的vlan及通过时动作<br>入：在满足允许列表前提下，收到数据带标记，直接转发；收到数据不带标记，打上该接口的pvid的标记<br>}</p>
+<p>三层交换机&#x3D;路由器(IP+静态+动态) +二层交换机(vlan stp)集合</p>
+<p>三层交换机物理接口无法配置IP地址（交换机接口默认二层接口）<br>如何在交换机上配置IP地址?<br>1、将二层接口转换为三层接口<br>[SW2]int g0&#x2F;0&#x2F;5<br>[SW2-GigabitEthernet0&#x2F;0&#x2F;5]undo portswitch 删除端口交换功能<br>2、在交换机上配置vlan虚拟接口 vlanif<br>[SW2]interface Vlanif 10<br>[SW2-Vlanif10]ip address 192.168.1.254 24<br>[SW2]interface Vlanif 20<br>[SW2-Vlanif10]ip address192.168.2.254 24</p>
+<p>交换机出来的数据一定带标记，路由器不带<br>（1）全程带标记			trunk<br>（2）出来去标记，进入打标记  access  hybrid</p>
+<p>配置实验:配置思路 先二层（聚合 vlan stp）再三层（vlan if  静态  OSPF)<br>每配置完一个技术——-验证是否正确<br>Vlan：dis port vlan       dis vlan<br>Vlanif  ip地址：dis ip int brief<br>配置完毕两端IP地址测试直连连通性：ping 对端地址<br>静态：dis ip ro<br>Ospf：dis ospf pe br (full状态) 	 dis ip ro </p>
+<p>将静态路由引入到ospf中，参考命令如下：<br>[R3]ospf 1<br>[R3-ospf-1]import-route  static<br>ospf 外部路由  150</p>
+<p>单臂路由：<br>Dot1q&#x3D;802.1q 0x8100k</p>
+<p>[R6]int g0&#x2F;0&#x2F;0.1  开启子接口<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]ip address 192.168.5.254 24  接口IP<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]dot1q termination vid 50  允许通过的vlan<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]arp broadcast enable   子接口默认广播功能没开</p>
+<p>链路聚合：<br>产生背景：为了提升网络可靠性，增大带宽<br>单板可靠—多冗余<br>设备可靠—双冗余<br>链路可靠—多链路</p>
+<p>STP：生成树协议<br>阻塞端口<br>如何在保证可靠前提下，提升带宽，减少丢包<br>定义：将多条物理链路聚合成一条聚合链路（eth-trunk）</p>
+<p>模式：<br>手工链路聚合模式：聚合链路中的所有链路都参数据的转发<br>1、创建聚合接口<br>2、将物理接口加入聚合接口</p>
+<p>SW1：<br>sys<br>sys SW1</p>
+<p>un in en</p>
+<p>int Eth-Trunk 1<br>q<br>int g0&#x2F;0&#x2F;1<br>eth-trunk 1<br>q<br>int g0&#x2F;0&#x2F;2<br>eth-trunk 1<br>q<br>int g0&#x2F;0&#x2F;3<br>eth-trunk 1<br>或者<br>int Eth-Trunk 1<br>trunkport g0&#x2F;0&#x2F;1<br>trunkport g0&#x2F;0&#x2F;2<br>trunkport g0&#x2F;0&#x2F;3<br>或者<br>int Eth-Trunk 1</p>
+<p>trunkport g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;3</p>
+<p>dis eth-trunk 1		查看聚合接口1</p>
+<p>LACP链路聚合模式：存在备份链路: M:N备份 M-活跃链路 N-非活跃链路<br>LACP：链路聚合控制协议<br>设备之间发送LACPDU：链路聚合控制协议数据单元</p>
+<p>要素：<br>LACPDU:设备系统优先级<br>MАC<br>接口优先级<br>接口编号</p>
+<p>如何选举活跃链路：在两台交换机之间选举出主动端<br>先比LACP系统优先级（32768），越小越优先<br>再比MAC：越小越优先</p>
+<p>在主动端设备上选举活跃链路：<br>先比LACP接口优先级（32768），越小越优先<br>再比接口编号：越小越优先</p>
+<p>SW3：<br>sys<br>sys SW3<br>un in en<br>int eth-trunk 2          		 创建聚合接口<br>mode lacp-static		 改为LACP模式<br>max active-linknumber 3 	 配置最大活跃链路数量<br>lacp preempt enable		（默认抢占关闭）开启抢占<br>lacp preempt delay 10	 配置抢占延迟(s)<br>trunkport g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4  将物理接口加入聚合接口</p>
+<p>lacp priority 4000		  修改lacp系统优先级</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp priority 40000  		  修改LACP接口优先级</p>
+<p>q<br>dis eth-trunk 2 </p>
+<p>SW4:<br>sys<br>sys SW4<br>un in en<br>int eth 2<br>mode lacp-static<br>max active- 3<br>lacp preempt enable<br>&#x2F;&#x2F;lacp pr en<br>la pr de 10<br>tr g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp priority 40000 </p>
+<p>STP：生成树协议（在保证可靠的前提下，解决环路问题）<br>产生原因：<br>二层环境为了保证可靠性，采用双冗余设备环形连接方式—环路问题		<br>问题：广播风暴—&gt;设备宕机<br>     MAC地址表震荡—-&gt;数据转发丢包</p>
+<p>原理：阻塞端口-拓扑稳定时，阻塞端口处于阻塞状态，当链路出现故障时，阻塞端口自动开启，开始转发数据。</p>
+<p>应用场景：二层交换网络—交换机默认运行STP</p>
+<p>STP模式：<br>STP：生成树协议<br>RSTP：快速生成树协议<br>MSTP：多实例生成树协议</p>
+<p>[SW2]display stp   查看STP（默认MSTP模式）<br>[SW3]display stp brief 查看STP简要信息<br>[sw2]stp mode stp  修改为stp模式<br>[sw2]display int g0&#x2F;0&#x2F;2 查看端口</p>
+<p>STP 工作原理—阻塞端口如何选出来的？</p>
+<p>根-选举根交换机（根桥）<br>—–网桥ID：<br>定义：运行STP协议的交换机唯一标识<br>组成：网桥优先级（默认32768，4096倍数，越小越优先）+MAC地址<br>比较网桥ID：(先比较优先级、在比较mac地址，越小越优先)</p>
+<p>[SW2]stp priority 4096     修改优先级</p>
+<p>干：根端口<br>定义：非根交换机到达根交换机最优的端口<br>比较规则:<br>1、根路径开销  802.1t  10M&#x3D;2000000  100M&#x3D;200000  1000M&#x3D;20000  10GM&#x3D;2000</p>
+<hr>
+<h5 id="链路聚合简要介绍："><a href="#链路聚合简要介绍：" class="headerlink" title="链路聚合简要介绍："></a>链路聚合简要介绍：</h5><p>背景：设备之间存在多条链路时，由于STP（生成树）的存在，实际只会有一条链路转发流量，设备间链路带宽无法得到提升。<br>用途：不进行硬件升级的前提下增加链路带宽</p>
+<p>链路聚合基本术语&#x2F;概念：<br>• 聚合组（Link Aggregation Group，LAG）：若干条链路捆绑在一起所<br>形成的的逻辑链路。每个聚合组唯一对应着一个逻辑接口，这个逻辑接<br>口又被称为链路聚合接口或Eth-Trunk接口。<br>• 成员接口和成员链路：组成Eth-Trunk接口的各个物理接口称为成员接<br>口。成员接口对应的链路称为成员链路。<br>• 活动接口和活动链路：活动接口又叫选中（Selected）接口，是参与数<br>据转发的成员接口。活动接口对应的链路被称为活动链路（Active link）<br>• 非活动接口和非活动链路：又叫非选中（Unselected）接口，是不参与<br>转发数据的成员接口。非活动接口对应的链路被称为非活动链路<br>（Inactive link）。<br>• 聚合模式 ：根据是否开启LACP（Link Aggregation Control Protocol，<br>链路聚合控制协议），链路聚合可以分为手工模式和LACP模式。<br>• 其他概念：活动接口上限阈值和活动接口下限阈值。</p>
+<p>链路聚合（手工和lacp）</p>
+<p>SW1:<br>sys				进入管理模式<br>sys SW1			命名（SW1）<br>un in en			取消信息中心提醒</p>
+<p>int e 1  			创建聚合接口，编号为1<br>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4	将物理接口g0&#x2F;0&#x2F;1到0&#x2F;0&#x2F;4加入聚合接口</p>
+<p>q<br>dis eth 1			查看聚合接口1</p>
+<hr>
+<p>SW2:<br>sys<br>sys SW2<br>un in en</p>
+<p>int e 1<br>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4</p>
+<p>q<br>dis eth 1</p>
+<hr>
+<p>SW3:<br>sys				<br>sys SW3<br>un in en</p>
+<p>int e 2			创建聚合接口，编号为2<br>mo la 			将此聚合接口改为LACP模式<br>m ac 3			配置最大活跃链路数量：3<br>la pr en			(默认关闭)开启LACP抢占模式<br>lacp pr de 10		配置抢占延迟(s)</p>
+<p>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4	将物理接口加入聚合接口</p>
+<p>lacp pri 4000		修改lacp优先级（抢占主动端）</p>
+<p>int g0&#x2F;0&#x2F;2			进入 GE0&#x2F;0&#x2F;2 接口<br>lacp pri 40000		修改LACP接口优先级(默认32768，改大使其变为备用链路)</p>
+<p>q<br>dis eth 2			查看聚合接口 2</p>
+<hr>
+<p>SW4:<br>sys<br>sys SW4<br>un in en</p>
+<p>int e 2<br>mo la<br>m ac 3<br>lacp pr en<br>lacp pr de 10</p>
+<p>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp pri 40000</p>
+<p>q<br>dis eth 2</p>
+<hr>
+<h5 id="STP"><a href="#STP" class="headerlink" title="STP"></a>STP</h5><p>1.环路问题导致的现象<br>广播风暴—&gt;设备宕机<br>MAC地址表震荡—-&gt;数据转发丢包</p>
+<p>生成树协议（作用：在保证可靠的前提下，解决环路问题）<br>原理：阻塞端口-拓扑稳定时，阻塞端口处于阻塞状态，当链路出现故障时，阻塞端口自动开启，开始转发数据。</p>
+<p>STP模式：<br>STP：生成树协议<br>RSTP：快速生成树协议<br>MSTP：多实例生成树协议</p>
+<p>STP报文–BPDU（桥协议数据单元）<br>Protocol Identifier: Spanning Tree Protocol (0x0000)   		协议标识符:生成树协议<br>Protocol Version Identifier: Spanning Tree (0)			        协议版本标识符:生成树(0)<br>BPDU Type: Configuration (0x00) 						BPDU类型：Confiquration<br>    配置BPDU：进行STP角色计算、维护拓扑；（1：请求知道啦！0：相安无事）<br>    TCN BPDU(拓扑变化 BPDU)：通告拓扑变化（1：拓扑变化啦！0：相安无事）<br>BPDU flags: 0x00									BPDU标志<br>    0… …&#x3D; Topology Change Acknowledgment: No			TCA:拓扑变化确认<br>    …0 &#x3D; Topology Change: No						TC：拓扑变化（<em>老化MAC地址，学习新MAC地址，阻塞端口进入转发状态</em>）（1：可以老化MAC地址啦！0：相安无事）<br>Root Identifier: 4096 &#x2F;0&#x2F; 4c:1f:cc:b9:3f:59					根标识符（根网桥ID）<br>Root Path Cost: 0									根路径开销<br>Bridge Identifier: 4096 &#x2F;0&#x2F; 4c:1f:cc:b9:3f:59					本交换机网桥ID<br>Port identifier: 0x8002								端口标ID:0x8002			<br>Message Age: 0										消息寿命（BPTU存放时间，最多20秒）<br>Max Age: 20										最大寿命<br>Hello Time: 2										发送间隔<br>Forward Delay: 15									发送延迟</p>
+<p>STP：（越小越优先）<br>根：根据网桥ID：先看网桥优先级，再看MAC地址优先级<br>根端口：非根交换机到达根交换机最优的端口：<br>1、根路径开销 （802.1t）<br>2、对端交换机的网桥ID<br>3、对端端口ID	端口优先级+端口编号	默认128 16倍数<br>4、本端端口ID   端口优先级+端口编号<br>指定端口 ：每一条链路到达根交换机最优的端口<br>1、根路径开销<br>2、两端交换机的网桥ID<br>3、本端端口ID</p>
+<p>5种STP端口状态：<br>禁用(Disable)：该接口不能收发BPDU,也不能收发业务数据帧,例如接口为down<br>阻塞(Blocking)：该接口被STP阻塞。处于阻塞状态的接口不能发送BPDU,但是会持续侦听BPDU,而且不能收发业务数据帧,也不会进行MAC地址学习<br>侦听（Listening)：当接口处于该状态时,表明STP初步认定该接口为根接口或指定接口,但接口依然处于STP计算的过程中,此时接口可以收发BPDU,但是不能收发业务数据帧,也不会进行MAC地址学习<br>学习（Learning）：当接口处于该状态时，会侦听业务数据帧（但是不能转发业务数据帧),并且在收到业务数据帧后进行MAC地址学习<br>转发(Forwarding)：处于该状态的接口可以正常地收发业务数据帧,也会进行BPDU处理。接口的角色需是根接口或指定接口才能进入转发状态</p>
+<p>6.STP故障恢复时间<br>直接30s，间接50s.</p>
+<hr>
+<h5 id="MSTP练习"><a href="#MSTP练习" class="headerlink" title="MSTP练习^"></a>MSTP练习^</h5><p>sys<br>sys SW2<br>un in en</p>
+<p>stp mo ms<br>st re<br>re HW<br>rev 1<br>ins 1 vlan 10<br>ins 2 vlan 20<br>ac re<br>stp ins 1 ro pr<br>stp ins 2 ro se</p>
+<p>sys<br>sys SW3<br>un in en</p>
+<p>stp mo ms<br>st re<br>re HW<br>rev 1<br>ins 1 vlan 10<br>ins 2 vlan 20<br>ac re<br>stp ins 2 ro pr<br>stp ins 1 ro se</p>
+<p>sys<br>sys SW1<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;1<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;2<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;3<br>p l a<br>p d v 20<br>int g0&#x2F;0&#x2F;4<br>p l a<br>p d v 20</p>
+<hr>
+<h5 id="MSTP练习-1"><a href="#MSTP练习-1" class="headerlink" title="MSTP练习^"></a>MSTP练习^</h5><p>sys<br>sys SW1<br>un in en</p>
+<p>v b 10 20</p>
+<p>int g0&#x2F;0&#x2F;1<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;2<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;3<br>p l a<br>p d v 20<br>int g0&#x2F;0&#x2F;4<br>p l a<br>p d v 20</p>
+<p>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20</p>
+<p>q<br>stp mode mstp<br>stp re<br>re HW<br>rev 1<br>ins 1 v 10 30<br>ins 2 v 20 40</p>
+<p>ac re</p>
+<p>sys<br>sys SW2<br>un in en</p>
+<p>v b 30 40</p>
+<p>int g0&#x2F;0&#x2F;1<br>p l a<br>p d v 30<br>int g0&#x2F;0&#x2F;2<br>p l a<br>p d v 30<br>int g0&#x2F;0&#x2F;3<br>p l a<br>p d v 40<br>int g0&#x2F;0&#x2F;4<br>p l a<br>p d v 40</p>
+<p>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 30 40</p>
+<p>q<br>stp mode mstp<br>stp re<br>re HW<br>rev 1<br>ins 1 v 10 30<br>ins 2 v 20 40</p>
+<p>ac re</p>
+<p>sys<br>sys SW3<br>un in en</p>
+<p>v b 3 4 10 20 30 40 </p>
+<p>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20 30 40</p>
+<p>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20 30 40</p>
+<p>int g0&#x2F;0&#x2F;3<br>p l t<br>p t a v 3 4 10 20 30 40</p>
+<p>int e 1<br>mo la<br>m ac 2<br>lacp pr en<br>lacp pr de 10</p>
+<p>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;3</p>
+<p>lacp pri 2000</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp pri 30000</p>
+<p>int v 3<br>ip a 35.1.1.3 24<br>int v 10<br>ip a 192.168.1.254 24<br>int v 30<br>ip a 192.168.3.254 24 </p>
+<p>q<br>ospf 1 ro 3.3.3.3<br>ar 1<br>net 35.1.1.3 0.0.0.0<br>net 192.168.1.254 0.0.0.0<br>net 192.168.3.254 0.0.0.0</p>
+<p>q<br>q<br>stp mode mstp<br>stp re<br>re HW<br>rev 1<br>ins 1 v 10 30<br>ins 2 v 20 40<br>ac re</p>
+<p>stp ins 1 roo pr<br>stp ins 2 roo se</p>
+<hr>
+<p>sys<br>sys SW4<br>un in en</p>
+<p>v b 3 4 10 20 40 </p>
+<p>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20 30 40</p>
+<p>int g0&#x2F;0&#x2F;4<br>p l t<br>p t a v 3 4 10 20 30 40</p>
+<p>int e 1<br>mo la<br>m ac 2<br>lacp pr en<br>lacp pr de 10</p>
+<p>t g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;3</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp pri 30000</p>
+<p>int v 4<br>ip a 45.1.1.4 24<br>int v 20<br>ip a 192.168.2.254 24<br>int v 40<br>ip a 192.168.4.254 24 </p>
+<p>q<br>os 1 ro 4.4.4.4<br>ar 1<br>net 45.1.1.4 0.0.0.0<br>net 192.168.2.254 0.0.0.0<br>net 192.168.4.254 0.0.0.0</p>
+<p>q<br>q<br>stp mode mstp<br>stp re<br>re HW<br>rev 1<br>ins 1 v 10 30<br>ins 2 v 20 40<br>ac re</p>
+<p>stp ins 2 roo pr<br>stp ins 1 roo se</p>
+<hr>
+<p>sys<br>sys SW5<br>un in en</p>
+<p>v b 3 4 10 20 30 40</p>
+<p>int v 3<br>ip a 35.1.1.5 24<br>int v 4<br>ip a 45.1.1.5 24</p>
+<p>int g0&#x2F;0&#x2F;1<br>p l t<br>p t a v 3 4 10 20 30 40<br>int g0&#x2F;0&#x2F;2<br>p l t<br>p t a v 3 4 10 20 30 40</p>
+<p>os 1 ro 5.5.5.5<br>ar 1<br>net 35.1.1.5 0.0.0.0<br>net 192.168.2.254 0.0.0.0</p>
+<hr>
+<p>总结<br>0.配PC<br>IP地址：192.168.1.1<br>子网掩码：255.255.255.0<br>网关：192.168.1.254</p>
+<p>0.交换机&#x2F;路由器初始化：<br>sys<br>sys R1&#x2F; SW1<br>un in en</p>
+<p>2.链路聚合：<br>int e 1<br>mo lacp<br>max act 3<br>la pr en<br>tr g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4<br>lacp preempt delay 20	抢占延迟20s<br>2.(1).链路聚合主动端优先级2000：<br>la pri 2000<br>(2)选举非活跃链路：（似乎也是主动端配就好了）<br>int g0&#x2F;0&#x2F;3<br>la pri 40000</p>
+<p>2.(N).链路聚合检查：<br>q<br>dis eth 1</p>
+<p>3.vlan<br>v b 10 20 30 40</p>
+<p>3.(1).与PC相接（与PC最近的交换机）：<br>int g0&#x2F;0&#x2F;1<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;2<br>p l a<br>p d v 10<br>int g0&#x2F;0&#x2F;3<br>p l a<br>p d v 20<br>int g0&#x2F;0&#x2F;4<br>p l a<br>p d v 20 </p>
+<p>3.(2).与上位交换机相接（通常是与带链路聚合的上位）：<br>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20 30 40</p>
+<p>3.(3).带链路聚合的上位交换机与(2)中交换机相接：<br>int g0&#x2F;0&#x2F;5<br>p l t<br>p t a v 10 20 30 40<br>int g0&#x2F;0&#x2F;7<br>p l t<br>p t a v 10 20 30 40</p>
+<p>int e 1<br>p l t<br>p t a v 10 20 30 40 </p>
+<p>3.(4).链路聚合vlan（与3.3有所重复）：<br>int e 1<br>p l t<br>p t a v 10 20 30 40 </p>
+<p>3.(N).vlan检查：<br>q<br>dis port vlan</p>
+<p>4.STP：<br>stp mo mstp<br>stp region-configuration<br>reg HW<br>re 1<br>ins 1 v 10 30<br>ins 2 v 20 40<br>act reg</p>
+<p>4.(1).STP实例主&#x2F;副根配置：<br>stp ins 1 root pr<br>stp ins 2 root se</p>
+<p>4.(2).连接PC接口开启边缘端口功能,并开启边缘端口保护功能<br>int g0&#x2F;0&#x2F;1<br>stp edged-port enable<br>int g0&#x2F;0&#x2F;2<br>stp edged-port enable<br>int g0&#x2F;0&#x2F;3<br>stp edged-port enable<br>int g0&#x2F;0&#x2F;4<br>stp edged-port enable</p>
+<p>q<br>stp bpdu-protection<br>—或—-<br>port-group 1<br>group-member g0&#x2F;0&#x2F;3<br>group-member g0&#x2F;0&#x2F;4<br>group-member g0&#x2F;0&#x2F;5<br>group-member g0&#x2F;0&#x2F;6<br>stp edged-port enable</p>
+<p>q<br>stp bpdu-protection</p>
+<p>4.(3)接口开启根保护<br>int g0&#x2F;0&#x2F;8<br>stp root-protection</p>
+<p>4.(4)开启TC BPDU防攻击,规定时间内处理的阈值调整为n<br>stp tc-protection threshold 3</p>
+<p>5.vlanif IP地址配置（上位交换机朝向顶层交换机的配置）<br>v b 3 10 20</p>
+<p>int g0&#x2F;0&#x2F;6<br>p l a<br>p d v 3</p>
+<p>qint<br>int v 3<br>ip a 15.1.1.1 24</p>
+<p>q<br>#ping 15.1.1.5   顶层交换机朝向上位交换机的接口</p>
+<p>int v 10<br>ip a 192.168.1.254 24<br>int v 20<br>ip a 192.168.2.254 24</p>
+<p>6.VRRP<br>int v 10  #一个vlanif配一次<br>vr vr 1 vir 192.168.1.101 (必须是vlan x 相同网段)</p>
+<p>6.(1)VRRP主备优先级配置，大为主，100为缺省不用配<br>vrrp vrid 1 priority 120</p>
+<p>6.(2)跟踪上行链路接口，若g0&#x2F;0&#x2F;x连接的链路坏掉，让其自动降级，默认降10<br>vrrp vrid 1 track interface g0&#x2F;0&#x2F;6 reduced 30</p>
+<p>6.(N)检查VRRP<br>dis vrrp brief</p>
+<p>7.单臂路由<br>interface GigabitEthernet0&#x2F;0&#x2F;1.1<br> dot1q termination vid 30<br> ip address 192.168.3.254 255.255.255.0<br> arp broadcast enable</p>
+<p>interface GigabitEthernet0&#x2F;0&#x2F;1.2<br> dot1q termination vid 40<br> ip address 192.168.4.254 255.255.255.0<br> arp broadcast enable</p>
+<p>8.OSPF（顶层路由器）（顶层交换机没有接口配置）<br>int g0&#x2F;0&#x2F;0<br>ip a 35.1.1.5 24<br>int g0&#x2F;0&#x2F;1<br>ip a 45.1.1.5 24</p>
+<p>os 1 ro 1.1.1.1<br>ar 1<br>net 35.1.1.5 0.0.0.0<br>net 45.1.1.5 0.0.0.0</p>
+<p>q<br>q<br>#dis ospf peer brief</p>
+<hr>
+<h5 id="VRRP-虚拟路由冗余协议"><a href="#VRRP-虚拟路由冗余协议" class="headerlink" title="VRRP 虚拟路由冗余协议"></a>VRRP 虚拟路由冗余协议</h5><p>作用概括：实现网关备份，解决多个网关间冲突问题，提高网络可靠性</p>
+<p>使用范围：三层（网络层）设备接口可部署</p>
+<p>定义：多物理路由虚拟成一虚拟路由；<br>    由多物理路由器共同维护；<br>    虚拟路由IP变为终端网关</p>
+<p>相关名词解释：<br>VRID【virtuality router id】：虚拟路由标识符<br>VIP【virtual-ip】：虚拟路由IP（由所有VRRP路由共同维护）【配置时指定】<br>VMAC：虚拟路由MAC地址【(0000-5e 00-01 xx)，其中xx为VRID】<br>                        保留	   VRRP  vrid<br>VRRP路由成员身分：<br>Master路由（只有一台）：进行网关数据转发和报文转发任务。<br>    1.在每一个VRRP组中，只有Master路由器才会响应针对虚拟IP地址的ARP Request。<br>     2.Master路由器会以一定的时间间隔周期性地发送VRRP报文，以便通知同一个VRRP组中的Backup路由器关于自己的存活情况。<br>Backup路由（备份路由器）：1.备份网关数据 2.Master故障时升变为Master接替转发<br>    实时侦听Master路由器发送出来的VRRP报文,随时准备接替Master路由器的工作。</p>
+<p>成员选举规则：<br>1.优先级：1-默认100-254 越大越优先【当物理路由IP地址与维护的IP地址为同一个IP地址时该路由器优先级自动修改为255】【Master挂了就向Backup发送优先级为0的通告报文，此时Backup将不在等待失效时间，直接变Master&#x2F;竞选Master】<br>2.接口IP：1-默认100-254 越大越优先<br>3.认证模式不一会出现多个主的现象</p>
+<p>成员抢占规则：（抢占功能默认开启，开启后可被随时抢占（即Master可及时变化））<br>1.优先级：默认100 越大越优先</p>
+<p>主备切换规则：<br>1.VRRP协议中定义两个定时器:<br>Adver_interval定时器： Master发送VRRP通告报文时间周期，缺省值为1秒。<br>Master_down定时器：超时即意味着Master挂了，Backup设备监听该定时器超时后，会升变为Master状态。</p>
+<p>Master_Down定时器计算公式如下:<br>MASTER_DOWN &#x3D; (3* ADVER_INTERVAL) +Skew_time (偏移时间)【大约三秒】<br>其中，Skew_Time&#x3D; (256-Priority) &#x2F;256</p>
+<p>2.主路由器不在运行VRRP时，发送优先为0的vrrp报文，备设备切换为主设备<br>3.备设备收到优先级低的VRRP报文时,备设备切换为主设备</p>
+<p>VRRP配置：<br>1.进接口—-配IP<br>2.进接口—<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0] vrrp vrid 1 virtual-ip 192.168.1.100<br>接口进入VRRP模式–虚拟路由标识符编号为1—虚拟IP 192.168.1.100<br>#查看 VRRP 简要信息<br>[R1]display vrrp brief<br>#查看 VRP 信息<br>[R1]display vrrp<br>#删除进程1<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]undo vrrp vrid 1<br>*修改某接口VRRP–指定虚拟路由标识符优先级<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]vrrp vrid 1 priority 120<br>*某接口–身份验证模式–md5密文认证–密码<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]vrrp vrid 1 authentication-mode md5 huawei<br>某接口出现故障时优先级减小<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]vrrp vrid 1 track interface g0&#x2F;0&#x2F;2 reduced 30</p>
+<p>###ping XXX.XXX.XXX.XXX -t 一直ping</p>
+<p>VRRP协议<br>报文：基于IP协议封装，协议号112<br>更新方式：采用组播更新 224.0.0.18</p>
+<p>虚拟路由器冗余协议版本2，包类型1(广告)<br>虚拟Rtr ID: 1<br>优先级:120(非默认备份优先级)<br>Addr Count: 1<br>Auth Type: No Authentication (0)<br>Adver Int: 1<br>校验和:Oxa4ef[正确]<br>[校验和状态:Good]<br>IP地址:192.168.1.100</p>
+<hr>
+<p>拓扑名：VRRP<br>R1：<br>sys<br>sys R1<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.253</p>
+<p>vr vr 1 vir 192.168.1.100<br>vr vr 1 pri 120</p>
+<p>vr vr 1 au m huawei</p>
+<p>R2：<br>sys<br>sys R2<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.254</p>
+<p>vr vr 1 vir 192.168.1.100</p>
+<p>vr vr 1 au m huawei</p>
+<p>VRRP状态机<br>Initialize (初始状态)、<br>Master (活动状态)、<br>Backup (备份状态)。</p>
+<p>I:收到Startup（pri&#x3D;?)——-&gt;           SHO<br>&#x3D;255 —-&gt;M  收到优先级比自己大的报文 —-&gt;B<br>&lt;255 —-&gt;B</p>
+<p>设置抢占延迟（让让OSPF）<br>[R1-GigabitEthernet0&#x2F;0&#x2F;0]vrrp vrid 1 preempt-mode timer delay 40</p>
+<p>VRRP STP 主应在同一交换机</p>
+<hr>
+<p>拓扑名：VRRP下午<br>R1：<br>sys<br>sys R1<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;2<br>ip a 13.1.1.1 24 </p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.253 24<br>vr vr 1 vir 192.168.1.100<br>vrrp vr 1 pri 120<br>vr vr 1 au m huawei<br>vrrp vr 1 pr ti de 40<br>vrrp vr 1 tr int g0&#x2F;0&#x2F;2 re 30</p>
+<p>q<br>os 1 ro 1.1.1.1<br>ar 0<br>net 192.168.1.253 0.0.0.0<br>net 13.1.1.1 0.0.0.0</p>
+<p>dis cu</p>
+<p>R2：<br>sys<br>sys R2<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;2<br>ip a 23.1.1.2 24</p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.1.254 24<br>vr vr 1 vir 192.168.1.100<br>vr vr 1 au m huawei<br>vrrp vr 1 pr ti de 40</p>
+<p>q<br>os 1 ro 2.2.2.2<br>ar 0<br>net 23.1.1.2 0.0.0.0<br>net 192.168.1.254 0.0.0.0</p>
+<p>dis cu</p>
+<p>R3:<br>sys<br>sys R3<br>un in en</p>
+<p>int g0&#x2F;0&#x2F;0<br>ip a 192.168.3.254 24<br>int g0&#x2F;0&#x2F;1<br>ip a 23.1.1.3 24<br>int g0&#x2F;0&#x2F;2<br>ip a 13.1.1.3 24</p>
+<p>q<br>os 1 ro 3.3.3.3<br>ar 0<br>net 13.1.1.3 0.0.0.0<br>net 23.1.1.3 0.0.0.0<br>net 192.168.3.254 0.0.0.0</p>
+<p>dis cu</p>
+<hr>
+<h5 id="二层技术："><a href="#二层技术：" class="headerlink" title="二层技术："></a>二层技术：</h5><p>VLAN：虚拟局域网<br>为什么要有VLAN？<br>交换机工作原理：学习，泛洪，转发<br>广播域：能收到广播消息的范围&#x2F;区域<br>交换机默认所有接口都在同一个广播域<br>广播域大–占用带宽资源，安全性低；<br>VLAN作用：隔离广播域<br>如何实现隔离？交换机为数据打上Tag，利用Tag区分不同VLAN</p>
+<p>不带tag数据（untagged）<br>帧头(DMAC&lt;–SMAC type)|ip(SIP–&gt;DIP)|tcp&#x2F;udp|data|帧尾</p>
+<p>携带tag数据（tagged）<br>帧头(DMAC&lt;–SMAC|tag(4bytes)|type)|ip(SIP–&gt;DIP)|tcp&#x2F;udp|data|帧尾</p>
+<p>Tag&#x3D;4B<br>1.Type 类型  					0X8100-802.1Q标准—-vlan<br>2.PRI 优先级					用于QOS (服务质量)<br>3.CFI MAC地址是否支持经典格式<br>4.VID(12bits   2^12&#x3D;4096vlan  范围：0-4095 能用的：1-4094) VLAN标识</p>
+<p>VLAN 对于tag不同处理动作–端口处理类型<br>Access：接入链路：只允许一个vlan通过				交换机–终端设备<br>Trunk： 干道链路：允许多个vlan通过					交换机–交换机<br>Hybrid：混合链路：手工定义允许通过的vlan及vlan通过时的动作	默认类型</p>
+<p>VLAN配置：<br>创建单个vlan：[SW1]vlan 10 –&gt; [SW1-vlan10]<br>描述备注vlan：[SW1-vlan10]description HR<br>创建多个vlan：[SW1]vlan batch 20 30<br>创建连续vlan：[SW1]vlan batch 40 to 100<br>查看vlan：[sw1]display vlan<br>查看端口和vlan关系：display port vlan</p>
+<p>Access配置：1. 进入接口  2. 端口链路类型-access  3. 端口所属的vlan<br>[SW1]int g0&#x2F;0&#x2F;1<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;1]port link-type access<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;1]port default vlan 10</p>
+<p>Trunk配置：1. 进入接口  2. 端口链路类型-trunk  3. trunk端口允许通过的vlan<br>[SW1]int g0&#x2F;0&#x2F;5<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port link-type trunk<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk allow-pass vlan 10 20<br>*[SW1-GigabitEthernet0&#x2F;0&#x2F;5]undo port trunk allow-pass vlan 1 删除vlan1<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk pvid vlan 100    修改trunk接口pvid</p>
+<p>删除命令 倒着删<br>看到<cr>回车</p>
+<p>Hybrid配置：<br>tagged：携带标记<br>untagged：不携带标记<br>[SW1]int g0&#x2F;0&#x2F;6<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port link-type hybrid<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port hybrid untagged vlan 30<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;6]port hybrid pvid vlan 30</p>
+<p>Tag的处理：允许列表下，不带标记打标记，相同标记去标转发，不同标记A丢T转<br>{<br>Access：（不带标记打标记，相同标记去标转发，不同标记直接丢弃）<br>入：不带标记，打上PVID<br>出：PVID比较，同就去标记转发，不同就丢弃<br>Trunk：<br>出：允许列表下，不同标记直接转发，相同标记去标转发<br>入：允许列表下，不带标记打标记，带着标记直接转发<br>Hybrid：<br>出：允许列表下，手工定义允许通过的vlan及通过时动作<br>入：在满足允许列表前提下，收到数据带标记，直接转发；收到数据不带标记，打上该接口的pvid的标记<br>}</p>
+<p>三层交换机&#x3D;路由器(IP+静态+动态) +二层交换机(vlan stp)集合</p>
+<p>三层交换机物理接口无法配置IP地址（交换机接口默认二层接口）<br>如何在交换机上配置IP地址?<br>1、将二层接口转换为三层接口<br>[SW2]int g0&#x2F;0&#x2F;5<br>[SW2-GigabitEthernet0&#x2F;0&#x2F;5]undo portswitch 删除端口交换功能<br>2、在交换机上配置vlan虚拟接口 vlanif<br>[SW2]interface Vlanif 10<br>[SW2-Vlanif10]ip address 192.168.1.254 24<br>[SW2]interface Vlanif 20<br>[SW2-Vlanif10]ip address192.168.2.254 24</p>
+<p>交换机出来的数据一定带标记，路由器不带<br>（1）全程带标记			trunk<br>（2）出来去标记，进入打标记  access  hybrid</p>
+<p>配置实验:配置思路 先二层（聚合 vlan stp）再三层（vlan if  静态  OSPF)<br>每配置完一个技术——-验证是否正确<br>Vlan：dis port vlan       dis vlan<br>Vlanif  ip地址：dis ip int brief<br>配置完毕两端IP地址测试直连连通性：ping 对端地址<br>静态：dis ip ro<br>Ospf：dis ospf pe br (full状态) 	 dis ip ro </p>
+<p>将静态路由引入到ospf中，参考命令如下：<br>[R3]ospf 1<br>[R3-ospf-1]import-route  static<br>ospf 外部路由  150</p>
+<p>单臂路由：<br>Dot1q&#x3D;802.1q 0x8100k</p>
+<p>[R6]int g0&#x2F;0&#x2F;0.1  开启子接口<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]ip address 192.168.5.254 24  接口IP<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]dot1q termination vid 50  允许通过的vlan<br>[R6-GigabitEthernet0&#x2F;0&#x2F;0.1]arp broadcast enable   子接口默认广播功能没开</p>
+<p>链路聚合：<br>产生背景：为了提升网络可靠性，增大带宽<br>单板可靠—多冗余<br>设备可靠—双冗余<br>链路可靠—多链路</p>
+<p>STP：生成树协议<br>阻塞端口<br>如何在保证可靠前提下，提升带宽，减少丢包<br>定义：将多条物理链路聚合成一条聚合链路（eth-trunk）</p>
+<p>模式：<br>手工链路聚合模式：聚合链路中的所有链路都参数据的转发<br>1、创建聚合接口<br>2、将物理接口加入聚合接口</p>
+<p>SW1：<br>sys<br>sys SW1</p>
+<p>un in en</p>
+<p>int Eth-Trunk 1<br>q<br>int g0&#x2F;0&#x2F;1<br>eth-trunk 1<br>q<br>int g0&#x2F;0&#x2F;2<br>eth-trunk 1<br>q<br>int g0&#x2F;0&#x2F;3<br>eth-trunk 1<br>或者<br>int Eth-Trunk 1<br>trunkport g0&#x2F;0&#x2F;1<br>trunkport g0&#x2F;0&#x2F;2<br>trunkport g0&#x2F;0&#x2F;3<br>或者<br>int Eth-Trunk 1</p>
+<p>trunkport g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;3</p>
+<p>dis eth-trunk 1		查看聚合接口1</p>
+<p>LACP链路聚合模式：存在备份链路: M:N备份 M-活跃链路 N-非活跃链路<br>LACP：链路聚合控制协议<br>设备之间发送LACPDU：链路聚合控制协议数据单元</p>
+<p>要素：<br>LACPDU:设备系统优先级<br>MАC<br>接口优先级<br>接口编号</p>
+<p>如何选举活跃链路：在两台交换机之间选举出主动端<br>先比LACP系统优先级（32768），越小越优先<br>再比MAC：越小越优先</p>
+<p>在主动端设备上选举活跃链路：<br>先比LACP接口优先级（32768），越小越优先<br>再比接口编号：越小越优先</p>
+<p>SW3：<br>sys<br>sys SW3<br>un in en<br>int eth-trunk 2          		 创建聚合接口<br>mode lacp-static		 改为LACP模式<br>max active-linknumber 3 	 配置最大活跃链路数量<br>lacp preempt enable		（默认抢占关闭）开启抢占<br>lacp preempt delay 10	 配置抢占延迟(s)<br>trunkport g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4  将物理接口加入聚合接口</p>
+<p>lacp priority 4000		  修改lacp系统优先级</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp priority 40000  		  修改LACP接口优先级</p>
+<p>q<br>dis eth-trunk 2 </p>
+<p>SW4:<br>sys<br>sys SW4<br>un in en<br>int eth 2<br>mode lacp-static<br>max active- 3<br>lacp preempt enable<br>&#x2F;&#x2F;lacp pr en<br>la pr de 10<br>tr g 0&#x2F;0&#x2F;1 to 0&#x2F;0&#x2F;4</p>
+<p>int g0&#x2F;0&#x2F;2<br>lacp priority 40000 </p>
+<p>STP：生成树协议（在保证可靠的前提下，解决环路问题）<br>产生原因：<br>二层环境为了保证可靠性，采用双冗余设备环形连接方式—环路问题		<br>问题：广播风暴—&gt;设备宕机<br>     MAC地址表震荡—-&gt;数据转发丢包</p>
+<p>原理：阻塞端口-拓扑稳定时，阻塞端口处于阻塞状态，当链路出现故障时，阻塞端口自动开启，开始转发数据。</p>
+<p>应用场景：二层交换网络—交换机默认运行STP</p>
+<p>STP模式：<br>STP：生成树协议<br>RSTP：快速生成树协议<br>MSTP：多实例生成树协议</p>
+<p>[SW2]display stp   查看STP（默认MSTP模式）<br>[SW3]display stp brief 查看STP简要信息<br>[sw2]stp mode stp  修改为stp模式<br>[sw2]display int g0&#x2F;0&#x2F;2 查看端口</p>
+<p><strong>STP 工作原理—阻塞端口如何选出来的？</strong></p>
+<p>根-选举根交换机（根桥）<br>—–网桥ID：<br>定义：运行STP协议的交换机唯一标识<br>组成：网桥优先级（默认32768，4096倍数，越小越优先）+MAC地址<br>比较网桥ID：(先比较优先级、在比较mac地址，越小越优先)</p>
+<p>[SW2]stp priority 4096     修改优先级</p>
+<p>干：根端口（RP）<br>定义：非根交换机到达根交换机最优的端口<br>比较规则:<br>1、根路径开销  802.1t  10M&#x3D;2000000  100M&#x3D;200000  1000M&#x3D;20000  10GM&#x3D;2000<br>     根路径开销RPC(root path cost)：根桥到达该设备沿途交换机入方向每个接口cost值之和<br>   （根交换机上所有端口都叫指定端口）</p>
+<p>[SW1]int g0&#x2F;0&#x2F;1<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;1]stp cost 200000   修改接口cost</p>
+<p>2、对端交换机的网桥ID<br>3、对端端口ID	端口优先级+端口编号	默认128 16倍数</p>
+<p>[SW1-GigabitEthernet0&#x2F;0&#x2F;2]stp port priority 16   修改STP接口优先级</p>
+<p>4.本端端口ID 端口优先级+端口编号</p>
+<p>枝：指定端口（DP）<br>定义：每一条链路到达根交换机最优的端口<br>比较规则:<br>1、根路径开销<br>2、两端交换机的网桥ID<br>3、本端端口ID</p>
+<p>阻塞端口（BP，block port；AP）：阻塞端口</p>
+<p>Role（端口角色：）<br>DESI:  指定<br>ROOT：根<br>ALTE：预备</p>
+<p>BPDU：STP报文</p>
+<p>STP State（状态）：<br>Discarding:丢弃<br>Learning:学习<br>Forwording：提出</p>
+<p>STP：（越小越优先）<br>根：根据网桥ID：先看网桥优先级，再看MAC地址优先级<br>根端口：非根交换机到达根交换机最优的端口：<br>1、根路径开销<br>2、对端交换机的网桥ID<br>3、对端端口ID	端口优先级+端口编号	默认128 16倍数<br>4、本端端口ID   端口优先级+端口编号<br>指定端口 ：每一条链路到达根交换机最优的端口<br>1、根路径开销<br>2、两端交换机的网桥ID<br>3、本端端口ID</p>
+<p>STP报文–BPDU（桥协议数据单元）<br>Protocol Identifier: Spanning Tree Protocol (0x0000)   		协议标识符:生成树协议<br>Protocol Version Identifier: Spanning Tree (0)			        协议版本标识符:生成树(0)<br>BPDU Type: Configuration (0x00) 						BPDU类型：Confiquration<br>    配置BPDU：进行STP角色计算、维护拓扑；（1：请求知道啦！0：相安无事）<br>    TCN BPDU(拓扑变化 BPDU)：通告拓扑变化（1：拓扑变化啦！0：相安无事）<br>BPDU flags: 0x00									BPDU标志<br>    0… …&#x3D; Topology Change Acknowledgment: No			TCA:拓扑变化确认<br>    …0 &#x3D; Topology Change: No						TC：拓扑变化（<em>老化MAC地址，学习新MAC地址，阻塞端口进入转发状态</em>）（1：可以老化MAC地址啦！0：相安无事）<br>Root Identifier: 4096 &#x2F;0&#x2F; 4c:1f:cc:b9:3f:59					根标识符（根网桥ID）<br>Root Path Cost: 0									根路径开销<br>Bridge Identifier: 4096 &#x2F;0&#x2F; 4c:1f:cc:b9:3f:59					本交换机网桥ID<br>Port identifier: 0x8002								端口标ID:0x8002			<br>Message Age: 0										消息寿命（BPTU存放时间，最多20秒）<br>Max Age: 20										最大寿命<br>Hello Time: 2										发送间隔<br>Forward Delay: 15									发送延迟</p>
+<p>STP端口状态：<br>禁用(Disable)：该接口不能收发BPDU,也不能收发业务数据帧,例如接口为down<br>阻塞(Blocking)：该接口被STP阻塞。处于阻塞状态的接口不能发送BPDU,但是会持续侦听BPDU,而且不能收发业务数据帧,也不会进行MAC地址学习<br>侦听（Listening)：当接口处于该状态时,表明STP初步认定该接口为根接口或指定接口,但接口依然处于STP计算的过程中,此时接口可以收发BPDU,但是不能收发业务数据帧,也不会进行MAC地址学习<br>学习（Learning）：当接口处于该状态时，会侦听业务数据帧（但是不能转发业务数据帧),并且在收到业务数据帧后进行MAC地址学习<br>转发(Forwarding)：处于该状态的接口可以正常地收发业务数据帧,也会进行BPDU处理。接口的角色需是根接口或指定接口才能进入转发状态</p>
+<p>禁用：不能收发BPDU，不能收发业务数据帧；接口Down<br>阻塞：只收不发BPDU，不能收发业务数据帧；不学MAC<br>侦听：可以收发BPDU，不能收发业务数据帧，不学MAC；初步认定接口类型；15s转发延迟：1.加速老化MAC地址表（正常MAC地址表老化时间：300s）2.避免临时环路<br>学习：侦听业务数据帧1，收到业务数据帧后学MAC；15s转发延迟：加速mac地址学习<br>转发：收发BPDU，收发业务数据帧；接口的角色需是根接口或指定接口才能进入转发状态</p>
+<p>STP 拓扑维护<br>直接故障：阻塞端口所在交換机链路发生故障，阻塞端口恢复至少需要30s<br>TCN：拓扑变更通知<br>间接故障：<br>阻塞端口恢复至少需要50s<br>20sBPDU才超时</p>
+<p>STP模式缺点：收敛速度慢</p>
+<p>改进模式：<br>RSTP：快速生成树协议<br>RSTP相对于STP改进：<br>STP：802.1D<br>RSTP：802.1W（2001年）</p>
+<p>改进点1：端口角色<br>RSTP<br>根端口<br>指定端口<br>替代端口(Alternate)以后将成为根端口，作为根端口的备份<br>备份端口(Backup)以后将成为指定端口，作为指定端口的备份</p>
+<p>改进点2：端口状态<br>RSTP<br>Discarding状态：不转发用户流量也不学习MAC地址；<br>学习(Learning)：不转发用户流量但是学习MAC地址；<br>转发(Forwarding)：既转发用户流量又学习MAC地址。</p>
+<p>改进点3：报文BPDU改进<br>STP BPDU：配置BPDU<br>RSTP BPDU：RST BPDU</p>
+<p>Protocol Identifier: Spanning Tree Protocol (0x0000)<br>Protocol Version Identifier: Rapid Spanning Tree<br>BPDU Type: Rapid&#x2F;Multiple Spanning Tree (0x02)<br>BPDU flags: ox7d, Agreement, Forwarding, Learning, Port Role: Designated, Topology Change<br>    0… …. &#x3D; Topology Change Acknowledgment: No	拓扑变化确认位<br>    .1.. …. &#x3D; Agreement: Yes						同意位<br>    ..1. …. &#x3D; Forwarding: Yes						转发位<br>    …1 …. &#x3D; Learning: Yes						学习位<br>    …. 11..&#x3D; Port Role: Designated (3)				端口角色（10根端口 01替代端口&#x2F;备份端口 00保留 11指定端口<br>    …. ..0. &#x3D; Proposal: No 						提议&#x2F;协商位<br>    ….. …1 &#x3D; Topology Change: Yes					拓扑变化位<br>    &gt;Root Identifier: 32768 &#x2F;0&#x2F; 4c:1f:cc:3d:13:34		根网桥ID<br>    Root Path Cost: 0							根路径开销<br>    Bridge Identifier: 32768 &#x2F;0 &#x2F; 4c:1f:cc:3d:13:34		本交换机网桥ID<br>    Port identifier: 0x8001						端口标识<br>    Message Age: 0								消息寿命<br>    Max Age: 20								最大寿命<br>    Hello Time: 2								发送间隔<br>    Forward Delay: 15							转发延迟<br>    Version 1 Length: 0							版本1长度</p>
+<p>改进点4：BPDU处理动作<br>（1）BPDU发送<br>在STP中由根桥发送配置BPDU，交换机收到根桥发送的配置BPDU后，才会向下游发送配置BPDU,收敛慢,计算复杂<br>在RSTP中,无论非根桥设备是否收到根桥发送BPDU，都会向下游交换机发送BPDU<br>（2）判断根桥&#x2F;链路故障<br>在STP中，根据max age (20s)超时判定<br>在RSTP中，根据超时时间(hello*3倍），超时判定<br>（3）次等BPDU的处理<br>在STP中，只能由指定端口处理此等BPDU<br>在RSTP中，当接口收到BPDU后,和本地缓存表中BPDU进行比较，若优于收到BPDU，则将更有BPDU从该接口返回</p>
+<p>收敛机制改进（仅限于单交换机设备上）<br>根端口快速切换：当根端口出现故障时，替代端口可以快速切换为根端口，端口状态换为转发状态<br>指定端口快速切换：当指定端口出现故障时，备份端口可以快速切换为指定端口，端口状态切换为转发状态<br>边缘端口机制：<br>定义：交换机连接终端设备的端口可以生成边缘端口<br>作用：边缘端口不参与STP计算，会直接进入转发状态<br>特点：当边缘端口收到bpdu，该端口转为STP普通端口，重新进行STP计算<br>配置：[SW3]int g0&#x2F;0&#x2F;3<br>     [SW3-GigabitEthernet0&#x2F;0&#x2F;3]stp edged-port enable</p>
+<p>P&#x2F;A机制（提议&#x2F;同意机制）：</p>
+<p>如何用命令修改主根&#x2F;备份根<br>[SW1]stp root primary<br>[SW2]stp root secondary</p>
+<p>RSTP故障恢复：<br>SW1与SW3之间的链路故障，SW3的g0&#x2F;0&#x2F;2口开启tewell计时器并向SW2发送tc位置位的BPDU（计时器发送后停止发送），并老化所有MAC，学习新MAC地址；SW2收到后tc位置位的BPDU后老化除接收口以外的MAC地址，向SW1发送tc位置位的BPDU，学习新MAC地址，以此类推。</p>
+<p>保护机制：<br>1.BPDU保护&#x2F;边缘端口保护：从边缘端口收到RST BPDU后，该端口进入down状态<br>[SW3]stp bpdu-protection</p>
+<p>2.根保护&#x2F;指定端口保护<br>一旦启用根保护功能的指定端口，收到优先级更高的RST BPDU时，端口将进入Discarding状态，不再转发报文。经过一段时间(通常为两倍的Forward Delay) ，如果端口一直没有再收到优先级较高的RST BPDU，端口会自动恢复到正常的Forwarding状态。<br>[SW1]int g0&#x2F;0&#x2F;3<br>[SW1-GigabitEthernet0&#x2F;0&#x2F;3]stp root-protection 开启根保护</p>
+<p>3.环路保护<br>在启动了环路保护功能后，如果根端口或Alternate端口长时间收不到来自上游设备的BPDU报文时，则向网管发出通知信息(此时根端口会进入Discarding状态,角色切换为指定端口) ，而Alternate端口则会一直保持在Discarding状态（角色也会切换为指定端口) ，不转发报文，从而不会在网络中形成环路。<br>[SW3]int g0&#x2F;0&#x2F;5<br>[SW3-GigabitEthernet0&#x2F;0&#x2F;5]stp loop-protection</p>
+<p>防TC-BPDU攻击&#x2F;TC BPDU保护<br>启用防TC-BPDU报文攻击功能后，在单位时间内，交换设备处理TC BPDU报文的次数可配置。如果在单位时间(2s)内，交换设备在收到TC BPDU报文数量大于配置的阈值(3次)，那么设备只会处理阈值指定的次数。<br>[SW3]stp tc-protection 开启TC BPDU保护<br>[SW3]stp tc-protection threshold 2 修改tc bpdu接收的阈值</p>
+<p>MSTP:多实例生成树<br>单个RSTP不足之处：<br>1、无法实现流量的负载分担<br>2、次优路径问题</p>
+<p>定义：MSTP可以将一个或多个VLAN映射到一个实例(实例),再基于实例计算生成树,映射到同一个实例的VLAN共享同一棵生成的树。每一个实例都是单独RSTP。<br>原理—名词认知：<br>MST Region (Multiple Spanning Tree Region,多生成树域），也可简称MST域<br>同一个MST域的设备具有下列特点:<br>都启动了MSTP.<br>具有相同的域名。<br>具有相同的VLAN到生成树实例映射配置。<br>具有相同的MSTP修订级别配置。</p>
+<p>MSTI (Multiple Spanning Tree Instance，多生成树实例)：<br>    一个MST域内可以生成多棵生成树,每棵生成树都称为一个MSTI<br>    MSTI使用Instance ID标识，华为设备取值为0~4094<br>    Instance0是缺省存在的,而且缺省时,华为交换机上所有的VLAN都映射到了Instance0。</p>
+<p>CST (Common Spanning Tree，公共生成树）<br>IST (Internal Spanning Tree,内部生成树)；IST是一个特殊的MSTI, MSTI的Instance ID为0。<br>CIST (Common and Internal Spanning Tree,公共和内部生成树）；通过生成树协议计算生成的,连接一个交换网络内所有交换设备的单生成树。<br>SST (Single Spanning Tree，单生成树）</p>
+<p>总根(CIST Root)<br>    是CIST的根桥<br>域根（Regional Root)<br>    分为IST域根和MSTI域根<br>    IST域根，在MST域中IST生成树中距离总根最近的交换设备是IST域根<br>    MSTI域根是每个多生成树实例的树根<br>主桥（Master Bridge）<br>    是IST Master，它是域内距离总根最近的交换设备<br>    如果总根在MST域中,则总根为该域的主桥。</p>
+<p>MSTP中定义的所有端口角色包括：<br>根端口、指定端口、Alternate端口、Backup端口 Master端口、域边缘端口和边缘端口。<br>Master端口是特殊的边缘端口。</p>
+<p>[SW2]stp mode mstp 					模式修改为MSTP<br>[SW2]stp region-configuration				进入stp域配置<br>[SW2-mst-reqion]reqion-name HW			修改域名称<br>[SW2-mst-region]revision-level 1			修改域修订等级<br>[SW2-mst-region]instance 1 vlan 10			实例关联vlan<br>[SW2-mst-region]instance 2 vlan 20	<br>[SW2-mst-region]active region-configuration	激活域配置<br>[SW2]stp instance 1 root primary	<br>[SW2]stp instance 2 root secondary			配置实例主根和备份根</p>
+<p>stp mode mstp<br>stp re<br>re HW<br>rev 1<br>ins 1 v 10 30<br>ins 2 v 20 40<br>ac re</p>
+<p>stp ins 2 roo pr<br>stp ins 1 roo se</p>
+<p>[SW2]port-group 1<br>[SW2-port-group-1]group-member g0&#x2F;0&#x2F;1<br>[SW2-port-group-1]group-member g0&#x2F;0&#x2F;2<br>[SW2-port-group-1]group-member g0&#x2F;0&#x2F;3<br>[SW2-port-group-1]group-member g0&#x2F;0&#x2F;4<br>[SW2-port-group-1]stp edged-port enable</p>
+<p>display ospf peer brief </p>
+<p>display ip int br</p>
+<p>display ip routing-table </p>
+<hr>
+<h5 id="ACL-访问控制列表"><a href="#ACL-访问控制列表" class="headerlink" title="ACL 访问控制列表"></a>ACL 访问控制列表</h5><p>产生背景：为了提升网络的安全性，控制数据的转发，需要流量控制工具</p>
+<p>作用：能够对于报文进行区分和匹配；流量控制工具</p>
+<p>工作原理<br>动作：permit：允许     deny：拒绝</p>
+<p>匹配条件：帧头(Dmac–Smac)|IP(Sip-Dip)|tcp&#x2F;udp(Sport-Dport)|data|帧尾</p>
+<p>匹配顺序：按照rule编号从上到下依次匹配<br>默认动作：允许所有—ACL对于数据的处理</p>
+<p>基本ACL		2000-2999	仅使用报文的源IP地址、分片信息和生效时间段信息来定义规则。<br>高级ACL		3000-3999	可使用IPv4报文的源IP地址、目的IP地址、IP协议类型、ICMP类型、TCP源&#x2F;目的端口号、UDP源&#x2F;目的端口号、生效时间段等来定义规则。<br>二层ACL		4000-4999	使用报文的以太网帧头信息来定义规则，如根据源MAC地址、目的MAC地址、二层协议类型等。<br>用户自定义ACL	5000-5999	使用报文头、偏移位置、字符串掩码和用户自定义字符串来定义规则。<br>用户ACL		6000-6999	既可使用IPv4报文的源IP地址或源UCL (User Control List)组,也可使用目的IP地址或目的UCL组、IP协议类型、ICMP类型、TCP源端口&#x2F;目的端口、UDP源端口&#x2F;目的端口号等来定义规则。</p>
+<p>基本ACL配置：</p>
+<p>创建ACL：<br>[R3]acl 2001<br>[R3-acl-basic-2001]rule deny source 192.168.1.0 0.0.0.255	拒绝源是192.168.1.0的数据</p>
+<p>调用ACL：<br>[R3]int g0&#x2F;0&#x2F;2<br>[R3-GigabitEthernet0&#x2F;0&#x2F;2]traffic-filter outbound acl 2001</p>
+<p>高级ACL：<br>创建ACL：<br>[R2]acl 3000<br>[R2-acl-adv-3000]rule deny tcp source 192.168.1.1.0 destination 192.168.2.2 0 destination-port eq www<br>调用ACL：<br>[R2]int g0&#x2F;0&#x2F;0<br>[R2-GigabitEthernet0&#x2F;0&#x2F;0]traffic-filter inbound acl 3000</p>
+<p>NAT<br>在网络边界设备上(路由器、防火墙)，将数据中的私网地址和公网地址进行转换</p>
+<p>NAT分类：<br>静态NAT	1对1转换	1个私有IP地址转换为固定的某1个公有IP地址<br>动态NAT   多对多转换	多个私有IP地址基于公网地址池进行转换<br>NAPT（网络地址端口转换）多对1转换	多个私有IP地址转换为一个&#x2F;多个公网IP地址（利用端口号区分不同的私有IP地址）</p>
+<p>[R5]ospf<br>[R5-ospf-1]default-route-advertise always 自动下发缺省路由</p>
+<p>[R5]int g0&#x2F;0&#x2F;0<br>[R5-GigabitEthernet0&#x2F;0&#x2F;0]nat static global 100.1.1.100 inside 192.168.1.1<br>静态内网连接全局公网</p>
+<p>NAPT配置：<br>[R5]acl 2000	定义出要转换的内网数据<br>[R5-acl-basic-2000]rule permit source 192.168.2.0 0.0.0.255<br>[R5]nat address-group 1 100.1.1.50 100.1.1.51 创建公网地址池<br>[R5]int g0&#x2F;0&#x2F;0	将内网数据和公网地址池进行映射<br>[R5-GigabitEthernet0&#x2F;0&#x2F;0]nat outbound 2000 address-group 1</p>
+<p>动态NAT配置：<br>[R5]int g0&#x2F;0&#x2F;0 将内网数据和公网地址池进行映射<br>[R5-GigabitEthernet0&#x2F;0&#x2F;0]nat outbound 2000 address-group 1 no-pat</p>
+<p>easy-ip：<br>将多个私有IP地址转换为公网出接口的IP地址<br>[R5]ACL 2001	定义出要转换的内网数据<br>[R5-acl-basic-2001]rule permit source 192.168.3.00.0.0.255</p>
+<p>[R5]int g0&#x2F;0&#x2F;0 将内网数据和接口进行映射<br>[R5-GigabitEthernet0&#x2F;0&#x2F;0]nat outbound 2001</p>
+<hr>
+<p>​		</p>
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/music-theory/">乐理</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Net/">Net</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Telnet"><span class="toc-text">Telnet^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%BD%91%E6%AE%B5%E9%80%9A%E4%BF%A1ARP%E6%B5%81%E7%A8%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%85%A8%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">相同网段通信ARP流程与交换机工作原理全过程：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%BD%91%E6%AE%B5%E9%80%9A%E4%BF%A1ARP%E6%B5%81%E7%A8%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E2%80%94%E5%85%B3%E9%94%AE%E8%A6%81%E7%B4%A0"><span class="toc-text">相同网段通信ARP流程与交换机工作原理—关键要素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-text">静态路由配置^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EARP%E5%8D%8F%E8%AE%AE%E6%8F%90%E5%8D%87%EF%BC%9A"><span class="toc-text">关于ARP协议提升：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">路由器工作原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OSPF-%E5%AE%9E%E9%AA%8C"><span class="toc-text">OSPF 实验^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">1.交换机工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%B7%AF%E7%94%B1%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">2.路由器工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-ARP%E5%8D%8F%E8%AE%AE%E4%BD%9C%E7%94%A8-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AF%B9%E7%AB%AFMAC%E5%9C%B0%E5%9D%80"><span class="toc-text">3.ARP协议作用,工作原理,如何获取对端MAC地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-TCP-IP-%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%AD%E6%AF%8F%E5%B1%82%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%8D%8F%E8%AE%AE"><span class="toc-text">4.TCP IP 协议栈中每层作用及协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-1"><span class="toc-text">1.交换机工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%B7%AF%E7%94%B1%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-1"><span class="toc-text">2.路由器工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-ARP%E5%8D%8F%E8%AE%AE%E4%BD%9C%E7%94%A8-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%AF%B9%E7%AB%AFMAC%E5%9C%B0%E5%9D%80-1"><span class="toc-text">3.ARP协议作用,工作原理,如何获取对端MAC地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-TCP-IP-%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%AD%E6%AF%8F%E5%B1%82%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%8D%8F%E8%AE%AE-1"><span class="toc-text">4.TCP IP 协议栈中每层作用及协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-text">浮动静态路由^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OSPF-%E4%B8%8E%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">OSPF 与优先级</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OSPF%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-text">OSPF原理：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OSPF%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-text">OSPF配置：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#OSPF-%E6%8A%A5%E6%96%87%E5%AE%9E%E9%AA%8C"><span class="toc-text">OSPF 报文实验^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%AA%8C%E8%AF%81"><span class="toc-text">两个验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#VLAN%E9%97%B4%E8%B7%AF%E7%94%B1%E7%BB%83%E4%B9%A0"><span class="toc-text">VLAN间路由练习^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-text">链路聚合简要介绍：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#STP"><span class="toc-text">STP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MSTP%E7%BB%83%E4%B9%A0"><span class="toc-text">MSTP练习^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MSTP%E7%BB%83%E4%B9%A0-1"><span class="toc-text">MSTP练习^</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#VRRP-%E8%99%9A%E6%8B%9F%E8%B7%AF%E7%94%B1%E5%86%97%E4%BD%99%E5%8D%8F%E8%AE%AE"><span class="toc-text">VRRP 虚拟路由冗余协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E5%B1%82%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-text">二层技术：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ACL-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">ACL 访问控制列表</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

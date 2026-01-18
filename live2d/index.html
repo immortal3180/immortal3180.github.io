@@ -1,0 +1,657 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>live2d - 霜晴避风港</title>
+
+  
+    <meta name="description" content="给hexo博客添加Live2d小人1.安装 hexo-helper-live2d 插件 1npm install --save hexo-helper-live2d  2.在根目录下config.yml 添加以下代码 123456789101112131415161718192021# live2dlive2d:  enable: true  # 是否启动  scriptFrom: local #">
+<meta property="og:type" content="article">
+<meta property="og:title" content="live2d">
+<meta property="og:url" content="https://immortal3180.github.io/live2d/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="给hexo博客添加Live2d小人1.安装 hexo-helper-live2d 插件 1npm install --save hexo-helper-live2d  2.在根目录下config.yml 添加以下代码 123456789101112131415161718192021# live2dlive2d:  enable: true  # 是否启动  scriptFrom: local #">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240906191004.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501201811025.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220608843.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220804115.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220814723.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220816646.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240537118.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240557285.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240626068.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240748530.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240754418.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501250420716.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501250423123.png">
+<meta property="article:published_time" content="2024-09-06T09:12:20.000Z">
+<meta property="article:modified_time" content="2026-01-18T20:19:01.614Z">
+<meta property="article:author" content="霜晴">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240906191004.png">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/try-new-web/"><span class="title">试图借助Cursor搭建网站</span></a><a class="item title" href="/valera/"><span class="title">Valera 基于兴趣的新人编曲教程</span></a><a class="item title" href="/vocaloid/"><span class="title">vocaloid</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/talk-to-llm/"><span class="title">talk-to-llm</span></a><a class="item title" href="/suffix/"><span class="title">文件后缀相关知识大全</span></a><a class="item title" href="/talk/"><span class="title">talk</span></a><a class="item title" href="/ring-buffer/"><span class="title">环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a><a class="item title" href="/pyinstaller/"><span class="title">Pyinstaller 打包教程</span></a><a class="item title" href="/ruankao-intermediate-network/"><span class="title">软考中级网工</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-09-06T09:12:20.000Z">2024-09-06</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-18T20:19:01.614Z">2026-01-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>live2d</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h3 id="给hexo博客添加Live2d小人"><a href="#给hexo博客添加Live2d小人" class="headerlink" title="给hexo博客添加Live2d小人"></a>给hexo博客添加Live2d小人</h3><p>1.安装 hexo-helper-live2d 插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<p>2.在根目录下config.yml 添加以下代码</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># live2d</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 是否启动</span></span><br><span class="line">  <span class="attr">scriptFrom:</span> <span class="string">local</span> <span class="comment"># 默认</span></span><br><span class="line">  <span class="attr">pluginRootPath:</span> <span class="string">live2dw/</span>  <span class="comment"># 插件在站点上的根目录(相对路径)</span></span><br><span class="line">  <span class="attr">pluginJsPath:</span> <span class="string">lib/</span>  <span class="comment"># 脚本文件相对与插件根目录路径</span></span><br><span class="line">  <span class="attr">pluginModelPath:</span> <span class="string">assets/</span>  <span class="comment"># 模型文件相对与插件根目录路径</span></span><br><span class="line">  <span class="attr">tagMode:</span> <span class="literal">false</span>  <span class="comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span></span><br><span class="line">  <span class="attr">debug:</span> <span class="literal">false</span>  <span class="comment"># 调试, 是否在控制台输出日志</span></span><br><span class="line">  <span class="attr">model:</span></span><br><span class="line">    <span class="attr">use:</span> <span class="string">nepmaid</span>  <span class="comment">## 模型文件</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">position:</span> <span class="string">right</span> <span class="comment"># 定位方向 left right top bottom</span></span><br><span class="line">    <span class="attr">width:</span> <span class="number">150</span>  <span class="comment"># 小人宽度</span></span><br><span class="line">    <span class="attr">height:</span> <span class="number">300</span> <span class="comment">#  小人高度</span></span><br><span class="line">    <span class="attr">hOffset:</span> <span class="number">-15</span>  <span class="comment"># 向 偏移</span></span><br><span class="line">    <span class="attr">vOffset:</span> <span class="number">-15</span>  <span class="comment"># 像 偏移</span></span><br><span class="line">  <span class="attr">mobile:</span></span><br><span class="line">    <span class="attr">show:</span> <span class="literal">false</span>  <span class="comment"># 手机端是否显示</span></span><br><span class="line">  <span class="attr">react:</span></span><br><span class="line">    <span class="attr">opacity:</span> <span class="number">0.7</span>  <span class="comment"># 模型透明度</span></span><br></pre></td></tr></table></figure>
+
+<p>3.<a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d">EYHN&#x2F;hexo-helper-live2d: Add the Sseexxyyy live2d to your hexo! (github.com)</a>上下载live2d-widget-models-master包</p>
+<p>4.在根目录下新建名为<code>live2d_models</code>的文件夹，复制 live2d-widget-models-master &gt; packages &gt; 中任意模型包到该文件夹下，如该图为miku模型<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/20240906191004.png"></p>
+<p>5.回到 config.yml </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">model:</span></span><br><span class="line">  <span class="attr">use:</span> <span class="string">live2d-widget-model-miku</span>  <span class="comment">## 改为你使用的模型文件名 </span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="Live2D-入门"><a href="#Live2D-入门" class="headerlink" title="Live2D 入门"></a>Live2D 入门</h5><h5 id="0-对已有部件不满意的替换方法收集"><a href="#0-对已有部件不满意的替换方法收集" class="headerlink" title="0.对已有部件不满意的替换方法收集"></a>0.对已有部件不满意的替换方法收集</h5><blockquote>
+<p>SAI图片导入方法</p>
+<p>1.从文件里直接打开图片，拖拽到画布上。</p>
+<p>2.文件-打开-选择需要打开的图</p>
+<p>3.不同窗口的，将想要的图片的窗口变小，然后长按图层，拖拽到另一个画布。</p>
+</blockquote>
+<blockquote>
+<p>Live2D更新图层方法</p>
+<p>文件-&gt;打开文件(Ctrl+O)-&gt;选择psd文件(文件中图层内容都要同名)-&gt;原模型-&gt;替换</p>
+</blockquote>
+<h5 id="1-准备：图片分层"><a href="#1-准备：图片分层" class="headerlink" title="1.准备：图片分层"></a>1.准备：图片分层</h5><p>总体：头发、脸、身体</p>
+<ul>
+<li>头发：前发、两边的头发(双马尾)、后发、呆毛(如果有的话)</li>
+</ul>
+<blockquote>
+<p>画画的时候原画被遮住的部分也不要忘记画出来。如果没有画的话，这部分在动的时候可能会看到图层断层，容易穿帮；</p>
+</blockquote>
+<ul>
+<li>脸：眼睛、鼻子、眉毛、嘴巴、轮廓、耳朵<ul>
+<li>眼睛：眼睑、眼珠、眼白<ul>
+<li>眼睑：外眼角、眼睫毛(上睫毛、下睫毛)</li>
+<li>嘴巴：上嘴唇(需要给口腔内部的移动预留画出皮肤)、下嘴唇(需要给口腔内部的移动预留画出皮肤)、口腔内部</li>
+<li>轮廓：需要把有头发的部分用肌肤的颜色补充好，再把头部轮廓补完整，</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>身体：脖子、躯干、手臂、腿部<ul>
+<li>脖子：为了脖子在脸部动的时候不会出现断层，把脖子画到嘴巴的距离比较好</li>
+<li>躯干：保留部分肩关节好做手臂的摆动；躯干里有像缎带等想要动的地方的话，将它单独分图层出来</li>
+<li>手臂：以肩、肘两个支点将手臂分为大臂和小臂</li>
+<li>腿部：裙子、左脚、右脚</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>(使用PS)导出为PSD文件的时候，记得将线稿和上色区域图层合并到一起，然后把分层的图层大致分组，以便于在Live2D软件里更好地管理。</p>
+<p>PS中似乎有Live2D导入用的脚本。</p>
+</blockquote>
+<h5 id="2-导入以及初级布线"><a href="#2-导入以及初级布线" class="headerlink" title="2.导入以及初级布线"></a>2.导入以及初级布线</h5><p><strong>导入并开始布线</strong>：导入PSD文件 - Ctrl+A全选 - 点击Auto自动布线按钮 - 标准形式布线</p>
+<p><strong>进入编辑模式细化布线</strong>：点击想要手动调整的图层 - Ctrl+E进入编辑模式，进行点的添加和删除 </p>
+<p><strong>取消原有的布线</strong>：</p>
+<p>工具栏的橡皮-擦掉想要删除的点(橡皮的大小可以按P在画布上左右拖动变更)</p>
+<p>在选择橡皮以外的工具的情况下按住Ctrl在画布上拖动+Delete,可以选择多个顶点删除</p>
+<p><strong>添加自己的布线</strong>：</p>
+<p>选择对象(比如眉毛)-选择”追加顶点”图标(钢笔头+加号)，在画布上点击就可以添加顶点了</p>
+<p>（会自动在点之间生成线）</p>
+<p>添加错点的时候，选择”删除顶点”图标(钢笔头+减号)，点击想删除的点即可</p>
+<p>在添加点的时候按住Alt也可以删除点</p>
+<p>打好点后想要连线的话，按”自动连接”就可以自动连线</p>
+<p>生成了想要的形状后，在画布上方点击”√”按钮保存操作</p>
+<p><strong>布线方式</strong>：</p>
+<p>(一定要用网格将图像包裹好)</p>
+<p>做出好看的正三角形；</p>
+<p>注意按中线划分打点；</p>
+<p>参考官方示例模型；</p>
+<p><strong>供参考的三种部位布线方式</strong>：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501201811025.png"></p>
+<h5 id="3-给角色添加动作"><a href="#3-给角色添加动作" class="headerlink" title="3.给角色添加动作"></a>3.给角色添加动作</h5><p>(1)将眼睛以外的部分锁定起来</p>
+<p>(2)以左眼为例，按住Ctrl复选所有左眼部分；</p>
+<p>找到”参数”栏，单击”左眼开闭”(这一栏背景变灰表示被选中)，选中后单击上方”追加两点”，再在”显示面板菜单”开启”锁定默认的形状”</p>
+<p>(3)将双眼眼球和眼白隐藏，在参数栏中将左眼开闭</p>
+<p>(4)数值调为0，在这样的状态下制作闭眼的变形；</p>
+<p>(5)只选左眼上睫毛，点击上方栏”变形路径”，沿着布线加点<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220608843.png"></p>
+<p>返回选择，选择的点变为红色，拖动红色的点绿色的点位不会动，这样变使变形操作更加方便了。</p>
+<p>(6)大致的形状做好了之后，返回”变形路径”，在”工具细节”栏中选择删除变形路径；再直接移动小点细调形状。</p>
+<p>(7)主要的眼睑变形完成了。试试用参数移动（拖动参数-左眼 开闭）</p>
+<p>(8)使用剪切蒙版 让闭眼的时候眼球看不到</p>
+<p>首先选择眼白部分，监视窗里显示了其ID，复制下来；</p>
+<p>再在眼球的检视面板里，粘贴到”剪贴ID”一栏中；</p>
+<p>这样眼球就作为眼白的剪切蒙版了。</p>
+<p>然后是眼白变形。变形前记得追加两点&#x2F;锁定默认的形状</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220804115.png"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220814723.png"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501220816646.png"></p>
+<p>(8)眉毛变形 - 选择左&#x2F;右眉 - 参数-左眉上下 - 追加三点</p>
+<p>先将绿点移到最左端，制作皱眉：眉毛中部往下拉，靠眉心处向下幅度大些；</p>
+<p>再将绿点移到最右端，制作惊讶状：整体向上拉，幅度 靠眉心处眉中部&gt;眉心&gt;眉尖；</p>
+<p>(9)嘴变形</p>
+<p>多选 上唇、下唇、口中</p>
+<p>参数 嘴开闭；追加两点，0为闭嘴，1为张嘴；</p>
+<p>先从上嘴唇入手，变形路径编辑加点：这次给皮肤部分也加上点，这样拖动嘴唇轮廓的时候就不会移动皮肤造成肤色变化了</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240537118.png"></p>
+<p>参数调0，将上唇微笑的形状拉出来，再拉平；下唇同理</p>
+<p>然后再使口腔内部可见，可以给口腔内部也做变形。</p>
+<p>这时大概率会发现上下唇变形后遮不住口腔内部部分区域，需要利用先前准备好的皮肤部分进行拉伸来盖住；</p>
+<h5 id="4-变形器"><a href="#4-变形器" class="headerlink" title="4.变形器"></a>4.变形器</h5><p>将变形对象放入变形器来制作动画；</p>
+<p>4个动作：头左右动；头发摇动；手臂动；身体倾斜；</p>
+<p>(1)创建旋转变形器</p>
+<p>部件：锁住 脖子、双手、躯干、双足；再Ctrl+A全选；再选择 创建旋转变形器</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240557285.png"></p>
+<blockquote>
+<p>补充加入变形器的方法：选择变型对象-&gt;检视面板-&gt;变形器 栏 中选择</p>
+</blockquote>
+<blockquote>
+<p>变形器可以按住Ctrl 移动变形中心位置</p>
+</blockquote>
+<p>(2)使用旋转变形器制作脸部倾斜</p>
+<p>部件：头部旋转变形器</p>
+<p>参数：角度Z</p>
+<p>追加3点</p>
+<p>旋转变形器移动到下巴正上方一点点</p>
+<p>参数拉到最右边的点；检视面板：角度10.0度</p>
+<p>参数拉到最左边的点；检视面板：角度-10.0度</p>
+<p>脸部倾斜完成；</p>
+<p>(3)使用弯曲变形器制作头发晃动</p>
+<p>选择部件”前发”，上方栏-创建弯曲变形器</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240626068.png"></p>
+<p>部件：前发摆动弯曲变形器</p>
+<p>编辑级别：2（1为精细改动，3为大改动）</p>
+<p>追加3点</p>
+<p>点在最左端-&gt;头发往左拽</p>
+<p>点在最右端-&gt;头发往右拽</p>
+<p>后发、侧发 同理。</p>
+<p>头发晃动完成。</p>
+<p>(4)使用旋转变形器制作手臂摆动</p>
+<p>选择部件”左手”，添加旋转变形器，移动变形器至肩关节下方一点点，旋转指针与手臂同向。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240748530.png"></p>
+<p>部件：左手旋转</p>
+<p>检视面板：点击”设置基准角度”</p>
+<p>参数面板下”+”号：新建参数</p>
+<p>命名ID：左手ID+Arm</p>
+<p>因为只想向上抬一点，所以范围取0~30度</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501240754418.png"></p>
+<p>部件：左手旋转变形器</p>
+<p>参数：左臂 角度；追加2点</p>
+<p>右手同理。</p>
+<p>(5)身体的倾斜、上下动作</p>
+<p>部件(全部解锁) - Ctrl+A全选 - 创建弯曲变形器 - </p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501250420716.png"></p>
+<p>先什么都不选 - 点击创建弯曲变形器，创建一个空变形器<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/20240825-/202501250423123.png"></p>
+<blockquote>
+<p>Live2D 给部件进行分类</p>
+<p>“部件”区域 - 添加新部件，生成的便是空文件夹</p>
+</blockquote>
+<p>111111</p>
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Android-Studio/">Android-Studio</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/STM32/">STM32 产品资料</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0Live2d%E5%B0%8F%E4%BA%BA"><span class="toc-text">给hexo博客添加Live2d小人</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Live2D-%E5%85%A5%E9%97%A8"><span class="toc-text">Live2D 入门</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#0-%E5%AF%B9%E5%B7%B2%E6%9C%89%E9%83%A8%E4%BB%B6%E4%B8%8D%E6%BB%A1%E6%84%8F%E7%9A%84%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95%E6%94%B6%E9%9B%86"><span class="toc-text">0.对已有部件不满意的替换方法收集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%87%86%E5%A4%87%EF%BC%9A%E5%9B%BE%E7%89%87%E5%88%86%E5%B1%82"><span class="toc-text">1.准备：图片分层</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AF%BC%E5%85%A5%E4%BB%A5%E5%8F%8A%E5%88%9D%E7%BA%A7%E5%B8%83%E7%BA%BF"><span class="toc-text">2.导入以及初级布线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%BB%99%E8%A7%92%E8%89%B2%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C"><span class="toc-text">3.给角色添加动作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%8F%98%E5%BD%A2%E5%99%A8"><span class="toc-text">4.变形器</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

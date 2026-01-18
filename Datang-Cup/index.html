@@ -1,0 +1,762 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>残缺的大唐杯相关知识 - 霜晴避风港</title>
+
+  
+    <meta name="description" content="理论知识  1.1 基站 核心网    类型 核心网 基站    5G 5GC gNB   4G EPC eNB      基站接入核心网 核心网：原核心网 基站：受核心影响的原基站    5G基站接入4G核心网 EPC en-gNB   4G基站接入5G核心网 5GC ng-eNB   上行：移动终端 — 基站 下行：基站 — 移动终端 1.2 5G三大场景    5G三大场景 全称（便于记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="残缺的大唐杯相关知识">
+<meta property="og:url" content="https://immortal3180.github.io/Datang-Cup/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="理论知识  1.1 基站 核心网    类型 核心网 基站    5G 5GC gNB   4G EPC eNB      基站接入核心网 核心网：原核心网 基站：受核心影响的原基站    5G基站接入4G核心网 EPC en-gNB   4G基站接入5G核心网 5GC ng-eNB   上行：移动终端 — 基站 下行：基站 — 移动终端 1.2 5G三大场景    5G三大场景 全称（便于记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/image-20240411150137901.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410210942.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410211122.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410211355.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214232.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214834.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214934.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410215251.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411150905.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152247.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152522.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152852.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153413.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153518.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153558.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153630.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154107.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154157.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154311.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154416.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154448.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154512.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154608.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154807.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154933.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155009.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155040.png">
+<meta property="og:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155724.png">
+<meta property="article:published_time" content="2024-04-09T12:40:26.000Z">
+<meta property="article:modified_time" content="2026-01-18T20:19:01.584Z">
+<meta property="article:author" content="霜晴">
+<meta property="article:tag" content="通信">
+<meta property="article:tag" content="大唐杯">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/image-20240411150137901.png">
+  
+  
+  
+  <meta name="keywords" content="通信,大唐杯">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/try-new-web/"><span class="title">试图借助Cursor搭建网站</span></a><a class="item title" href="/valera/"><span class="title">Valera 基于兴趣的新人编曲教程</span></a><a class="item title" href="/vocaloid/"><span class="title">vocaloid</span></a><a class="item title" href="/ruijie/"><span class="title">锐捷</span></a><a class="item title" href="/talk-to-llm/"><span class="title">talk-to-llm</span></a><a class="item title" href="/suffix/"><span class="title">文件后缀相关知识大全</span></a><a class="item title" href="/talk/"><span class="title">talk</span></a><a class="item title" href="/ring-buffer/"><span class="title">环形缓冲 - 一种 处理发送与接收的数据流 的数据结构</span></a><a class="item title" href="/pyinstaller/"><span class="title">Pyinstaller 打包教程</span></a><a class="item title" href="/ruankao-intermediate-network/"><span class="title">软考中级网工</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%80%9A%E4%BF%A1/">通信</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-04-09T12:40:26.000Z">2024-04-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-18T20:19:01.584Z">2026-01-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>残缺的大唐杯相关知识</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><hr>
+<ol>
+<li>理论知识</li>
+</ol>
+<p>1.1 基站 核心网</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>核心网</th>
+<th>基站</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5G</td>
+<td>5GC</td>
+<td>gNB</td>
+</tr>
+<tr>
+<td>4G</td>
+<td>EPC</td>
+<td>eNB</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>基站接入核心网</th>
+<th>核心网：原核心网</th>
+<th>基站：受核心影响的原基站</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5G基站接入4G核心网</td>
+<td>EPC</td>
+<td>en-gNB</td>
+</tr>
+<tr>
+<td>4G基站接入5G核心网</td>
+<td>5GC</td>
+<td>ng-eNB</td>
+</tr>
+</tbody></table>
+<p>上行：移动终端 — 基站</p>
+<p>下行：基站 — 移动终端</p>
+<p>1.2 5G三大场景</p>
+<table>
+<thead>
+<tr>
+<th>5G三大场景</th>
+<th>全称（便于记忆）</th>
+<th>简述</th>
+<th>特点</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eMBB</td>
+<td>（Enhanced Mobile Broadband，增强移动宽带）</td>
+<td>增：宽带数据服务</td>
+<td>高速率，大容量数据传输</td>
+<td>视频、下载、VR、云游戏</td>
+</tr>
+<tr>
+<td>uRLLC</td>
+<td>（Ultra-Reliable and Low-Latency Communications，超可靠低时延通信）</td>
+<td>精：低时延，高可靠性</td>
+<td>实时，关键性应用；可靠稳定</td>
+<td>实时控制、医疗、自动驾驶</td>
+</tr>
+<tr>
+<td>mMTC</td>
+<td>（Massive Machine Type Communications，大规模机器通信）</td>
+<td>广：大型物联网</td>
+<td>大规模多设备；低功耗低成本</td>
+<td>智能家居、智能城市</td>
+</tr>
+</tbody></table>
+<p>5G八大关键能力：</p>
+<ul>
+<li>流量密度</li>
+<li>连接数密度</li>
+<li>时延</li>
+<li>移动性</li>
+<li>能效</li>
+<li>用户体验速率</li>
+<li>频谱效率</li>
+<li>峰值效率</li>
+</ul>
+<p>1.3 速率</p>
+<p>香农公式：<br>$$<br>C&#x3D;B * \log _{2}\left(1+\frac{S}{N}\right)<br>$$<br>C：信道容量</p>
+<p>B：带宽</p>
+<p>S&#x2F;N：信噪比</p>
+<p>C 是数据速率的极限值，单位 bit&#x2F;s；B 为信道带宽，单位 Hz；S 是信号功率（瓦），N 是噪声</p>
+<p>功率（瓦）。</p>
+<p>[TOC]</p>
+<h3 id="4-10"><a href="#4-10" class="headerlink" title="4.10"></a>4.10</h3><h1 id="仿真练习"><a href="#仿真练习" class="headerlink" title="仿真练习"></a><em>仿真练习</em></h1><hr>
+<h2 id="仿真练习-5G网络开通与调测"><a href="#仿真练习-5G网络开通与调测" class="headerlink" title="仿真练习 - 5G网络开通与调测"></a>仿真练习 - 5G网络开通与调测</h2><hr>
+<h4 id="勘站规划"><a href="#勘站规划" class="headerlink" title="勘站规划"></a>勘站规划</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/image-20240411150137901.png"></p>
+<h6 id="射频规划"><a href="#射频规划" class="headerlink" title="射频规划"></a>射频规划</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410210942.png" alt="射频规划-默认不变"></p>
+<h6 id="天线挂高"><a href="#天线挂高" class="headerlink" title="天线挂高"></a>天线挂高</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410211122.png"></p>
+<h6 id="下倾角"><a href="#下倾角" class="headerlink" title="下倾角"></a>下倾角</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410211355.png"></p>
+<h6 id="设备选型"><a href="#设备选型" class="headerlink" title="设备选型"></a>设备选型</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214232.png"></p>
+<h6 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214834.png"></p>
+<h6 id="光模块"><a href="#光模块" class="headerlink" title="光模块"></a>光模块</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410214934.png"></p>
+<h6 id="电源类型"><a href="#电源类型" class="headerlink" title="电源类型"></a>电源类型</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240410215251.png"></p>
+<h4 id="网络部署"><a href="#网络部署" class="headerlink" title="网络部署"></a>网络部署</h4><hr>
+<h5 id="OCM机柜"><a href="#OCM机柜" class="headerlink" title="OCM机柜"></a>OCM机柜</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411150905.png"></p>
+<h6 id="传输参数"><a href="#传输参数" class="headerlink" title="传输参数"></a>传输参数</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152247.png"></p>
+<h6 id="路由关系"><a href="#路由关系" class="headerlink" title="路由关系"></a>路由关系</h6><ul>
+<li></li>
+</ul>
+<hr>
+<h5 id="核心网机柜-核心网规划"><a href="#核心网机柜-核心网规划" class="headerlink" title="核心网机柜 - 核心网规划"></a>核心网机柜 - 核心网规划</h5><h6 id="签约号码"><a href="#签约号码" class="headerlink" title="签约号码"></a>签约号码</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152522.png"></p>
+<h6 id="传输参数-1"><a href="#传输参数-1" class="headerlink" title="传输参数"></a>传输参数</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411152852.png"></p>
+<h6 id="路由关系-1"><a href="#路由关系-1" class="headerlink" title="路由关系"></a>路由关系</h6><ul>
+<li></li>
+</ul>
+<h6 id="网元功能"><a href="#网元功能" class="headerlink" title="网元功能"></a>网元功能</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153413.png"></p>
+<h6 id="光纤-1"><a href="#光纤-1" class="headerlink" title="光纤"></a>光纤</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153518.png"></p>
+<h6 id="光模块-1"><a href="#光模块-1" class="headerlink" title="光模块"></a>光模块</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153558.png"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411153630.png"></p>
+<hr>
+<h5 id="核心网机柜-业务服务器"><a href="#核心网机柜-业务服务器" class="headerlink" title="核心网机柜 - 业务服务器"></a>核心网机柜 - 业务服务器</h5><h6 id="传输参数-2"><a href="#传输参数-2" class="headerlink" title="传输参数"></a>传输参数</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154107.png"></p>
+<h6 id="路由关系-2"><a href="#路由关系-2" class="headerlink" title="路由关系"></a>路由关系</h6><ul>
+<li></li>
+</ul>
+<h6 id="文件包"><a href="#文件包" class="headerlink" title="文件包"></a>文件包</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154157.png"></p>
+<h6 id="BBU机柜-BBU规划"><a href="#BBU机柜-BBU规划" class="headerlink" title="BBU机柜 - BBU规划"></a>BBU机柜 - BBU规划</h6><h6 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154311.png"></p>
+<h6 id="板卡规划"><a href="#板卡规划" class="headerlink" title="板卡规划"></a>板卡规划</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154416.png"></p>
+<h6 id="设备接口认知"><a href="#设备接口认知" class="headerlink" title="设备接口认知"></a>设备接口认知</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154448.png"></p>
+<h6 id="GPS安装"><a href="#GPS安装" class="headerlink" title="GPS安装"></a>GPS安装</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154512.png"></p>
+<h6 id="辅材"><a href="#辅材" class="headerlink" title="辅材"></a>辅材</h6><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154608.png" alt="NG口光纤"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154807.png" alt="NG口光模块"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411154933.png" alt="Ir口光纤"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155009.png" alt="Ir口光模块"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155040.png" alt="供电方式"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.gitmirror.com/immortal3180/Repo/main/img/GithubPicBed/DaTang/20240411155724.png"></p>
+<hr>
+<h3 id="4-17"><a href="#4-17" class="headerlink" title="4.17"></a>4.17</h3><h4 id="5G无线技术与应用"><a href="#5G无线技术与应用" class="headerlink" title="5G无线技术与应用"></a>5G无线技术与应用</h4><h6 id="1-大规模天线（Massive-MIMO）"><a href="#1-大规模天线（Massive-MIMO）" class="headerlink" title="1.大规模天线（Massive MIMO）"></a>1.大规模天线（Massive MIMO）</h6><p>基站和终端设备上配大量天线阵列，多流并传（多就是好，利用空间维度增加频谱效率和网络容量）</p>
+<h6 id="2-全频谱接入（Full-frequency-domain-technology）"><a href="#2-全频谱接入（Full-frequency-domain-technology）" class="headerlink" title="2.全频谱接入（Full frequency-domain technology）"></a>2.全频谱接入（Full frequency-domain technology）</h6><p>也就是说高频有，低频也有；</p>
+<p>高频：热点区域的速率提升</p>
+<p>低频：实现无缝覆盖</p>
+<h6 id="3-超密集组网部署（UDN）"><a href="#3-超密集组网部署（UDN）" class="headerlink" title="3.超密集组网部署（UDN）"></a>3.超密集组网部署（UDN）</h6><p>也就是密集小基站</p>
+<p>增加网络容量，改善热点区域（500-1000的热点增长）</p>
+<hr>
+<h6 id="新型多址：多址是用来区分同一个小区内不同用户的标识"><a href="#新型多址：多址是用来区分同一个小区内不同用户的标识" class="headerlink" title="新型多址：多址是用来区分同一个小区内不同用户的标识"></a>新型多址：多址是用来区分同一个小区内不同用户的标识</h6><p>1.频分多址（frequency division multiple access，<strong>FDMA</strong>）</p>
+<p>把总带宽分隔成多个正交的信道，每个用户占用一个信道。</p>
+<p>2.时分多址（Time division multiple access，<strong>TDMA</strong>）</p>
+<p>它允许多个用户在不同的时间片（时隙）来使用相同的频率。</p>
+<p>3.码分多址（<strong>CDMA</strong>）</p>
+<p>靠不同的地址码来区分的地址。每个配有不同的地址码，用户所发射的载波(为同一载波)既受基带数字信号调制，又受地址码调制，接收时，只有确知其配给地址码的接收机，才能解调出相应的基带信号，而其他接收机因地址码不同，无法解调出信号。</p>
+<p>4.正交频分多址（Orthogonal Frequency Division Multiple Access，<strong>OFDMA</strong>）</p>
+<p>是OFDM技术的演进，将OFDM和FDMA技术结合。在利用OFDM对信道进行副载波化后，在部分子载波上加载传输数据的传输技术。在有限频谱上有更多用户。</p>
+<p>5.非正交多址技术：</p>
+<p>（进一步提升系统容量，支持上行非调度传输，减少空口时延，适应低时延要求）</p>
+<p>NOMA：基于功率叠加的非正交多址（日本NTT)</p>
+<p>SCMA：基于多位调制和稀疏码扩频的稀疏码分多址（华为）</p>
+<p>MUSA：基于复数多元码及增强叠加编码的多用户共享接入技术（中兴）</p>
+<p>PDMA：基于非正交特征图样的图样分隔多址技术（大唐）</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/410633936">秒懂频分多址FDMA、时分多址TDMA、码分多址CDMA、空分多址SDMA - 知乎 (zhihu.com)</a></p>
+<hr>
+<h6 id="新型多载波技术："><a href="#新型多载波技术：" class="headerlink" title="新型多载波技术："></a>新型多载波技术：</h6><p>波形：</p>
+<p>CP-OFDM(多载波)</p>
+<p>UF-OFDM</p>
+<p>DFT-S-OFDM(单载波)</p>
+<p>5G候选新波形：</p>
+<p>F-OFDM</p>
+<p>FBMC(滤波器组多载波)</p>
+<p>UFMC</p>
+<p>GFDM</p>
+<hr>
+<h6 id="编码技术："><a href="#编码技术：" class="headerlink" title="编码技术："></a>编码技术：</h6><p>信道：数据传输的通路</p>
+<ul>
+<li>LDPC(低密度奇偶校验码)</li>
+<li>Polar(极化码)</li>
+</ul>
+<hr>
+<h6 id="调制技术："><a href="#调制技术：" class="headerlink" title="调制技术："></a>调制技术：</h6><p>概念：将原始信号转化为适合在信道中传输的形式的过程</p>
+<p>模拟调制：调幅、调频、调相；有安全隐患</p>
+<p>数字调制：载波信号的离散状态</p>
+<p>QAM-正交振幅调制：相位和幅度调制的一个叠加。调制技术与速率息息相关</p>
+<p>1.16QAM（4G）</p>
+<p>2.64QAM（下行，2^6 –&gt; 1个RE 可以携带6bit的信息）</p>
+<p>3.256QAM（上下行都可用，2^8 –&gt; 1个RE 可以携带8bit的信息）</p>
+<hr>
+<h6 id="双工技术："><a href="#双工技术：" class="headerlink" title="双工技术："></a>双工技术：</h6><p>双工的概念：区分上下行</p>
+<p>如何分配上下行？：</p>
+<p>频分双工（FDD）：不同频率（上下行）</p>
+<p>时分双工（TDD）：相同频率，时域不同</p>
+<p>全双工：同时同频全双工，难点在于如何而避免干扰问题</p>
+<p>灵活双工(对全双工向前兼容)：根据需要改变上下行分配的时频域</p>
+<hr>
+<p>信道带宽的概念：</p>
+<p>在频域上子载波间隔确定时，信道带宽可以配置的最大资源块的数量叫做最大传输带宽</p>
+<p>根据最大传输带宽来设置最小保护带宽</p>
+<p>最小保护带宽计算公式：</p>
+<p>( CHBW(带宽M) * 1000(kHZ) - RB数 * SCS *12 ) &#x2F; 2 - SCS &#x2F;2</p>
+<hr>
+<p>信道带宽 &#x3D; 传输带宽 + 保护带宽</p>
+<hr>
+<h4 id="5G网络架构"><a href="#5G网络架构" class="headerlink" title="5G网络架构"></a>5G网络架构</h4><p>接入网：骨干网络 到 用户终端 的所有设备 &#x2F; 负责收集数据上传的所有设备</p>
+<p>核心网：负责管理数据，分炼数据，本质是路由交换</p>
+<p>承载网：负责数据的传输</p>
+<p>基站与基站之间要进行交互，其接口为Xn接口</p>
+<p>其基站包括gNB –&gt; 5G基站 和 ng-eNB –&gt; 4G增强基站</p>
+<hr>
+<p>涉及5G的组织：</p>
+<p>1.ITU（international telecommunication union，国际电信联盟）：</p>
+<p>联合国的电信组织部门，在全世界范围内牵头组织通信</p>
+<p>2.3GPP（3rd Generation Partnership Project，第三代合作伙伴计划）：</p>
+<p>自3G时代为制定统一移动通信标准 联合世界范围内主流通信公司而成立</p>
+<hr>
+<p>射频编号：0	1	2<br>方位角：240	0	120</p>
+<p>天线挂高：高度相加<br>下倾角：题<br>设备选型：题 - NR频点 - AAU<br>N41:2000-3000<br>N78:3000-4000<br>N79:4000-5000</p>
+<p>光纤：1310 2LC<br>光模块：1310 25G<br>电源：直流 - DC48V</p>
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/keil-setup-fast/">Keil+CubeMX 快速安装</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Yuzu/">Yuzu 模拟器合集</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a><br><a href="https://icp.gov.moe/?keyword=20240215" target="_blank">萌ICP备20240215号</a></p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-10"><span class="toc-text">4.10</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%83%E4%B9%A0-5G%E7%BD%91%E7%BB%9C%E5%BC%80%E9%80%9A%E4%B8%8E%E8%B0%83%E6%B5%8B"><span class="toc-text">仿真练习 - 5G网络开通与调测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8B%98%E7%AB%99%E8%A7%84%E5%88%92"><span class="toc-text">勘站规划</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B0%84%E9%A2%91%E8%A7%84%E5%88%92"><span class="toc-text">射频规划</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%A9%E7%BA%BF%E6%8C%82%E9%AB%98"><span class="toc-text">天线挂高</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8B%E5%80%BE%E8%A7%92"><span class="toc-text">下倾角</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E9%80%89%E5%9E%8B"><span class="toc-text">设备选型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%89%E7%BA%A4"><span class="toc-text">光纤</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%89%E6%A8%A1%E5%9D%97"><span class="toc-text">光模块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-text">电源类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%83%A8%E7%BD%B2"><span class="toc-text">网络部署</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#OCM%E6%9C%BA%E6%9F%9C"><span class="toc-text">OCM机柜</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%8F%82%E6%95%B0"><span class="toc-text">传输参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%85%B3%E7%B3%BB"><span class="toc-text">路由关系</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BD%91%E6%9C%BA%E6%9F%9C-%E6%A0%B8%E5%BF%83%E7%BD%91%E8%A7%84%E5%88%92"><span class="toc-text">核心网机柜 - 核心网规划</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AD%BE%E7%BA%A6%E5%8F%B7%E7%A0%81"><span class="toc-text">签约号码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%8F%82%E6%95%B0-1"><span class="toc-text">传输参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%85%B3%E7%B3%BB-1"><span class="toc-text">路由关系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BD%91%E5%85%83%E5%8A%9F%E8%83%BD"><span class="toc-text">网元功能</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%89%E7%BA%A4-1"><span class="toc-text">光纤</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%89%E6%A8%A1%E5%9D%97-1"><span class="toc-text">光模块</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BD%91%E6%9C%BA%E6%9F%9C-%E4%B8%9A%E5%8A%A1%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">核心网机柜 - 业务服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%8F%82%E6%95%B0-2"><span class="toc-text">传输参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%85%B3%E7%B3%BB-2"><span class="toc-text">路由关系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8C%85"><span class="toc-text">文件包</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#BBU%E6%9C%BA%E6%9F%9C-BBU%E8%A7%84%E5%88%92"><span class="toc-text">BBU机柜 - BBU规划</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E8%BF%9E%E6%8E%A5"><span class="toc-text">设备连接</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%BF%E5%8D%A1%E8%A7%84%E5%88%92"><span class="toc-text">板卡规划</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E6%8E%A5%E5%8F%A3%E8%AE%A4%E7%9F%A5"><span class="toc-text">设备接口认知</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#GPS%E5%AE%89%E8%A3%85"><span class="toc-text">GPS安装</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BE%85%E6%9D%90"><span class="toc-text">辅材</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-17"><span class="toc-text">4.17</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5G%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">5G无线技术与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E5%A4%A7%E8%A7%84%E6%A8%A1%E5%A4%A9%E7%BA%BF%EF%BC%88Massive-MIMO%EF%BC%89"><span class="toc-text">1.大规模天线（Massive MIMO）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E5%85%A8%E9%A2%91%E8%B0%B1%E6%8E%A5%E5%85%A5%EF%BC%88Full-frequency-domain-technology%EF%BC%89"><span class="toc-text">2.全频谱接入（Full frequency-domain technology）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-%E8%B6%85%E5%AF%86%E9%9B%86%E7%BB%84%E7%BD%91%E9%83%A8%E7%BD%B2%EF%BC%88UDN%EF%BC%89"><span class="toc-text">3.超密集组网部署（UDN）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E5%A4%9A%E5%9D%80%EF%BC%9A%E5%A4%9A%E5%9D%80%E6%98%AF%E7%94%A8%E6%9D%A5%E5%8C%BA%E5%88%86%E5%90%8C%E4%B8%80%E4%B8%AA%E5%B0%8F%E5%8C%BA%E5%86%85%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E7%9A%84%E6%A0%87%E8%AF%86"><span class="toc-text">新型多址：多址是用来区分同一个小区内不同用户的标识</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%96%B0%E5%9E%8B%E5%A4%9A%E8%BD%BD%E6%B3%A2%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-text">新型多载波技术：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-text">编码技术：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-text">调制技术：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%8C%E5%B7%A5%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-text">双工技术：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5G%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="toc-text">5G网络架构</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    processEscapes: true
+  }
+});
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for(i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

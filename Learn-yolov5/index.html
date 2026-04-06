@@ -1,0 +1,673 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  
+  <title>Learn-yolov5 - 霜晴避风港</title>
+
+  
+    <meta name="description" content="学习yolov5 参考文章：手把手带你调参YOLOv5 (v5.0-v7.0)（推理）_yolov5调参-CSDN博客  一、yolov5入门使用1. 环境搭建(1) 下载 yolov5-master使用 Git 克隆 YOLOv5 仓库 12345678# 克隆 YOLOv5 仓库git clone https:&#x2F;&#x2F;github.com&#x2F;ultralytics&#x2F;yolov5# 导航到克隆的目录c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn-yolov5">
+<meta property="og:url" content="https://immortal3180.github.io/Learn-yolov5/index.html">
+<meta property="og:site_name" content="霜晴避风港">
+<meta property="og:description" content="学习yolov5 参考文章：手把手带你调参YOLOv5 (v5.0-v7.0)（推理）_yolov5调参-CSDN博客  一、yolov5入门使用1. 环境搭建(1) 下载 yolov5-master使用 Git 克隆 YOLOv5 仓库 12345678# 克隆 YOLOv5 仓库git clone https:&#x2F;&#x2F;github.com&#x2F;ultralytics&#x2F;yolov5# 导航到克隆的目录c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101010736.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101011804.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101134035.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101172602.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101173045.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101175333.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101174256.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101175014.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101184230.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101212150.png">
+<meta property="article:published_time" content="2025-12-31T17:04:23.000Z">
+<meta property="article:modified_time" content="2026-01-04T19:21:51.026Z">
+<meta property="article:author" content="霜晴">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101010736.png">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
+
+  
+    <link rel="shortcut icon" href="/images/ciallo.apk.round.png">
+  
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1C99YXK0WT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1C99YXK0WT');
+  </script>
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="title" href="/"><div class="main" ff="title">霜晴避风港</div><div class="sub cap">... la ringrazio.</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/immortal3180" style="color:#000000"><img no-lazy src="/images/github-favicon.png" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="Bilibili" target="_blank" rel="noopener" href="https://space.bilibili.com/641764776" style="color:#00a1d6"><img no-lazy src="/images/bilibili-favicon.ico" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a><a class="nav-item" title="友链" href="/friends/" style="color:#8de93f"><img no-lazy src="/images/link.svg" / onerror="javascript:this.classList.add('error');this.src='/images/ciallo.apk.round.png';"></a></nav>
+</div>
+<div class="widgets">
+
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-12-31T17:04:23.000Z">2026-01-01</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-01-04T19:21:51.026Z">2026-01-05</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Learn-yolov5</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="学习yolov5"><a href="#学习yolov5" class="headerlink" title="学习yolov5"></a>学习yolov5</h1><blockquote>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43694096/article/details/124378167?spm=1001.2014.3001.5501">手把手带你调参YOLOv5 (v5.0-v7.0)（推理）_yolov5调参-CSDN博客</a></p>
+</blockquote>
+<h3 id="一、yolov5入门使用"><a href="#一、yolov5入门使用" class="headerlink" title="一、yolov5入门使用"></a>一、yolov5入门使用</h3><h4 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h4><h5 id="1-下载-yolov5-master"><a href="#1-下载-yolov5-master" class="headerlink" title="(1) 下载 yolov5-master"></a>(1) 下载 yolov5-master</h5><p>使用 Git 克隆 YOLOv5 仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆 YOLOv5 仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/ultralytics/yolov5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导航到克隆的目录</span></span><br><span class="line"><span class="built_in">cd</span> yolov5</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装所需的包</span></span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Github下载 yolov5-master：<a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">ultralytics&#x2F;yolov5: YOLOv5 🚀 in PyTorch &gt; ONNX &gt; CoreML &gt; TFLite</a></p>
+</blockquote>
+<blockquote>
+<p>如果你暂时不会使用Git，就按照下图所示下载(需要会基本使用GitHub)</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101010736.png"></p>
+<h5 id="2-创建虚拟环境、安装依赖"><a href="#2-创建虚拟环境、安装依赖" class="headerlink" title="(2) 创建虚拟环境、安装依赖"></a>(2) 创建虚拟环境、安装依赖</h5><blockquote>
+<p>提前准备：</p>
+<p>python环境&gt;&#x3D;3.8，最好是python3.8系列，否则可能存在奇怪的bug</p>
+<p>IDE：PyCharm</p>
+</blockquote>
+<p>如果环境配置妥当，</p>
+<p>使用 PyCharm 打开 yolov5-master 工程，</p>
+<p>PyCharm 检测到 requirements.txt 后会自动根据依赖项，</p>
+<p>创建虚拟环境，</p>
+<p>并安装依赖</p>
+<blockquote>
+<p>(如果依赖无法成功下载，可能需要掌握科学上网，或配置国内镜像源)</p>
+</blockquote>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101011804.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt  -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-获取预训练模型"><a href="#2-获取预训练模型" class="headerlink" title="2. 获取预训练模型"></a>2. 获取预训练模型</h4><p>前往 yolov5 GitHub Release 页面，下载官方提供的 <strong>预训练模型权重文件</strong>：<a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/releases">Releases · ultralytics&#x2F;yolov5</a></p>
+<p>以 yolov5s.pt 为例，</p>
+<blockquote>
+<p><code>yolov5s.pt</code> 是一个<strong>预训练的、小型的、基于 PyTorch 的 YOLOv5 模型权重文件</strong>。它是在大型 COCO 数据集上训练好的，可以<strong>直接用于检测 80 种常见物体</strong>，或者作为<strong>起点</strong>来训练你自己的特定目标检测模型。</p>
+</blockquote>
+<p>(1) 下载 yolov5s.pt：<a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s.pt">https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s.pt</a></p>
+<p>(2) 下载后将 yolov5s.pt 放入 yolov5-master 项目文件夹根目录下</p>
+<h4 id="3-测试使用"><a href="#3-测试使用" class="headerlink" title="3. 测试使用"></a>3. 测试使用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用网络摄像头运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对本地图像文件运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source img.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对本地视频文件运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source vid.mp4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对屏幕截图运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source screen</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对图像目录运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source path/to/images/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对列出图像路径的文本文件运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="built_in">list</span>.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对列出流 URL 的文本文件运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="built_in">list</span>.streams</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 glob 模式对图像运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="string">&#x27;path/to/*.jpg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对 YouTube 视频 URL 运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="string">&#x27;https://youtu.be/LNwODJXcvt4&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 对 RTSP、RTMP 或 HTTP 流运行推理</span></span><br><span class="line">python detect.py --weights yolov5s.pt --source <span class="string">&#x27;rtsp://example.com/media.mp4&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><hr>
+<h3 id="二、创建自己的数据集"><a href="#二、创建自己的数据集" class="headerlink" title="二、创建自己的数据集"></a>二、创建自己的数据集</h3><blockquote>
+<p>需要环境：</p>
+<p>python 3.8 任意版本(否则可能会出现奇怪的bug)</p>
+</blockquote>
+<h4 id="1-使用现成-创造新的原始数据集"><a href="#1-使用现成-创造新的原始数据集" class="headerlink" title="1.使用现成&#x2F;创造新的原始数据集"></a>1.使用现成&#x2F;创造新的原始数据集</h4><p><strong>数据增强方法：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>方法</th>
+<th>作用</th>
+<th>适用任务</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>几何变换</strong></td>
+<td>翻转 (Flip)</td>
+<td>增加样本多样性，模拟左右 &#x2F; 上下颠倒</td>
+<td>分类、检测</td>
+</tr>
+<tr>
+<td></td>
+<td>缩放 (Scale)</td>
+<td>模拟目标远近变化</td>
+<td>检测</td>
+</tr>
+<tr>
+<td></td>
+<td>裁剪 (Crop)</td>
+<td>强制关注局部特征</td>
+<td>分类、检测</td>
+</tr>
+<tr>
+<td></td>
+<td>旋转 (Rotation)</td>
+<td>模拟目标角度变化</td>
+<td>分类、检测</td>
+</tr>
+<tr>
+<td><strong>颜色变换</strong></td>
+<td>亮度 &#x2F; 对比度</td>
+<td>模拟不同光照条件</td>
+<td>所有任务</td>
+</tr>
+<tr>
+<td></td>
+<td>噪声注入</td>
+<td>增强对图像质量下降的鲁棒性</td>
+<td>分类、医学影像</td>
+</tr>
+<tr>
+<td><strong>高级方法</strong></td>
+<td>随机擦除</td>
+<td>防止模型依赖局部特征</td>
+<td>分类</td>
+</tr>
+<tr>
+<td></td>
+<td>CutMix &#x2F; MixUp</td>
+<td>正则化，提升模型泛化能力</td>
+<td>分类</td>
+</tr>
+</tbody></table>
+<h4 id="2-数据标注"><a href="#2-数据标注" class="headerlink" title="2.数据标注"></a>2.数据标注</h4><p>(1) 使用 PyCharm 新建 python 项目</p>
+<p>(2) 安装数据标注软件 labelimg</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install labelimg -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+<p>(3) 安装完成后在终端输入 labelimg </p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101134035.png"></p>
+<p>设置为自动保存模式</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101172602.png"></p>
+<p>选择 未标注图片所处文件夹 与 标注后图片保存的文件夹</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101173045.png"></p>
+<p>标注格式选择 YOLO 格式</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101175333.png"></p>
+<p>开始标注(如果打开了 Auto Save mode 就不用频繁地保存了)</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101174256.png"></p>
+<blockquote>
+<p>labelimg 快捷键：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101175014.png"></p>
+</blockquote>
+<p>生成的标注文件如下图所示：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101184230.png"></p>
+<p>分析生成的所有标记文件，共分为两种：</p>
+<p><strong>class.txt</strong>：所有 label 的名称，</p>
+<p>一行一个 label 名称，它们有对应的 label id，</p>
+<p>第一行 label id 为0，</p>
+<p>第二行 label id 为1，以此类推</p>
+<p><strong>图片名.txt</strong>：对应图片中所有标注框的相关参数，</p>
+<p>一行信息对应一个标注框的参数，包含5组数字，</p>
+<p>用空格划分，分别对应</p>
+<p>一个标注框的 label id、x(目标框中心点x坐标)、y(目标框中心点y坐标)、w(目标框宽度)、h(目标框高度)</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/immortal3180/Repo/refs/heads/main/img/GithubPicBed/20240825-/20260101212150.png"></p>
+<hr>
+<h4 id="实际应用：在树莓派5上部署YOLOV5模型并实现目标检测、mqtt通信、串口发送"><a href="#实际应用：在树莓派5上部署YOLOV5模型并实现目标检测、mqtt通信、串口发送" class="headerlink" title="实际应用：在树莓派5上部署YOLOV5模型并实现目标检测、mqtt通信、串口发送"></a>实际应用：在树莓派5上部署YOLOV5模型并实现目标检测、mqtt通信、串口发送</h4><p>1.系统：TF卡烧录 RaspyBerryPiOS 64bit (自带VNC方便远程连接)</p>
+<p>2.项目下载：( YOLOv5官方项目 - yolov5-master )</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5/archive/refs/heads/master.zip">https://github.com/ultralytics/yolov5/archive/refs/heads/master.zip</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/immortal3180/yolov5-mqtt-serial.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 与远程仓库同步</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<p>3.环境配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入项目目录</span></span><br><span class="line"><span class="built_in">cd</span> ~/xxxxx/yolov5-master</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建虚拟环境</span></span><br><span class="line">python3 -m venv venv</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 激活虚拟环境</span></span><br><span class="line"><span class="built_in">source</span> venv/bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 激活成功后，你的命令行提示符前面会出现 (venv) 的字样，像这样：</span></span><br><span class="line">(venv) a123@abc:~/xxxxx/yolov5-master $ </span><br><span class="line"><span class="comment"># 当你完成工作后，可以随时退出虚拟环境。</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖(通过清华源)</span></span><br><span class="line">pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行脚本</span></span><br><span class="line">python detect.py --weights yolov5s.pt --<span class="built_in">source</span> 0</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<hr>
+<h5 id="实际使用的实际应用："><a href="#实际使用的实际应用：" class="headerlink" title="实际使用的实际应用："></a>实际使用的实际应用：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 手动启动</span></span><br><span class="line">a123@abc:~ $ <span class="built_in">cd</span> ~/Desktop/WorkSpace/yolov5-mqtt-serial</span><br><span class="line">a123@abc:~/Desktop/WorkSpace/yolov5-mqtt-serial $ <span class="built_in">source</span> venv/bin/activate</span><br><span class="line">(venv) a123@abc:~/Desktop/WorkSpace/yolov5-mqtt-serial $ python detect.py --weights trash0.pt --<span class="built_in">source</span> 0 </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用跳线帽短接串口，再使用minicom观察串口输出信息：</span></span><br><span class="line">minicom -D /dev/ttyAMA0 -b 115200</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更改风扇策略</span></span><br><span class="line">sudo nano /boot/firmware/config.txt</span><br><span class="line"><span class="comment"># 查看cpu温度</span></span><br><span class="line">watch -n 1 vcgencmd measure_temp</span><br></pre></td></tr></table></figure>
+
+
+
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/talk/">talk</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Learn-Raspberry-Pi/">树莓派5上手使用</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>© 2024  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建<br>文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处<br><a target="_blank" rel="noopener" href="https://stats.uptimerobot.com/kDDbIRso6S">站点监控</a></p>
+</div><script defer src="https://cloud.umami.is/script.js" data-website-id="8c6acffc-8def-4d50-9ff2-c29909ea702d"></script></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81yolov5%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8"><span class="toc-text">一、yolov5入门使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1. 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD-yolov5-master"><span class="toc-text">(1) 下载 yolov5-master</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E3%80%81%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-text">(2) 创建虚拟环境、安装依赖</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">2. 获取预训练模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8"><span class="toc-text">3. 测试使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">二、创建自己的数据集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E7%8E%B0%E6%88%90-%E5%88%9B%E9%80%A0%E6%96%B0%E7%9A%84%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">1.使用现成&#x2F;创造新的原始数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8"><span class="toc-text">2.数据标注</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%EF%BC%9A%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE5%E4%B8%8A%E9%83%A8%E7%BD%B2YOLOV5%E6%A8%A1%E5%9E%8B%E5%B9%B6%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E3%80%81mqtt%E9%80%9A%E4%BF%A1%E3%80%81%E4%B8%B2%E5%8F%A3%E5%8F%91%E9%80%81"><span class="toc-text">实际应用：在树莓派5上部署YOLOV5模型并实现目标检测、mqtt通信、串口发送</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-text">实际使用的实际应用：</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.28.1" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>
